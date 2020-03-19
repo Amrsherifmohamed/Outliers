@@ -1,0 +1,17 @@
+
+.c2
+{
+display:block;
+width: 1500px;
+height: 0;
+
+}
+.bt{
+
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.border{margin-right: 0%;}

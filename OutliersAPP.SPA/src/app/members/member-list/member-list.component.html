@@ -1,0 +1,29 @@
+<div class="text-center">
+  <h4 *ngIf="pagination.totalItems!=0" style="font-family:'Droid-Arabic-Kufi'"> Find {{pagination.totalItems}} <span *ngIf="pagination.totalItems>10">Users</span>
+    <span *ngIf="pagination.totalItems<=10&&pagination.totalItems!=0">Users</span>
+</h4>
+<h4 *ngIf="pagination.totalItems==0" style="font-family:'Droid-Arabic-Kufi'"><span>لا يوجد إقتراحات مناسبة</span> </h4>
+</div>
+<div class="c2">
+  <form dir="rtl" form="ngForm" (ngSubmit)="search=false;loadUsers();" class="form-inline" novalidate>
+    <div class="col" >
+      <div class="btn-group-vertical float-left">
+      </div>
+    </div>
+  </form>
+ <br>
+  <div class="row ">
+    <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
+      <app-member-card [user]='user'></app-member-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="pagination.totalItems>0" class="d-flex justify-content-center">
+  <pagination [boundaryLinks]="true" [itemsPerPage]="pagination.itemsPerPage" [totalItems]="pagination.totalItems"
+    [(ngModel)]="pagination.currentPage" (pageChanged)="search=true;pageChanged($event);" previousText="&lsaquo;" nextText="&rsaquo;"
+    firstText="&laquo;" lastText="&raquo;">
+
+  </pagination>
+
+</div>
