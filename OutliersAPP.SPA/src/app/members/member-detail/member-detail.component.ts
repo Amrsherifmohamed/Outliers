@@ -22,6 +22,8 @@ export class MemberDetailComponent implements OnInit , AfterViewChecked {
   showLook:boolean=true;
   paid:boolean=false;
   photoUrl:string;
+  countfollwers:string;
+  countfollwing:string;
   options = {weekday : 'long' , year :'numeric' , month : 'long',day:'numeric'};
 
   galleryOptions: NgxGalleryOptions[];
@@ -47,7 +49,18 @@ export class MemberDetailComponent implements OnInit , AfterViewChecked {
        this.memberTabs.tabs[selectedTab>0?selectedTab:0].active=true;
      }
     )
-
+    this.userService.userFollowering(this.user.id).
+    subscribe(
+      res=>{this.authService.firstfollower.next(res.toString());
+      this.authService.latestfollowercount.subscribe(res=>{this.countfollwers=res;});
+      }
+    );
+    this.userService.getnumberofollwers(this.user.id).subscribe(
+      res=>{this.authService.firstfollwering.next(res.toString());
+      this.authService.latestfolloweringcount.subscribe(res=>{this.countfollwing=res;});}
+    );
+    this.created = new Date(this.user.created).toLocaleString('ar-EG',this.options).replace('،','');
+    this.age = this.user.age.toLocaleString('ar-EG');
     this.galleryOptions=[{
       width:'500px',height:'500px',imagePercent:100,thumbnailsColumns:4,
       imageAnimation:NgxGalleryAnimation.Slide,preview:false

@@ -47,8 +47,7 @@ namespace OutliersAPP.API.Data
         {
             var query =  _context.Users.Include(u=>u.Photos).AsQueryable();
             if(isCurrentUser)
-                            query = query.IgnoreQueryFilters();
-            
+            query = query.IgnoreQueryFilters();
             var user = await query.FirstOrDefaultAsync(u=>u.Id==id);
             return user;
         }
@@ -172,5 +171,55 @@ namespace OutliersAPP.API.Data
         {
             return await _context.Users.OrderBy(u=>u.NormalizedUserName).Where(u=>u.NormalizedUserName!="ADMIN").ToListAsync();
         }
+         public async Task<int> getnumberofollwering(int userId){
+        var user= await _context.Likes.Where(l=>l.LikerId==userId).ToListAsync();
+        var count =user.Count();
+        return count;
+          }
+        public async Task<int> getnumberofollwers(int userId){
+              var user=await _context.Likes.Where(l=>l.LikeeId==userId).ToListAsync();
+              var count =user.Count();
+              return count;
+          }
+           public async Task<Post> getpost(int id)
+        {
+            var Posts = await _context.Posts.Include(p=>p.User).ThenInclude(u=>u.Photos).FirstOrDefaultAsync(p=>p.Id==id);
+            return Posts;
+        }
+
+        public async Task<IEnumerable<Post>> GetPosts(int userId)
+        {
+           var Posts = await _context.Posts.Include(u=>u.User).ThenInclude(u=>u.Photos).Where(u=>u.UserId==userId).ToListAsync();
+           return Posts;
+        //    .ThenInclude(u=>u.Photos)
+        //    .OrderByDescending(p=>p.posttime)
+        }   
+       public async Task<ICollection<Post>> GetPostsForFollwing(int userId)
+       {
+           var Posts=  _context.Posts.Include(u=>u.User).ThenInclude(u=>u.Photos).OrderBy(u=>u.posttime).AsQueryable();
+            var userLikees = await GetUserLikes(userId,false);
+               Posts =  Posts.Where(p=>userLikees.Contains(p.UserId));
+            return Posts.ToList();
+       }
+             public async Task<Comment> getComment(int id,int postId)
+        {
+            var Comment = await _context.Comments.Include(c=>c.User).ThenInclude(u=>u.Photos).Include(c=>c.Post)
+            .FirstOrDefaultAsync(p=>p.Id==id&&p.PostId==postId);
+            return Comment;
+        }
+
+        public async Task<IEnumerable<Comment>> GetComments(int postId)
+        {
+           var Comments = await _context.Comments.Include(c=>c.User).ThenInclude(u=>u.Photos)
+           .Include(c=>c.Post).Where(u=>u.PostId==postId).ToListAsync();
+           return Comments;
+        } 
+        public async Task<Post> getpostformuser(int postId,int userId){
+            return await _context.Posts.FirstOrDefaultAsync(p=>p.Id==postId&&p.UserId==userId);
+        }
+        public async Task<Comment> getcommentForuser(int id,int postId,int userId){
+            return await _context.Comments.FirstOrDefaultAsync(c=>c.Id==id&&c.UserId==userId&&c.PostId==postId);
+        }
+
     }
 }

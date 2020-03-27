@@ -165,6 +165,12 @@
         <h5 class="centered">{{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}</h5>
 
         <li class="sub-menu">
+          <a [routerLink]="['/members/home']">
+            <i class="fa fa-home-alt"></i>
+            <span>Home</span>
+            </a>
+        </li>
+        <li class="sub-menu">
           <a [routerLink]="['/members/profile']">
             <i class="fa fa-desktop"></i>
             <span>Profile</span>

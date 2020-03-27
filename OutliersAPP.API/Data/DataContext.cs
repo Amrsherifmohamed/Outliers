@@ -17,6 +17,8 @@ namespace OutliersAPP.API.Data
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Job> Job { get; set; }
         public DbSet<ApplyForJob> ApplyForJob { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         protected override void OnModelCreating(ModelBuilder builder){
 
         base.OnModelCreating(builder);

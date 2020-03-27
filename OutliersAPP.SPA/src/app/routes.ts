@@ -19,6 +19,13 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { MemberProfileComponent } from './members/member-profile/member-profile.component';
 import { MemberHomeComponent } from './members/member-home/member-home.component';
 import { MemberChatComponent } from './members/member-chat/member-chat.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { PostResolver } from './_resolvers/post.resolver';
+import { PostMemberResolver } from './_resolvers/post-member.resolver';
+import { PostFollwerResolver } from './_resolvers/postfollwer.resolver';
+import { CommentResolver } from './_resolvers/comment.resolver';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { PostDetailResolver } from './_resolvers/post-detail.resolver';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -37,17 +44,26 @@ export const appRoutes: Routes = [
         }, canDeactivate: [PreventUnsavedChangesGuard]
       },
       {
-        path: 'members/profile', component: MemberProfileComponent
+        path: 'members/profile', component: MemberProfileComponent,resolve:{
+          user:MemberEditResolver,post:PostResolver
+        }
+      },
+      {
+        path: 'member/post/comment/:id', component: PostDetailComponent,resolve:{
+          post:PostDetailResolver,comment:CommentResolver
+        }
       },
       {
         path: 'members/chat', component: MemberChatComponent
       },
       {
-        path: 'members/home', component: MemberHomeComponent
+        path: 'members/home', component: MemberHomeComponent,resolve:{
+          post:PostFollwerResolver,posts:PostResolver
+        }
       },
       {
         path: 'members/:id', component: MemberDetailComponent, resolve: {
-          user: MemberDetailResolver
+          user: MemberDetailResolver,post:PostMemberResolver
         }
       },
 

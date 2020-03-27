@@ -29,7 +29,9 @@ namespace OutliersAPP.API.Models
         public ICollection<Message> MessagesSent { get; set; }
         public ICollection<Message> MessagesReceived { get; set; }  
         public ICollection<UserRole> UserRoles { get; set; }
-        public  ICollection <ApplyForJob> ApplyForJobs { get; set; }
+        public ICollection<ApplyForJob> ApplyForJobs { get; set;}
+        public ICollection<Post> Posts{ get; set; }
+        public ICollection<Comment> Comments{get;set;}
         
     }
 }

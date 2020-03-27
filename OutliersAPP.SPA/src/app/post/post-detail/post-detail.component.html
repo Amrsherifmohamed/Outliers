@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">               
+    </div>
+     <div class="col-md-6">
+    <app-post-card [post]='posts'></app-post-card>
+        <div *ngFor="let comment of comments">
+            <app-comment-card [comment]='comment'></app-comment-card>
+        </div>  
+</div>
+</div>
+</div>

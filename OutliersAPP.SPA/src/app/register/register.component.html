@@ -5,13 +5,15 @@
     <legend><span class="number"></span>Your basic info</legend>
 
     <div class="form-group">
-      <input style="font-weight:bold;font-size:1.0rem;color: #000;" formControlName="username" type="text" [ngClass]="{'is-invalid' : registerForm.get('username').errors && registerForm.get('username').touched}"
+      <input style="font-weight:bold;font-size:1.0rem;color: #000;" formControlName="username" type="text" 
+      [ngClass]="{'is-invalid' : registerForm.get('username').errors && registerForm.get('username').touched}"
         class=" form-control" placeholder="First Name">
       <div class="invalid-feedback"> أدخل إسمك</div>
     </div>
 
     <div class="form-group">
-      <input  style="font-weight:bold;font-size:1.0rem;color: #000;" [ngClass]="{'is-invalid': registerForm.get('knownAs').errors && registerForm.get('knownAs').touched}" class="form-control"
+      <input  style="font-weight:bold;font-size:1.0rem;color: #000;" 
+      [ngClass]="{'is-invalid': registerForm.get('knownAs').errors && registerForm.get('knownAs').touched}" class="form-control"
         placeholder="User Name" formControlName="knownAs">
       <div class="invalid-feedback" *ngIf="registerForm.get('knownAs').touched && registerForm.get('knownAs').hasError('required')">Enter Your
         User Name</div>
@@ -24,7 +26,8 @@
         Birth Day </div>
     </div>
     <div class="form-group">
-      <input style="font-weight:bold;font-size:1.0rem;color: #000;" class="input-group input-group-icon" [ngClass]="{'is-invalid': registerForm.get('city').errors && registerForm.get('city').touched}" class="form-control"
+      <input style="font-weight:bold;font-size:1.0rem;color: #000;"
+       class="input-group input-group-icon" [ngClass]="{'is-invalid': registerForm.get('city').errors && registerForm.get('city').touched}" class="form-control"
         placeholder="City" formControlName="city">
       <div class="invalid-feedback" *ngIf="registerForm.get('city').touched && registerForm.get('city').hasError('required')">Enter Your
         City </div>
@@ -67,7 +70,8 @@
 
 
     <div class="form-group">
-      <input style="font-weight:bold;font-size:1.0rem;color: #000;" [ngClass]="{'is-invalid': registerForm.get('Experience').errors && registerForm.get('Experience').touched}" class="form-control"
+      <input style="font-weight:bold;font-size:1.0rem;color: #000;" 
+      [ngClass]="{'is-invalid': registerForm.get('Experience').errors && registerForm.get('Experience').touched}" class="form-control"
         placeholder=" Experience  Not required " formControlName="Experience">
       <div class="invalid-feedback" *ngIf="registerForm.get('Academic').touched && registerForm.get('Experience').hasError('required')">Enter Your
         Experience</div>

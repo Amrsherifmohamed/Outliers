@@ -18,6 +18,8 @@ export class MemberEditComponent implements OnInit {
   age:string;
   options = {weekday : 'long' , year :'numeric' , month : 'long',day:'numeric'};
   photoUrl:string;
+  countfollwers:string;
+  countfollwing:string;
  @HostListener('window:beforeunload',['$event'])
  unLoadNotification($event:any){
    if(this.editForm.dirty){
@@ -32,14 +34,22 @@ export class MemberEditComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.user = data['user'];
     });
-
     this.authService.currentPhotoUrl.subscribe(photoUrl=>this.photoUrl=photoUrl);
+    this.userService.userFollowering(this.authService.decodedToken.nameid).
+      subscribe(
+        res=>{this.authService.firstfollower.next(res.toString());
+        this.authService.latestfollowercount.subscribe(res=>{this.countfollwers=res;});
+        }
+      );
+      this.userService.getnumberofollwers(this.authService.decodedToken.nameid).subscribe(
+        res=>{this.authService.firstfollwering.next(res.toString());
+        this.authService.latestfolloweringcount.subscribe(res=>{this.countfollwing=res;});}
+      );
     this.created = new Date(this.user.created).toLocaleString('ar-EG',this.options).replace('،','');
     this.age = this.user.age.toLocaleString('ar-EG');
   }
 
   updateUser() {
-
    this.userService.updateUser(this.authService.decodedToken.nameid,this.user).subscribe(()=>{
     this.alertify.success('updated Is Done ');
     this.editForm.reset(this.user);

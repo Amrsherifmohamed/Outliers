@@ -22,5 +22,14 @@ namespace OutliersAPP.API.Data
         Task<Payment> GetPaymentForUser(int userId);
         Task<ICollection<User>> GetLikersOrLikees(int userId,string type);
         Task<ICollection<User>> GetAllUsersExceptAdmin();
+        Task<int> getnumberofollwering(int userId);
+        Task<int> getnumberofollwers(int userId);
+        Task<Post> getpost(int id);
+        Task<IEnumerable<Post>> GetPosts(int userId);
+        Task<ICollection<Post>> GetPostsForFollwing(int userId);
+        Task<Comment> getComment(int id,int postId);
+        Task<IEnumerable<Comment>> GetComments(int postId);
+        Task<Post> getpostformuser(int postId,int userId);
+        Task<Comment> getcommentForuser(int postId,int id,int userId);
     }
 }

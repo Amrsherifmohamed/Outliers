@@ -186,5 +186,15 @@ namespace OutliersAPP.API.Controllers
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
             return Ok(usersToReturn);
         }
+        [HttpGet("{userId}/userFollowering")]
+        public async Task<IActionResult> getnumberofollwering(int userId){
+            var count = await _repo.getnumberofollwering(userId);
+            return Ok(count);
+        }
+        [HttpGet("{userId}/getnumberofollwers")]
+        public async Task<IActionResult> getnumberofollwers(int userId){
+                var count =await _repo.getnumberofollwers(userId);
+                return Ok(count);
+        }
     }
 }

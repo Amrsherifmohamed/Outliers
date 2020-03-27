@@ -6,29 +6,22 @@
           <div class="row content-panel">
             <div class="col-md-4 profile-text mt mb centered">
               <div class="right-divider hidden-sm hidden-xs">
-                <h4>1922</h4>
+                <h4>{{countfollwers}}</h4>
                 <h6>FOLLOWERS</h6>
-                <h4>290</h4>
+                <h4><span>{{countfollwing}}</span></h4>
                 <h6>FOLLOWING</h6>
-                <h4>$ 13,980</h4>
-                <h6>MONTHLY EARNINGS</h6>
               </div>
             </div>
             <div class="col-md-4 profile-text">
-              <h3>Sam Soffes</h3>
-              <h6>Main Administrator</h6>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC.</p>
+              <h3>{{user.userName}}</h3>
+              <h4>{{user.gender}}</h4>
+              <p>{{user.skills}}</p>
               <br>
-              <p><button class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
             </div>
             <!-- /col-md-4 -->
             <div class="col-md-4 centered">
               <div class="profile-pic">
                 <p><img src="{{photoUrl || 'assets/User.png'}}" class="img-circle"></p>
-                <p>
-                  <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
-                </p>
               </div>
             </div>
             <!-- /col-md-4 -->
@@ -42,7 +35,7 @@
               <ul class="nav nav-tabs nav-justified">
 
                 <li>
-                  <a data-toggle="tab" href="#contact" class="contact-map">Photos</a>
+                  <a data-toggle="tab" href="#photo" class="contact-map">Photos</a>
                 </li>
                 <li>
                   <a data-toggle="tab" href="#edit">Edit Profile</a>
@@ -52,30 +45,8 @@
             <!-- /panel-heading -->
             <div class="panel-body">
               <div class="tab-content">
-                <div id="overview" class="tab-pane">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <textarea rows="3" class="form-control" placeholder="Whats on your mind?"></textarea>
-                      <div class="grey-style">
-                        <div class="pull-left">
-                          <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
-                          <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
-                        </div>
-                        <div class="pull-right">
-                          <button class="btn btn-sm btn-theme03">POST</button>
-                        </div>
-                      </div>
-
-                      <!-- /detailed -->
-                    </div>
-                    <!-- /col-md-6 -->
-
-                    <!-- /col-md-6 -->
-                  </div>
-                  <!-- /OVERVIEW -->
-                </div>
                 <!-- /tab-pane -->
-                <div id="contact" class="tab-pane">
+                <div id="photo" class="tab-pane">
                   <div class="row">
                     <div class="col-md-6">
                       <div id="map"></div>
@@ -86,9 +57,6 @@
                       <div class="col-md-12 col-md-offset-2 mt">
                         <app-photo-editor (getMemberPhotoChange)="updateMainPhoto($event)" [photos]="user.photos">
                         </app-photo-editor>
-
-
-
                       </div>
 
                     </div>
@@ -146,13 +114,6 @@
                               class="form-control border-white"></textarea>
                           </div>
                         </div>
-
-
-
-
-
-
-
                         <div class="form-group">
                           <label class="col-lg-2 control-label">Lives In</label>
                           <div class="col-lg-6">
@@ -164,7 +125,6 @@
                             </div>
                           </div>
                         </div>
-
                         <div class="form-group">
                           <div class="col-lg-offset-2 col-lg-10">
                             <button form="editForm" [disabled]="!editForm.dirty" class="btn btn-theme"

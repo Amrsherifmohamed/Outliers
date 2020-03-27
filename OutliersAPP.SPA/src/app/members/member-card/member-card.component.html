@@ -10,8 +10,9 @@
       <h4 class="card-title">{{user.userName}}</h4>
       <p class="card-description">
       </p>
-      <a href="#" class="button">Follow</a>
-
+      <button (click)="sendLike(user.id)" class="button">
+        <i class="fa fa-thumbs-up"></i>
+      </button>
     </div>
   </div>
   </div>

@@ -92,7 +92,7 @@ namespace OutliersAPP.API
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
             services.AddAutoMapper();
-            //Mapper.Reset();
+            // Mapper.Reset();
             services.AddTransient<TrialData>();
             
             services.AddScoped<IZwajRepository, ZwajRepository>();
@@ -129,7 +129,8 @@ namespace OutliersAPP.API
 
 
             // app.UseHttpsRedirection();
-            trialData.TrialUsers();
+           
+            // trialData.TrialUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             app.UseSignalR(routes => {
                 routes.MapHub<ChatHub>("/chat");

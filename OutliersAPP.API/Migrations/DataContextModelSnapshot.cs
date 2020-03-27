@@ -14,7 +14,7 @@ namespace OutliersAPP.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099");
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
@@ -95,6 +95,28 @@ namespace OutliersAPP.API.Migrations
                     b.HasIndex("JobId");
 
                     b.ToTable("ApplyForJob");
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CommentTime");
+
+                    b.Property<int>("PostId");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("description");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("OutliersAPP.API.Models.Job", b =>
@@ -210,6 +232,26 @@ namespace OutliersAPP.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Photos");
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("PostLike");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("description");
+
+                    b.Property<DateTime?>("posttime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("OutliersAPP.API.Models.Role", b =>
@@ -381,6 +423,19 @@ namespace OutliersAPP.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("OutliersAPP.API.Models.Comment", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OutliersAPP.API.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("OutliersAPP.API.Models.Like", b =>
                 {
                     b.HasOne("OutliersAPP.API.Models.User", "Likee")
@@ -411,6 +466,14 @@ namespace OutliersAPP.API.Migrations
                 {
                     b.HasOne("OutliersAPP.API.Models.User", "User")
                         .WithMany("Photos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.Post", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.User", "User")
+                        .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

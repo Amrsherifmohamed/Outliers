@@ -6,6 +6,8 @@ import { User } from '../_models/user';
 import { PaginationResult } from '../_models/Pagination';
 import { map } from 'rxjs/operators';
 import { Message } from '../_models/message';
+import { Post } from '../_models/Post';
+import {Comment} from '../_models/Comment'
 
 @Injectable({
   providedIn: 'root'
@@ -110,5 +112,41 @@ export class UserService {
 
   getPaymentForUser(userId:number){
     return this.http.get(this.baseUrl + userId + '/payment');
+  }
+  userFollowering(userId:number){
+    return this.http.get(this.baseUrl+userId+'/userFollowering');
+  }
+  getnumberofollwers(userId:number){
+    return this.http.get(this.baseUrl+userId+"/getnumberofollwers")
+  }
+  getpostsforuser(userId:number):Observable<Post[]>{
+    return this.http.get<Post[]>(this.baseUrl+userId+ " /Posts");
+  }
+  getpostforuser(userId:number,id:number){
+    return this.http.get(this.baseUrl+userId+"/posts/"+id);
+  }
+  createpost(post:Post,userId:number){
+    return this.http.post(this.baseUrl+userId+"/posts",post);
+  }
+  deletpost(userId:number,id:number){
+    return this.http.delete(this.baseUrl+userId+"/posts/"+id,{});
+  }
+  updatepost(userId:number,id:number,post:Post){
+    return this.http.put(this.baseUrl+userId+"/posts/"+id,post);
+  }
+  getpostfollwering(userId:number){
+    return this.http.get(this.baseUrl+userId+"/posts/home");
+  }
+  getcommnetforpost(postId:number,userId:number):Observable<Comment[]>{
+    return this.http.get<Comment[]>(this.baseUrl+userId+"/Comment/"+postId);
+  }
+  createcomment(postId:number,userId:number,comment:Comment){
+    return this.http.post(this.baseUrl+userId+"/Comment/"+postId,comment);
+  }
+  updatcomment(postId:number,userId:number,comment:Comment,id:number){
+    return this.http.put(this.baseUrl+userId+"/Comment/"+postId+id,comment);
+  }
+  deletecomment(postId:number,userId:number,id:number){
+    return this.http.delete(this.baseUrl+userId+"/Comment/"+postId+"/"+id);
   }
 }

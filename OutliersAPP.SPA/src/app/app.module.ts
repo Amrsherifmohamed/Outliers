@@ -45,6 +45,15 @@ import { MemberProfileComponent } from './members/member-profile/member-profile.
 import { MemberHomeComponent } from './members/member-home/member-home.component';
 import { MemberChatComponent } from './members/member-chat/member-chat.component';
 import { MemberLoginComponent } from './members/member-login/member-login.component';
+import { PostCardComponent } from './post/post-card/post-card.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { PostResolver } from './_resolvers/post.resolver';
+import { PostMemberResolver } from './_resolvers/post-member.resolver';
+import { PostFollwerResolver } from './_resolvers/postfollwer.resolver';
+import { CommentCardComponent } from './post/comment-card/comment-card.component';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { CommentResolver } from './_resolvers/comment.resolver';
+import { PostDetailResolver } from './_resolvers/post-detail.resolver';
 
 
 export function tokenGetter() {
@@ -75,7 +84,11 @@ export function tokenGetter() {
       MemberProfileComponent,
       MemberHomeComponent,
       MemberChatComponent,
-      MemberLoginComponent
+      MemberLoginComponent,
+      PostCardComponent,
+      PostListComponent,
+      CommentCardComponent,
+      PostDetailComponent,
       
    ],
    imports: [
@@ -114,7 +127,12 @@ export function tokenGetter() {
       MemberEditResolver,
       ListResolver,
       MessageResolver,
-      AdminService
+      AdminService,
+      PostResolver,
+      PostMemberResolver,
+      PostFollwerResolver,
+      CommentResolver,
+      PostDetailResolver
    ],
    entryComponents:[RolesModalComponent],
    bootstrap: [

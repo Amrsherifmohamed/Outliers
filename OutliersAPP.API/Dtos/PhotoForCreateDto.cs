@@ -10,7 +10,6 @@ namespace OutliersAPP.API.Dtos
         public string Description { get; set; }
         public DateTime DateAdded { get; set; }
         public string publicId { get; set; }
-
         public PhotoForCreateDto()
         {
           DateAdded = DateTime.Now;  

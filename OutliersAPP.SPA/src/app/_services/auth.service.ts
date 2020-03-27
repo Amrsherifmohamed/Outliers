@@ -22,6 +22,11 @@ export class AuthService {
   unreadCount = new BehaviorSubject<string>('');
   latestUnreadCount = this.unreadCount.asObservable();
 
+  firstfollower=new BehaviorSubject<string>('');
+  latestfollowercount=this.firstfollower.asObservable();
+  firstfollwering=new BehaviorSubject<string>('');
+  latestfolloweringcount=this.firstfollwering.asObservable();
+
   hubConnection:HubConnection = new HubConnectionBuilder().withUrl("http://localhost:5000/chat").build();
 
   constructor(private http: HttpClient) { }
