@@ -1,0 +1,62 @@
+
+<section id="container">
+  <section id="main-content">
+    <section class="wrapper">
+      <!-- page start-->
+      <div class="row mt">
+        <div class="col-sm-3">
+          <section class="panel">
+            <div class="panel-body">
+              <a href="mail_compose.html" class="btn btn-compose">
+                <i class="fa fa-pencil"></i>  Your Mangement Card
+                </a>
+              <ul class="nav nav-pills nav-stacked mail-nav" style="text-align: left;">
+                <li ><a [routerLink]="['/dashboard']"> <i class="fa fa-address-card"></i>Your Jobs<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li class="active"><a [routerLink]="['/jobappliers']"> <i class="fa fa-inbox"></i> See Who Applied <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addjob']"> <i class="fa fa-align-center"></i>Publish New Job</a></li>
+                <li><a href="#"> <i class="fa fa-envelope"></i> Contact With Admin <span class="label label-info pull-right inbox-notification">8</span></a></li>
+                <li><a> <i class="fa fa-exclamation-circle"></i> Important</a></li>
+
+              </ul>
+            </div>
+          </section>
+        </div>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="content-panel" style="text-align: left;">
+          <h4><i class="fa fa-angle-right"></i> Who Is Applied In Your Jobs ...</h4>
+          <hr>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name of Job </th>
+                <th>Applier Name </th>
+                <th>Time Applied</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let user of appliers">
+              <tr>
+                <td> <a [routerLink]="['/jobs/',user.jobId]"><strong>{{user.jobTitle}}</strong> </a></td>
+                <td> <a  [routerLink]="['/members/',user.userId]"><strong>{{user.userName}}</strong> </a></td>
+
+                <td>{{user.applyDate}}</td>
+                <td>{{user.msg}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+        </div>
+      </div>
+
+
+
+    </section>
+  </section>
+
+</section>

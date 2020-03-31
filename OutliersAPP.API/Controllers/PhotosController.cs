@@ -18,12 +18,12 @@ namespace ZwajApp.API.Controllers
     [ApiController]
     public class PhotosController : ControllerBase
     {
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
         private readonly IOptions<CloudinarySettings> _cloudinaryConfig;
         private readonly IMapper _mapper;
         private Cloudinary _cloudinary;
 
-        public PhotosController(IZwajRepository repo, IOptions<CloudinarySettings> cloudinaryConfig,
+        public PhotosController(IOutliersRepository repo, IOptions<CloudinarySettings> cloudinaryConfig,
         IMapper mapper)
         {
             _mapper = mapper;

@@ -61,10 +61,9 @@ export class MemberDetailComponent implements OnInit , AfterViewChecked {
     );
     this.created = new Date(this.user.created).toLocaleString('ar-EG',this.options).replace('،','');
     this.age = this.user.age.toLocaleString('ar-EG');
-    this.galleryOptions=[{
-      width:'500px',height:'500px',imagePercent:100,thumbnailsColumns:4,
-      imageAnimation:NgxGalleryAnimation.Slide,preview:false
-    }]
+    this.galleryOptions = [{ "previewFullscreen": true, "previewForceFullscreen": true },
+    { "breakpoint": 500, "width": "300px", "height": "300px", "thumbnailsColumns": 3 },
+    { "breakpoint": 300, "width": "100%", "height": "200px", "thumbnailsColumns": 2 }];
 
     this.galleryImages=this.getImages();
     this.created = new Date(this.user.created).toLocaleString('ar-EG',this.options).replace('،','');

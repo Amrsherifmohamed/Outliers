@@ -1,0 +1,123 @@
+<section id="main-content" style="text-align: left;">
+  <section class="wrapper">
+    <div class="col-lg-12 mt">
+      <div class="row content-panel">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="invoice-body">
+            <div class="pull-left">
+              <h1>{{job.companyName}}</h1>
+              <address>
+                <strong>{{job.companyCity}}.</strong><br>
+                {{job.companyCountry}}.<br>
+                Posted {{job.created}}<br>
+                <strong>About this Company : </strong> {{job.companyInfo}}
+              </address>
+            </div>
+            <div class="pull-right">
+              <h2>{{job.jobTitle}}</h2>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-md-9">
+                <h4>About the Job</h4>
+                <address>
+                  <strong>Job Roles : </strong> {{job.jobRole}}
+                  <strong><br>Job Description: </strong> {{job.jobDescription}}<br>
+                </address>
+              </div>
+              <div class="col-md-3">
+                <br>
+                <div>
+                  <div class="pull-left"> <strong>Experience Needed :</strong> </div>
+                  <div class="pull-right"> {{job.experienceNeeded}} </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div>
+                  <div class="pull-left"> <strong>Salary : </strong> </div>
+                  <div class="pull-right"> {{job.salary}} </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div>
+                  <div class="pull-left"> <strong>Job Type : </strong> </div>
+                  <div class="pull-right"> {{job.jobType}} </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div>
+                  <div class="pull-left"> <strong>Career Level : </strong> </div>
+                  <div class="pull-right"> {{job.careerLevel}} </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div>
+                  <div class="pull-left"> <strong> Vacancies : </strong> </div>
+                  <div class="pull-right"> {{job.vacancies}} </div>
+                  <div class="clearfix"></div>
+                </div>
+                <!-- /row -->
+                <br>
+                <button  *hasRole="['Fresh Graduate','Professional']"  style=" background-color: #48cfad; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;border-radius: 9px;" type="button" data-toggle="modal" data-target="#myModal">
+                  Apply For Job
+                </button>
+              </div>
+            </div>
+            <form (ngSubmit)="apply()" [formGroup]="jobForm" class="contact100-form">
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                          aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Please Enter youre number or Email To contact With You
+                        :) </h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <input style="color: black;width: 500px;height: 50px; padding: 3px;" class="input100"
+                          type="text" placeholder="Please Enter youre number or Email To contact With You :)  "
+                          formControlName="msg"
+                          [ngClass]="{'is-invalid' : jobForm.get('msg').errors && jobForm.get('msg').touched}">
+                        <div style="color: brown; font-weight: bold; "
+                          *ngIf="jobForm.get('msg').touched && jobForm.get('msg').hasError('required')"> <i
+                            class="fa fa-exclamation-triangle"></i> This Field Is Required </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button onclick="reloadPage();" class="btn btn-primary">Apply</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <table class="table">
+
+              <tbody>
+                <tr>
+                  <td colspan="2" rowspan="4">
+                    <h4>Job Requirements</h4>
+                    <p>{{job.jobRequirements}}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <br>
+            <br>
+          </div>
+          <!--/col-lg-12 mt -->
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

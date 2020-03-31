@@ -16,9 +16,9 @@ namespace OutliersAPP.API.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
         private readonly IMapper _mapper;
-        public PostsController(IZwajRepository repo,IMapper mapper)
+        public PostsController(IOutliersRepository repo,IMapper mapper)
         {
             _repo=repo;
             _mapper=mapper;
@@ -35,6 +35,7 @@ namespace OutliersAPP.API.Controllers
             var PostToReturn = _mapper.Map<IEnumerable<PostForListDto>>(posts);
             return Ok(PostToReturn);
         }
+        
         [HttpGet("{id}",Name = "GetPost")]
         public async Task<IActionResult> getpost(int id)
         {

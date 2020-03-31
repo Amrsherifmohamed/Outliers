@@ -14,7 +14,7 @@ namespace OutliersAPP.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
@@ -90,6 +90,14 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<int>("JobId");
 
+                    b.Property<DateTime>("ApplyDate");
+
+                    b.Property<string>("JobTitle");
+
+                    b.Property<string>("Msg");
+
+                    b.Property<string>("UserName");
+
                     b.HasKey("UserId", "JobId");
 
                     b.HasIndex("JobId");
@@ -124,9 +132,17 @@ namespace OutliersAPP.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CareerLevel");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Country");
+
                     b.Property<DateTime>("Created");
 
                     b.Property<string>("ExperienceNeeded");
+
+                    b.Property<string>("JobDescription");
 
                     b.Property<string>("JobRequirements");
 
@@ -136,7 +152,13 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<string>("Salary");
 
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("Vacancies");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Job");
                 });
@@ -332,6 +354,8 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
+                    b.Property<string>("RoleName");
+
                     b.Property<string>("SecurityStamp");
 
                     b.Property<string>("Skills");
@@ -432,6 +456,14 @@ namespace OutliersAPP.API.Migrations
 
                     b.HasOne("OutliersAPP.API.Models.User", "User")
                         .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.Job", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.User", "User")
+                        .WithMany("Jobs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

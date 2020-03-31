@@ -47,6 +47,32 @@ namespace OutliersAPP.API.Helpers
             CreateMap<User,UserForcaredDto>()
             .ForMember(dest=>dest.PhotoURL,opt=>{opt.MapFrom(src=>src.Photos.FirstOrDefault(p=>p.IsMain).Url);})
             .ForMember(dest=>dest.Age,opt=>{opt.ResolveUsing(src=>src.DateOfBirth.CalculateAge());});
+            
+            
+            CreateMap<JobForCreationDto,Job>().ReverseMap();
+            CreateMap<Job,JobToReturnDto>();
+            CreateMap<Job,JobForDetailsDto>()
+            .ForMember(dest=>dest.UserPhotoUrl,opt=>{opt.MapFrom(src=>src.User.Photos.FirstOrDefault(p=>p.IsMain).Url);})
+            .ForMember(dest=>dest.CompanyName,opt=>{opt.MapFrom(src=>src.User.KnownAs);})
+            .ForMember(dest=>dest.CompanyInfo,opt=>{opt.MapFrom(src=>src.User.Introduction);})
+            .ForMember(dest=>dest.CompanyCity,opt=>{opt.MapFrom(src=>src.User.City);})
+            .ForMember(dest=>dest.CompanyCountry,opt=>{opt.MapFrom(src=>src.User.Country);})
+            .ForMember(dest=>dest.CompanyPhone,opt=>{opt.MapFrom(src=>src.User.PhoneNumber);});
+
+            CreateMap<Job,JobForListDto>()
+            .ForMember(dest=>dest.UserPhotoUrl,opt=>{opt.MapFrom(src=>src.User.Photos.FirstOrDefault(p=>p.IsMain).Url);})
+            .ForMember(dest=>dest.CompanyName,opt=>{opt.MapFrom(src=>src.User.KnownAs);})
+            .ForMember(dest=>dest.CompanyInfo,opt=>{opt.MapFrom(src=>src.User.Introduction);})
+            .ForMember(dest=>dest.CompanyCity,opt=>{opt.MapFrom(src=>src.User.City);})
+            .ForMember(dest=>dest.CompanyCountry,opt=>{opt.MapFrom(src=>src.User.Country);})
+            .ForMember(dest=>dest.CompanyPhone,opt=>{opt.MapFrom(src=>src.User.PhoneNumber);});
+
+            CreateMap<JobForUpdateDto,Job>();
+         
+            
+       
+       
+       
        }
         
     }

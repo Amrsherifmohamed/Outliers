@@ -15,7 +15,7 @@ using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ZwajApp.API.Controllers
+namespace OutliersAPP.API.Controllers
 {
     [AllowAnonymous]
     [Route("api/[controller]")]
@@ -37,33 +37,38 @@ namespace ZwajApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
+            // var selectedRole = userForRegisterDto.RoleName;
             var userToCreate = _mapper.Map<User>(userForRegisterDto);
-            var result = await _userManager.CreateAsync(userToCreate,userForRegisterDto.Password);
+            var result = await _userManager.CreateAsync(userToCreate, userForRegisterDto.Password);
+            var result2 = await _userManager.AddToRoleAsync(userToCreate, userForRegisterDto.RoleName);  
             var userToReturn = _mapper.Map<UserForDetailsDto>(userToCreate);
-            if(result.Succeeded){
+            if (result.Succeeded)
+            {
                 return CreatedAtRoute("GetUser", new { controller = "Users", id = userToCreate.Id }, userToReturn);
             }
-            return BadRequest(result.Errors);          
+            return BadRequest(result.Errors);
+
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
             var user = await _userManager.FindByNameAsync(userForLoginDto.UserName);
-            var result = await _signInManager.CheckPasswordSignInAsync(user,userForLoginDto.Password,false);
-            if(result.Succeeded){
-                var appUser = await _userManager.Users.Include(p=>p.Photos).FirstOrDefaultAsync(
-                    u=>u.NormalizedUserName==userForLoginDto.UserName.ToUpper()
+            var result = await _signInManager.CheckPasswordSignInAsync(user, userForLoginDto.Password, false);
+            if (result.Succeeded)
+            {
+                var appUser = await _userManager.Users.Include(p => p.Photos).FirstOrDefaultAsync(
+                    u => u.NormalizedUserName == userForLoginDto.UserName.ToUpper()
                 );
                 var userToReturn = _mapper.Map<UserForListDto>(appUser);
                 return Ok(new
-            {
-                token = GenerateJwtToken(appUser).Result,
-                user = userToReturn
-            });
+                {
+                    token = GenerateJwtToken(appUser).Result,
+                    user = userToReturn
+                });
             }
             return Unauthorized();
-            }
+        }
 
         private async Task<string> GenerateJwtToken(User user)
         {
@@ -75,7 +80,7 @@ namespace ZwajApp.API.Controllers
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {
-                claims.Add(new Claim (ClaimTypes.Role,role));
+                claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));

@@ -17,9 +17,8 @@ namespace OutliersAPP.API.Models
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-
-        private string phoneNumber{ get; set; }
-
+        private string phoneNumber { get; set; }
+        public string RoleName { get; set; }
         public string IntrestedJobe { get; set; }
         public string Experience { get; set; }
         public string Skills { get; set; }
@@ -27,11 +26,12 @@ namespace OutliersAPP.API.Models
         public ICollection<Like> Likers { get; set; }
         public ICollection<Like> Likees { get; set; }
         public ICollection<Message> MessagesSent { get; set; }
-        public ICollection<Message> MessagesReceived { get; set; }  
+        public ICollection<Message> MessagesReceived { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
-        public ICollection<ApplyForJob> ApplyForJobs { get; set;}
-        public ICollection<Post> Posts{ get; set; }
-        public ICollection<Comment> Comments{get;set;}
-        
+        public ICollection<ApplyForJob> ApplyForJobs { get; set; }
+        public  ICollection <Job> Jobs { get; set; }
+        public ICollection<Post> Posts { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+
     }
 }

@@ -15,9 +15,9 @@ namespace OutliersAPP.API.Controllers
     [ApiController]
     public class CommentController : ControllerBase
     {
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
         private readonly IMapper _mapper;
-        public CommentController(IZwajRepository repo,IMapper mapper)
+        public CommentController(IOutliersRepository repo,IMapper mapper)
         {
             _repo=repo;
             _mapper=mapper;

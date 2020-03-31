@@ -17,10 +17,13 @@ defineLocale('ar', arLocale);
 export class RegisterComponent implements OnInit {
 
   @Output() cancelRegister = new EventEmitter();
+
   user: User;
   registerForm: FormGroup;
+
   bsConfig: Partial<BsDatepickerConfig>;
   locale = 'ar';
+
   constructor(private router: Router, private authService: AuthService, private alertify: AlertifyService,
      private fb: FormBuilder, private localeService: BsLocaleService) {
     this.localeService.use(this.locale);
@@ -37,7 +40,7 @@ export class RegisterComponent implements OnInit {
 
   createRegisterForm() {
     this.registerForm = this.fb.group({
-      gender: ['Male'],
+      gender: [''],
       username: ['', Validators.required],
       knownAs: ['', Validators.required],
       dateOfBirth: [null, Validators.required],
@@ -50,13 +53,15 @@ export class RegisterComponent implements OnInit {
       Experience: [''],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
       confirmPassword: ['', Validators.required],
-      userType: ['Fresh Graduate'],
+      roleName: ['', Validators.required],
     }, { validator: this.passwordMatchValidator });
   }
   passwordMatchValidator(form: FormGroup) {
     return form.get('password').value === form.get('confirmPassword').value ? null : { 'mismatch': true };
   }
-  register() {
+
+  register()
+  {
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
       this.authService.register(this.user).subscribe(
@@ -76,7 +81,11 @@ export class RegisterComponent implements OnInit {
 
   }
 
-
+  loggedIn() {
+    // const token = localStorage.getItem('token');
+    // return !! token;
+    return this.authService.loggedIn();
+  }
 
   cancel() {
     this.cancelRegister.emit(false);

@@ -57,6 +57,18 @@ import { PostDetailResolver } from './_resolvers/post-detail.resolver';
 import { MemberFollownigResolver } from './_resolvers/member-following.resolver';
 import { MemberFollowingcardComponent } from './members/member-followingcard/member-followingcard.component';
 import { MemberFollowinglistComponent } from './members/member-followinglist/member-followinglist.component';
+import { JobEditResolver } from './_resolvers/job-edit.resolver';
+import { JobService } from './_services/job.service';
+import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobDetailsComponent } from './jobs/job-details/job-details.component';
+import { JobAddComponent } from './jobs/job-add/job-add.component';
+import { CompanyAppliersComponent } from './jobs/company-appliers/company-appliers.component';
+import { JobEditComponent } from './jobs/job-edit/job-edit.component';
+import { CompanyDashboardComponent } from './jobs/company-dashboard/company-dashboard.component';
+import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolver';
+import { JobDetailResolver } from './_resolvers/job-detail.resolver';
+import { JobListResolver } from './_resolvers/job-list.resolver';
+import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
 
 
 export function tokenGetter() {
@@ -94,7 +106,13 @@ export function tokenGetter() {
       PostDetailComponent,
       MemberFollowingcardComponent,
       MemberFollowinglistComponent,
-      
+      JobListComponent,
+      JobDetailsComponent,
+      JobAddComponent,
+      CompanyAppliersComponent,
+      JobEditComponent,
+      CompanyDashboardComponent,
+
    ],
    imports: [
       BrowserModule,
@@ -108,7 +126,7 @@ export function tokenGetter() {
       BsDatepickerModule.forRoot(),
       ButtonsModule.forRoot(),
       ModalModule.forRoot(),
-      
+
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       JwtModule.forRoot({
@@ -118,7 +136,7 @@ export function tokenGetter() {
            blacklistedRoutes: ['localhost:5000/api/auth']
          }
        })
-      
+
    ],
    providers: [
       AuthService,
@@ -138,7 +156,13 @@ export function tokenGetter() {
       PostFollwerResolver,
       CommentResolver,
       PostDetailResolver,
-      MemberFollownigResolver
+      MemberFollownigResolver,
+      JobService,
+      JobDetailResolver,
+      JobListResolver,
+      CompanyDashboardResolver,
+      JobAppliersResolver,
+      JobEditResolver,
    ],
    entryComponents:[RolesModalComponent],
    bootstrap: [

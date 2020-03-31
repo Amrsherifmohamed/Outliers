@@ -8,10 +8,10 @@ using OutliersAPP.API.Models;
 
 namespace OutliersAPP.API.Data
 {
-    public class ZwajRepository :IZwajRepository
+    public class OutliersRepository :IOutliersRepository
     {
         private readonly DataContext _context;
-        public ZwajRepository(DataContext context)
+        public OutliersRepository(DataContext context)
         {
             _context = context;
 
@@ -231,6 +231,19 @@ namespace OutliersAPP.API.Data
             var post= await _context.Comments.Where(c=>c.PostId==postId).ToListAsync();
         var count =post.Count();
         return count;
+        }
+
+                public async Task<Job> GetJob(int id)
+        {
+         var user = await _context.Job.Include(u=>u.User).ThenInclude(u=>u.Photos).FirstOrDefaultAsync(u=>u.Id==id);
+            return user;
+        }
+
+        public async Task<IEnumerable<Job>> GetJobs()
+        {
+            var jobs = await _context.Job.Include(u=>u.User).ThenInclude(u=>u.Photos).ToListAsync();
+           return jobs;
+         
         }
     }
 }

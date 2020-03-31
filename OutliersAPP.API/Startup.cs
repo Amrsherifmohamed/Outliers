@@ -95,7 +95,7 @@ namespace OutliersAPP.API
             // Mapper.Reset();
             services.AddTransient<TrialData>();
             
-            services.AddScoped<IZwajRepository, ZwajRepository>();
+            services.AddScoped<IOutliersRepository,OutliersRepository>();
             services.AddScoped<LogUserActivity>();
             //Authentication MiddleWare
             
@@ -130,7 +130,7 @@ namespace OutliersAPP.API
 
             // app.UseHttpsRedirection();
            
-            // trialData.TrialUsers();
+            trialData.TrialUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             app.UseSignalR(routes => {
                 routes.MapHub<ChatHub>("/chat");

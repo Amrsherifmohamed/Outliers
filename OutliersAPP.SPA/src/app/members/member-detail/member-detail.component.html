@@ -17,6 +17,7 @@
               <h4>{{user.gender}}</h4>
               <p>{{user.skills}}</p>
               <br>
+              <p><button data-toggle="tab" href="#messages" class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
             </div>
             <!-- /col-md-4 -->
             <div class="col-md-4 centered">
@@ -26,10 +27,10 @@
             </div>
             <!-- /col-md-4 -->
           </div>
-          
+
           <!-- /row -->
         </div>
-        
+
         <!-- /col-lg-12 -->
         <div class="col-lg-12 mt">
           <div class="row content-panel">
@@ -157,6 +158,8 @@
                     </div>
                   </div>
                 </div>
+
+
                 <div id="contact" class="tab-pane">
                   <div class="row">
                     <div class="col-md-6">
@@ -167,6 +170,7 @@
                         </div>
                         <app-post-list></app-post-list>
                       </div>
+
                     </div>
                     <div class="col-md-6 detailed">
                       <h4>Location</h4>
@@ -188,11 +192,24 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
-                <div id="photo" class="tab-pane"> 
+
+                <div id="photo" class="tab-pane">
                           <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
 
                 </div>
+                <div id="messages" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <app-member-messages  [recipientId]="user.id"></app-member-messages>
+
+                    </div>
+                  </div>
+                  <!-- /row -->
+                </div>
+
+
               </div>
             </div>
           </div>

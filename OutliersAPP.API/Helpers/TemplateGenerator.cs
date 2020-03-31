@@ -9,9 +9,9 @@ namespace OutliersAPP.API.Helpers
     public class TemplateGenerator
     {
         private readonly IMapper _mapper;
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
 
-        public TemplateGenerator(IZwajRepository repo, IMapper mapper)
+        public TemplateGenerator(IOutliersRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;

@@ -140,7 +140,7 @@
             </li>
 
 
-     
+
             <li>
               <a href="index.html#">See all notifications</a>
             </li>
@@ -170,6 +170,13 @@
             <span>Home</span>
             </a>
         </li>
+        <li *hasRole="['Company']"  class="sub-menu">
+          <a [routerLink]="['/dashboard']">
+            <i class="fa fa-dashboard"></i>
+            <span>Dashboard</span>
+            </a>
+        </li>
+
         <li class="sub-menu">
           <a [routerLink]="['/members/profile']">
             <i class="fa fa-desktop"></i>
@@ -184,7 +191,7 @@
             </a>
           <ul class="sub">
             <li><a>Courses</a></li>
-            <li><a>Practice</a></li>
+            <li><a [routerLink]="['/jobs']">Jobs</a></li>
             <li><a>Assesments</a></li>
           </ul>
         </li>

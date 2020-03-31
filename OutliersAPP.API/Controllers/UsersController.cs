@@ -22,11 +22,11 @@ namespace OutliersAPP.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
         private readonly IMapper _mapper;
         private readonly IOptions<StripeSettings> _stripeSettings;
         private readonly IConverter _converter;
-        public UsersController(IZwajRepository repo, IMapper mapper, IOptions<StripeSettings> stripeSettings,
+        public UsersController(IOutliersRepository repo, IMapper mapper, IOptions<StripeSettings> stripeSettings,
          IConverter converter)
         {
             _converter = converter;

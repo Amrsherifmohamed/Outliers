@@ -1,0 +1,47 @@
+<section  style="margin-left: 20%;" id="main-content">
+  <section  class="wrapper">
+    <form class="example" action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div  class="row">
+      <div *ngFor="let job of jobs" class="col-lg-9 main-chart">
+        <div class="row">
+          <div class="col-md-10 mb">
+            <div class="message-p pn">
+              <div class="message-header">
+                <h5>DIRECT MESSAGE</h5>
+              </div>
+              <div class="row">
+                <div class="col-md-3 centered hidden-sm hidden-xs">
+                  <img src="{{job.userPhotoUrl}}" class="img-circle" width="65"><br><br>
+                  <strong>{{job.companyName}}  </strong>
+                </div>
+                <div class="col-md-9 " style="text-align: left;">
+                  <p>
+                    <strong style="color: #ed3c0d;">{{job.jobTitle}}</strong>
+
+                  </p>
+
+                  <p class="small">{{job.created}} ago</p>
+
+                   <p> <strong>country / City :  </strong>  {{job.country}} / {{job.city}}</p>
+                   <p> job Type: {{job.jobType}} , {{job.experienceNeeded}} , salary : {{job.salary}} , career Level: {{job.careerLevel}} </p>
+
+                  <div>
+                    <ul class="nav pull-center top-menu">
+                      <li><a class="logout" [routerLink]="['/jobs/',job.id]">See Detail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</section>
+
+
+

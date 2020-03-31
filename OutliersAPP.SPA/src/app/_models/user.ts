@@ -19,6 +19,7 @@ export interface User {
     introduction?: string;
     lookingFor?: string;
     photos?: Photo[];
+    roleName: string;
     roles?: string[];
 
 

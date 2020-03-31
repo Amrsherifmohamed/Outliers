@@ -27,6 +27,17 @@ import { CommentResolver } from './_resolvers/comment.resolver';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { PostDetailResolver } from './_resolvers/post-detail.resolver';
 import { MemberFollownigResolver } from './_resolvers/member-following.resolver';
+import { JobAddComponent } from './jobs/job-add/job-add.component';
+import { JobDetailResolver } from './_resolvers/job-detail.resolver';
+import { JobDetailsComponent } from './jobs/job-details/job-details.component';
+import { JobEditResolver } from './_resolvers/job-edit.resolver';
+import { JobEditComponent } from './jobs/job-edit/job-edit.component';
+import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobListResolver } from './_resolvers/job-list.resolver';
+import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
+import { CompanyAppliersComponent } from './jobs/company-appliers/company-appliers.component';
+import { CompanyDashboardComponent } from './jobs/company-dashboard/company-dashboard.component';
+import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolver';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -73,8 +84,38 @@ export const appRoutes: Routes = [
           users: ListResolver
         }
       },
-      { path: 'messages', component: MessagesComponent, canActivate: [MessagesGuard], resolve: { messages: MessageResolver } },
-      { path: 'charge', component: PaymentComponent, canActivate: [ChargeGuard] },
+      {
+        path: 'addjob', component: JobAddComponent
+      },
+      {
+        path: 'jobs/:id', component: JobDetailsComponent, resolve: {
+          job: JobDetailResolver
+        }
+      },
+      {
+        path: 'job/edit/:id', component: JobEditComponent, resolve: {
+          job: JobEditResolver
+        }
+      },
+      {
+        path: 'dashboard', component:CompanyDashboardComponent, resolve: {
+          dashboard: CompanyDashboardResolver
+        }
+      },
+      {
+        path: 'jobs', component: JobListComponent, resolve: {
+          jobs: JobListResolver
+        }
+      },
+      {
+        path: 'jobappliers', component:CompanyAppliersComponent, resolve: {
+          jobappliers: JobAppliersResolver
+        }
+      },
+
+
+      { path: 'messages', component: MessagesComponent, resolve: { messages: MessageResolver } },
+      { path: 'charge', component: PaymentComponent },
       { path: 'admin', component: AdminPanelComponent, data: { roles: ['Admin', 'Moderator'] } }
     ]
   },

@@ -18,9 +18,9 @@ namespace ZwajApp.API.Controllers
     [ApiController]
     public class MessagesController : ControllerBase
     {
-        private readonly IZwajRepository _repo;
+        private readonly IOutliersRepository _repo;
         private readonly IMapper _mapper;
-        public MessagesController(IZwajRepository repo, IMapper mapper)
+        public MessagesController(IOutliersRepository repo, IMapper mapper)
         {
             _mapper = mapper;
             _repo = repo;
