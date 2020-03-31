@@ -26,6 +26,7 @@ import { PostFollwerResolver } from './_resolvers/postfollwer.resolver';
 import { CommentResolver } from './_resolvers/comment.resolver';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { PostDetailResolver } from './_resolvers/post-detail.resolver';
+import { MemberFollownigResolver } from './_resolvers/member-following.resolver';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -58,7 +59,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'members/home', component: MemberHomeComponent,resolve:{
-          post:PostFollwerResolver,posts:PostResolver
+          post:PostFollwerResolver,posts:PostResolver,following:MemberFollownigResolver
         }
       },
       {

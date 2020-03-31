@@ -43,7 +43,10 @@ namespace OutliersAPP.API.Helpers
             .ForMember(dest=>dest.UserKnownAs,opt=>{opt.MapFrom(src=>src.User.KnownAs);})
             .ForMember(dest=>dest.UserPhotoUrl,opt=>{opt.MapFrom(src=>src.User.Photos.FirstOrDefault(p=>p.IsMain).Url);});
             CreateMap<Comment,CommentForReturnDto>();   
-            CreateMap<CommentForUpdateDto,Comment>();     
+            CreateMap<CommentForUpdateDto,Comment>();   
+            CreateMap<User,UserForcaredDto>()
+            .ForMember(dest=>dest.PhotoURL,opt=>{opt.MapFrom(src=>src.Photos.FirstOrDefault(p=>p.IsMain).Url);})
+            .ForMember(dest=>dest.Age,opt=>{opt.ResolveUsing(src=>src.DateOfBirth.CalculateAge());});
        }
         
     }

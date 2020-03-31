@@ -29,7 +29,9 @@ namespace OutliersAPP.API.Data
         Task<ICollection<Post>> GetPostsForFollwing(int userId);
         Task<Comment> getComment(int id,int postId);
         Task<IEnumerable<Comment>> GetComments(int postId);
+        Task<ICollection<User>> getfollowing(int userId);
         Task<Post> getpostformuser(int postId,int userId);
         Task<Comment> getcommentForuser(int postId,int id,int userId);
+        Task<int>   Getnumberofcomment(int postId);
     }
 }

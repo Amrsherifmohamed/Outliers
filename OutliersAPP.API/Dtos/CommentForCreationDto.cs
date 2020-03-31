@@ -1,6 +1,5 @@
 using System;
 
-using System;
 namespace OutliersAPP.API.Dtos
 {
     public class CommentForCreationDto

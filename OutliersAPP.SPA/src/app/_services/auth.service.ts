@@ -26,6 +26,8 @@ export class AuthService {
   latestfollowercount=this.firstfollower.asObservable();
   firstfollwering=new BehaviorSubject<string>('');
   latestfolloweringcount=this.firstfollwering.asObservable();
+  countcomment=new BehaviorSubject<string>('');
+  lastetcountcoment=this.countcomment.asObservable();
 
   hubConnection:HubConnection = new HubConnectionBuilder().withUrl("http://localhost:5000/chat").build();
 

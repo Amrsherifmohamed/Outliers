@@ -196,5 +196,11 @@ namespace OutliersAPP.API.Controllers
                 var count =await _repo.getnumberofollwers(userId);
                 return Ok(count);
         }
+        [HttpGet("{userId}/getfollowing")]
+        public  async Task<IActionResult>getfollowing(int userId){
+            var users= await _repo.getfollowing(userId);
+            var usertoreturn=_mapper.Map<IEnumerable<UserForcaredDto>>(users);
+            return Ok(usertoreturn);
+        }
     }
 }

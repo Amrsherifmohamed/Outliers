@@ -1,22 +1,13 @@
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OutliersAPP.API.Data;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using OutliersAPP.API.Dtos;
-using Microsoft.AspNetCore.Identity;
 using OutliersAPP.API.Models;
-using Microsoft.Extensions.Options;
 using OutliersAPP.API.Helpers;
-using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Security.Claims;
-using System.Threading.Tasks;
 namespace OutliersAPP.API.Controllers
 {
     [ServiceFilter(typeof(LogUserActivity))]
@@ -86,6 +77,11 @@ namespace OutliersAPP.API.Controllers
             if (await _repo.SaveAll())
                 return NoContent();
             throw new Exception($"field to update post {id}");
+        }
+         [HttpGet("getnucomment")]
+        public async Task<IActionResult> Getnumbetofcomment(int postId){
+            var count = await _repo.Getnumberofcomment(postId);
+            return Ok(count);
         }
     }
 }

@@ -5,6 +5,7 @@ export interface Comment{
     postId:number;
     userId:number;
     userPhotoUrl:string;
+    UserName:string;
     userKnownAs:string;
     description:string;
     commentTime:Date;

@@ -40,3 +40,17 @@ D:\Fcih\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.AP
 D:\Fcih\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorTargetAssemblyInfo.cache
 D:\Fcih\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.dll
 D:\Fcih\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.pdb
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.deps.json
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.runtimeconfig.json
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.runtimeconfig.dev.json
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.dll
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.pdb
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.csprojAssemblyReference.cache
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.csproj.CoreCompileInputs.cache
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorAssemblyInfo.cache
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorAssemblyInfo.cs
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.AssemblyInfoInputs.cache
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.AssemblyInfo.cs
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorTargetAssemblyInfo.cache
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.dll
+C:\Users\smart\Downloads\GP2\GP2\Outliers\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.pdb

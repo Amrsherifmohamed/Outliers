@@ -220,6 +220,17 @@ namespace OutliersAPP.API.Data
         public async Task<Comment> getcommentForuser(int id,int postId,int userId){
             return await _context.Comments.FirstOrDefaultAsync(c=>c.Id==id&&c.UserId==userId&&c.PostId==postId);
         }
-
+        public async Task<ICollection<User>> getfollowing(int userId){
+            var users =  _context.Users.Include(u=>u.Photos).OrderByDescending(u=>u.LastActive).AsQueryable();
+            var following= await GetUserLikes(userId,false);
+            users =  users.Where(p=>following.Contains(p.Id));
+            return users.ToList();
+        }
+        public async Task<int> Getnumberofcomment(int postId)
+        {
+            var post= await _context.Comments.Where(c=>c.PostId==postId).ToListAsync();
+        var count =post.Count();
+        return count;
+        }
     }
 }

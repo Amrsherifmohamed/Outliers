@@ -54,6 +54,9 @@ import { CommentCardComponent } from './post/comment-card/comment-card.component
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { CommentResolver } from './_resolvers/comment.resolver';
 import { PostDetailResolver } from './_resolvers/post-detail.resolver';
+import { MemberFollownigResolver } from './_resolvers/member-following.resolver';
+import { MemberFollowingcardComponent } from './members/member-followingcard/member-followingcard.component';
+import { MemberFollowinglistComponent } from './members/member-followinglist/member-followinglist.component';
 
 
 export function tokenGetter() {
@@ -89,6 +92,8 @@ export function tokenGetter() {
       PostListComponent,
       CommentCardComponent,
       PostDetailComponent,
+      MemberFollowingcardComponent,
+      MemberFollowinglistComponent,
       
    ],
    imports: [
@@ -132,7 +137,8 @@ export function tokenGetter() {
       PostMemberResolver,
       PostFollwerResolver,
       CommentResolver,
-      PostDetailResolver
+      PostDetailResolver,
+      MemberFollownigResolver
    ],
    entryComponents:[RolesModalComponent],
    bootstrap: [

@@ -149,4 +149,10 @@ export class UserService {
   deletecomment(postId:number,userId:number,id:number){
     return this.http.delete(this.baseUrl+userId+"/Comment/"+postId+"/"+id);
   }
+  getfollowing(userId:number){
+    return this.http.get(this.baseUrl+userId+"/getfollowing");
+  }
+  getnumberofComment(postId:number,userId:number){
+    return this.http.get(this.baseUrl+userId+"/Comment/"+postId+"getnucomment");
+  }
 }
