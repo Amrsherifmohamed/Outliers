@@ -175,7 +175,7 @@ height: 0;
             bottom: 0;
             right: 0;
             overflow-y: scroll;
-            width: 15%;
+            width: 20%;
           }
         }
         
@@ -193,7 +193,7 @@ height: 0;
         
         #right {
           height:100%;
-          background-color: #2f323a;
+          background-color: #d6d9dc;
           text-align: center;
         }
         
