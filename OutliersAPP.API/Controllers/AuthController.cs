@@ -42,10 +42,13 @@ namespace OutliersAPP.API.Controllers
             var result = await _userManager.CreateAsync(userToCreate, userForRegisterDto.Password);
             var result2 = await _userManager.AddToRoleAsync(userToCreate, userForRegisterDto.RoleName);  
             var userToReturn = _mapper.Map<UserForDetailsDto>(userToCreate);
+       
+
             if (result.Succeeded)
             {
                 return CreatedAtRoute("GetUser", new { controller = "Users", id = userToCreate.Id }, userToReturn);
             }
+
             return BadRequest(result.Errors);
 
         }

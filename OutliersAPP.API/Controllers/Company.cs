@@ -37,7 +37,7 @@ namespace OutliersAPP.API.Controllers
             _context = context;
         }
 
-        [HttpGet("{id}",Name = "GetJob")]
+        [HttpGet("{id}", Name = "GetJob")]
         public async Task<IActionResult> GetJob(int id)
         {
             var job = await _repo.GetJob(id);

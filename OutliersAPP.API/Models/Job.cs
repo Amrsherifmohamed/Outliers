@@ -20,6 +20,7 @@ namespace OutliersAPP.API.Models
         public string JobDescription { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+        public string JobRole { get; set; }
         public DateTime Created { get; set; }
         public ICollection<ApplyForJob> ApplyForJobs { get; set; }
 

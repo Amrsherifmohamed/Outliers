@@ -97,8 +97,7 @@ namespace OutliersAPP.API
             
             services.AddScoped<IOutliersRepository,OutliersRepository>();
             services.AddScoped<LogUserActivity>();
-            //Authentication MiddleWare
-            
+            //Authentication MiddleWare       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -126,7 +125,6 @@ namespace OutliersAPP.API
                 });
                 // app.UseHsts();
             }
-
 
             // app.UseHttpsRedirection();
            
