@@ -17,7 +17,7 @@
               <h4>{{user.gender}}</h4>
               <p>{{user.skills}}</p>
               <br>
-              <p><button data-toggle="tab" href="#messages" class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
+              <p><button (click)="selectTab(3);" data-toggle="tab" href="#messages" class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
             </div>
             <!-- /col-md-4 -->
             <div class="col-md-4 centered">
@@ -43,7 +43,7 @@
                   <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
                 </li>
                 <li>
-                  <a data-toggle="tab" href="#photo" >Photos</a>
+                  <a (deselect)="deselect();" data-toggle="tab" href="#photo" >Photos</a>
                 </li>
               </ul>
             </div>
@@ -89,33 +89,8 @@
                           <li>
                             <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-02.jpg"></div>
                           </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-03.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-04.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-05.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-06.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-07.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-08.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-09.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-10.jpg"></div>
-                          </li>
-                          <li>
-                            <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-11.jpg"></div>
-                          </li>
+
+
                         </ul>
                         <div class="row mt">
                           <div class="col-md-4 col-md-offset-4">
