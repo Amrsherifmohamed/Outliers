@@ -28,7 +28,9 @@ Say Hi   </div>
                   <img  style="border-radius: 50%;" src="{{message.senderPhotoUrl}}" alt="{{message.senderKnownAs}}" class="rounded-circle">
                 </span>
                 {{message.senderKnownAs}}</strong> </div>
-            <div class="second-part"> <strong>{{message.content}}</strong> </div>
+            <div class="second-part"> <strong>{{message.content}}</strong> <strong *ngIf="!message.isRead" class="text-danger align-middle">(غير مقروءة)</strong>
+              <strong *ngIf="message.isRead" class="text-warning align-middle">(مقروءة
+                  {{message.dateRead | timeAgo}})</strong> </div>
             <div class="third-part"><strong>{{message.messageSent | timeAgo}}</strong></div>
           </div>
         </section>
