@@ -1,18 +1,32 @@
-<div class="card mb-3">
+<div class="card mb-3" style="background: #eaeaea;">
   <div class="card card-profile">
-    <div class="card-avatar">
-      <a [routerLink]="['/members/',user.id]">
-        <img class="img" src="{{user.photoURL || 'assets/User.png'}}" />
-      </a>
+    <div class="team-member" style="background: #eaeaea;">
+      <img  src="{{user.photoURL || 'assets/User.png'}}" alt="Image" class="img-fluid">
+      <div class="text">
+        <h2 class="mb-2 font-weight-light h4"></h2>
+        <span style="cursor: pointer;" [routerLink]="['/members/',user.id]" class="d-block mb-2 text-white-opacity-05"><h1>{{user.userName}}</h1></span>
+        <p style="font-size: 20px;" class="mb-4"> <i class="fa fa-user"></i> {{user.roleName}}</p>
+
+        <a style="padding: 2%;size: 100px;" (click)="sendLike(user.id)">
+        <h2 style="cursor: pointer;">  <i class="fa fa-thumbs-up fa-10x"></i> </h2>
+        </a>
+      </div>
+
     </div>
-    <div class="card-body ">
-      <h6 class="card-category">User Type</h6>
-      <h4 class="card-title">{{user.userName}}</h4>
-      <p class="card-description">
+  </div>
+  </div>
+<!--
+  <div class="team-member">
+    <img  src="{{user.photoURL || 'assets/User.png'}}" alt="Image" class="img-fluid">
+    <div class="text">
+      <h2 class="mb-2 font-weight-light h4"></h2>
+      <span class="d-block mb-2 text-white-opacity-05">{{user.userName}}</span>
+      <p class="mb-4">{{user.roleName}}</p>
+      <p>
+        <a href="#" class="text-white p-2" (click)="sendLike(user.id)"><span class="icon-facebook"></span><i class="fa fa-thumbs-up"></i></a>
+        <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+        <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
       </p>
-      <button (click)="sendLike(user.id)" class="button">
-        <i class="fa fa-thumbs-up"></i>
-      </button>
     </div>
-  </div>
-  </div>
+
+  </div> -->

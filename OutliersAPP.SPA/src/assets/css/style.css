@@ -1664,7 +1664,16 @@ PANELS CONFIGURATIONS
 	font-weight: 700;
 }
 
-
+.content-panel-img {
+  background-image: url('assets/img/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg');
+	box-shadow: 0px 3px 2px #aab2bd;
+	padding-top: 15px;
+  padding-bottom: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  background-attachment: fixed;
+}
 /* Message Panel */
 .message-p {
 	background: #f5f5f5;
