@@ -43,7 +43,8 @@ namespace OutliersAPP.API.Controllers
             userParams.UserId = currentUserId;
             if (string.IsNullOrEmpty(userParams.Gender))
             {
-                userParams.Gender = userFromRepo.Gender == "رجل" ? "إمرأة" : "رجل";
+            
+                userParams.Gender = userFromRepo.Gender == "Male"  ? "Male" :"Female";
             }
             var users = await _repo.GetUsers(userParams);
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
