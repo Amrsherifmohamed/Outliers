@@ -38,7 +38,7 @@ import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
 import { CompanyAppliersComponent } from './jobs/company-appliers/company-appliers.component';
 import { CompanyDashboardComponent } from './jobs/company-dashboard/company-dashboard.component';
 import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolver';
-import { MemberChatroomComponent } from './members/member-chatroom/member-chatroom.component';
+import { MemberChatdetailComponent } from './members/member-chatdetail/member-chatdetail.component';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -79,7 +79,11 @@ export const appRoutes: Routes = [
           user: MemberDetailResolver,post:PostMemberResolver
         }
       },
-
+      {
+        path: 'chat/:id', component: MemberChatdetailComponent, resolve: {
+          user: MemberDetailResolver,follow:MemberFollownigResolver
+        }
+      },
       {
         path: 'lists', component: ListsComponent, resolve: {
           users: ListResolver
@@ -109,8 +113,8 @@ export const appRoutes: Routes = [
         }
       },
       {
-        path: 'chatroom', component: MemberChatroomComponent, resolve: {
-          following:MemberFollownigResolver
+        path: 'chatroom', component: MemberChatComponent, resolve: {
+          follow:MemberFollownigResolver
         }
       },
       {

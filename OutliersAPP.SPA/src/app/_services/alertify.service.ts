@@ -39,13 +39,13 @@ export class AlertifyService {
     },
 
     // language resources 
-    glossary: {
+  glossary: {
       // dialogs default title
-      title: 'موقع زواج',
+      title: 'Outlieres ',
       // ok button text
-      ok: 'نعم',
+      ok: 'Yes',
       // cancel button text
-      cancel: 'لا',
+      cancel: 'NO',
 
     },
 

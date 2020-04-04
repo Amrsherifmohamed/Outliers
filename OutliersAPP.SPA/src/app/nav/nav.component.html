@@ -152,7 +152,7 @@
     </div>
     <div class="top-menu">
       <ul class="nav pull-right top-menu">
-        <li><a class="logout" (click)="loggedOut();">Logout</a></li>
+        <li><a style="cursor:  pointer;" class="logout" (click)="loggedOut();">Logout</a></li>
       </ul>
     </div>
   </header>
@@ -232,13 +232,13 @@
           </ul>
         </li>
         <li class="sub-menu">
-          <a [routerLink]="['/members/chat']">
+          <a [routerLink]="['/chatroom']" >
             <i class="fa fa-comments-o"></i>
             <span>Chat Room</span>
             </a>
           <ul class="sub">
             <li><a href="#">Lobby</a></li>
-            <li><a href="#"> Chat Room</a></li>
+            <li><a  [routerLink]="['/chatroom']"> Chat Room</a></li>
           </ul>
         </li>
 
@@ -246,17 +246,4 @@
     </div>
   </aside>
 
-  <footer class="site-footer">
-    <div class="text-center">
-      <p>
-        &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
-      </p>
-      <div class="credits">
-        Created with Dashio template by <a href="#">TemplateMag</a>
-      </div>
-      <a href="#" class="go-top">
-        <i class="fa fa-angle-up"></i>
-        </a>
-    </div>
-  </footer>
 </section>

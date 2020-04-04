@@ -49,7 +49,7 @@ export class PhotoEditorComponent implements OnInit {
         removeAfterUpload: true,
         autoUpload: false,
         maxFileSize: 10 * 1024 * 1024,
-        
+
       }
     );
     this.uploader.onAfterAddingFile=(file)=>{file.withCredentials=false;};
@@ -83,20 +83,20 @@ export class PhotoEditorComponent implements OnInit {
       this.authService.changeMemberPhoto(photo.url);
       this.authService.currentUser.photoURL=photo.url;
       localStorage.setItem('user',JSON.stringify(this.authService.currentUser));
-      
+
       },
-      ()=>{this.alertify.error('يوجد مشكلة في الصورة الأساسية');}
+      ()=>{this.alertify.error('There is a problem in the main image');}
     )
   }
 
   delete(id:number){
-    this.alertify.confirm("هل تريد حذف تلك الصورة",()=>{
+    this.alertify.confirm('Are You Sure To Delete This Photo ?',()=>{
       this.userService.deletePhoto(this.authService.decodedToken.nameid,id).subscribe(
         ()=>{
           this.photos.splice(this.photos.findIndex(p=>p.id===id),1);
-          this.alertify.success("تم حذف الصورة بنجاح");
+          this.alertify.success('Deleted');
         },
-        error=>{this.alertify.error("حدث خطأ أثناء حذف الصورة");}
+        error=>{this.alertify.error('Sorry...');}
 
       );
     });

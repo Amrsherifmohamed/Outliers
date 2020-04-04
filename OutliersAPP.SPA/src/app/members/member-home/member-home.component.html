@@ -1,118 +1,38 @@
-    <!-- <div class="panel-body">
-        <div class="tab-content">
-          <div id="overview" class="tab-pane active">
-            <!-- <div class="col-md-4">   
-            </div> 
-            <div class="row">
-                <div class="col-md-4">    
-                 </div>
-              <div class="col-md-4">
-                <form #PostForm="ngForm" (ngSubmit)="createpost();">
-                <textarea rows="5" name="description" [(ngModel)]="newpost.description" class="form-control" placeholder="Whats on your mind?"></textarea>
-                <div class="grey-style">
-                  <div class="pull-left">
-                    <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
-                    <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
-                  </div>
-                  <div class="pull-right">
-                    <button class="btn btn-sm btn-theme03" formaction="PostForm">POST</button>
-                  </div>
-                </div>
-                </form>
-                  <br>  
-                  <app-post-list></app-post-list> 
-              </div>
-
-              <!-- <div class="card">
-                <div #panel class="card-body">
-                    <ul class="chat">
-                        <li >
-                      
-                            <div *>
-              
-              
-              
-                            </div>
-              
-              
-                           
-                            <div >
-              
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-              </div> 
-              <div class="col-md-2">    
-              </div>
-              <div class="col-md-2">
-                <div class="card gedf-card">
-                    <div class="">
-                        <h1>{{countfollwers}}</h1>
-                       <a [routerLink]="['/lists']"><h3>FOLLOWING</h3></a> 
-                       <br>
-                       <br>
-                        <h1><span>{{countfollwing}}</span></h1>
-                       <a [routerLink]="['/lists']"><h3>FOLLOWERS</h3></a>
-                      </div>
-                </div>
-                <div class="card gedf-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title a
-nd make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-            </div>
-
- </div>
-
- <div class="mtorgih">
-
-</div>
- </div>
- </div> 
-</div> -->
-<div class="detailed ">  
+<div class="detailed ">
   <div class="container-fluid gedf-wrapper">
-      <div class="row">
-          <div class="col-md-4">
-             
-          </div>
-          <div class="col-md-4 gedf-main">
-              <!--- \\\\\\\Post-->
-
-                <form #PostForm="ngForm" (ngSubmit)="createpost();">
-                <textarea rows="5" name="description" [(ngModel)]="newpost.description" class="form-control" placeholder="Whats on your mind?"></textarea>
-                <div class="grey-style">
-                  <div class="pull-left">
-                    <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
-                    <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
-                  </div>
-                  <div class="pull-right">
-                    <button   class="btn btn-sm btn-theme03" formaction="PostForm">POST</button>
-                  </div>
-                </div>
-                </form>
-              <app-post-list></app-post-list>
-          </div>
-
-          <div class="app_page1 ds">
-            <div class="row">
-                <div class="col-sm-1" id="right">
-                  <h4 class="centered mt">TEAM MEMBERS ONLINE</h4>
-                  <app-member-followinglist></app-member-followinglist>
-
-                </div>
-                </div>
-                </div>
+    <div class="row">
+      <div class="col-md-4">
 
       </div>
+      <div class="col-md-4 gedf-main">
+        <!--- \\\\\\\Post-->
+
+        <form #PostForm="ngForm" (ngSubmit)="createpost();">
+          <textarea rows="5" name="description" [(ngModel)]="newpost.description" class="form-control"
+            placeholder="Whats on your mind?"></textarea>
+          <div class="grey-style">
+            <div class="pull-left">
+              <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
+              <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-sm btn-theme03" formaction="PostForm">POST</button>
+            </div>
+          </div>
+        </form>
+        <app-post-list></app-post-list>
+      </div>
+
+      <div class="app_page1 ds">
+        <div class="row">
+          <div class="col-sm-1" id="right">
+            <h4 class="centered mt">TEAM MEMBERS ONLINE</h4>
+            <app-member-followinglist></app-member-followinglist>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-
-

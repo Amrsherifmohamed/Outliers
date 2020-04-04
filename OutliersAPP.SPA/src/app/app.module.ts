@@ -70,6 +70,8 @@ import { JobDetailResolver } from './_resolvers/job-detail.resolver';
 import { JobListResolver } from './_resolvers/job-list.resolver';
 import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
 import { MemberChatroomComponent } from './members/member-chatroom/member-chatroom.component';
+import { MemberChatroomcardComponent } from './members/member-chatroomcard/member-chatroomcard.component';
+import { MemberChatdetailComponent } from './members/member-chatdetail/member-chatdetail.component';
 
 
 export function tokenGetter() {
@@ -114,6 +116,8 @@ export function tokenGetter() {
       JobEditComponent,
       CompanyDashboardComponent,
       MemberChatroomComponent,
+      MemberChatroomcardComponent,
+      MemberChatdetailComponent,
 
    ],
    imports: [

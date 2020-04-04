@@ -1,0 +1,31 @@
+<!-- <meta http-equiv="refresh" content="1"> -->
+<section id="main-content" style="text-align: left;">
+  <section class="wrapper site-min-height">
+    <!-- page start-->
+    <div class="chat-room mt">
+
+      <aside class="mid-side">
+   <app-member-messages  [recipientId]="user.id"></app-member-messages>
+      </aside>
+
+      <aside class="right-side" >
+        <div class="user-head">
+          <a href="#" class="chat-tools btn-theme" style="width: 200px;"><i>Chatting With {{user.userName}}</i></a>
+        </div>
+
+        <div class="invite-row">
+          <h4 class="pull-left">Team Members {{user.userName}} </h4>
+          <a href="#" class="btn btn-theme04 pull-right">+ Invite</a>
+        </div>
+<div style="   overflow-y: scroll;
+height: 396px;
+width: 350px;">
+  <app-member-chatroom></app-member-chatroom>
+</div>
+
+      </aside>
+    </div>
+  </section>
+</section>
+
+

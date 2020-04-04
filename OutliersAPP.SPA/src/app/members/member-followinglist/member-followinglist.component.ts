@@ -16,9 +16,11 @@ constructor(private userservice:UserService,private authservice:AuthService
   ,private router:ActivatedRoute,private alertify:AlertifyService) { }
 
   ngOnInit() {
+
     this.router.data.subscribe(data=>
       this.followings=data["following"]
     );
+    
   }
 
 }
