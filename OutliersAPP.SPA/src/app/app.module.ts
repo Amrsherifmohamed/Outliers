@@ -69,6 +69,7 @@ import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolve
 import { JobDetailResolver } from './_resolvers/job-detail.resolver';
 import { JobListResolver } from './_resolvers/job-list.resolver';
 import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
+import { MemberChatroomComponent } from './members/member-chatroom/member-chatroom.component';
 
 
 export function tokenGetter() {
@@ -112,6 +113,7 @@ export function tokenGetter() {
       CompanyAppliersComponent,
       JobEditComponent,
       CompanyDashboardComponent,
+      MemberChatroomComponent,
 
    ],
    imports: [

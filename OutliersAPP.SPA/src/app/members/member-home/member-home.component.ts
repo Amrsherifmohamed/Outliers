@@ -20,7 +20,9 @@ comment:Comment;
 newpost:any={};
 countfollwers:string;
 countfollwing:string;
+
 @HostListener('window:beforeunload',['$event'])
+
 unLoadNotification($event:any){
   if(this.PostForm.dirty){
     $event.returnValue=true;
@@ -41,6 +43,8 @@ unLoadNotification($event:any){
         this.authService.latestfolloweringcount.subscribe(res=>{this.countfollwing=res;});}
       );
   }
+
+  
   createpost(){
       this.userService.createpost(this.newpost,this.authService.decodedToken.nameid).subscribe(
         ()=>{
@@ -52,5 +56,5 @@ unLoadNotification($event:any){
           this.alertify.error(error);
         }
       );
-    } 
+    }
 }

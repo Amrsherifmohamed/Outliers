@@ -55,7 +55,6 @@ namespace OutliersAPP.API.Controllers
             var jobsToReturn = _mapper.Map<IEnumerable<JobForListDto>>(jobs);
             return Ok(jobsToReturn);
         }
-
         [HttpPost("addjob/{id}")]
         public async Task<IActionResult> AddJob(int id, [FromBody] JobForCreationDto jobForCreationDto)
         {

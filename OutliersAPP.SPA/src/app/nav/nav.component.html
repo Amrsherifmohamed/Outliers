@@ -89,13 +89,13 @@
           </ul>
         </li>
         <!-- settings end -->
-        <!-- inbox dropdown start-->
+        <!-- inbox dropdown start  class="dropdown-toggle" data-toggle="dropdown" -->
         <li id="header_inbox_bar" class="dropdown">
-          <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+          <a [routerLink]="['/messages']" routerLinkActive="active">
             <i class="fa fa-envelope-o"></i>
-            <span class="badge bg-theme">5</span>
+            <span *ngIf="count!=='0'" class="badge bg-theme">{{count}}</span>
             </a>
-          <ul class="dropdown-menu extended inbox">
+          <!-- <ul class="dropdown-menu extended inbox">
             <div class="notify-arrow notify-arrow-green"></div>
             <li>
               <p class="green">You have 5 new messages</p>
@@ -116,7 +116,7 @@
             <li>
               <a href="index.html#">See all messages</a>
             </li>
-          </ul>
+          </ul> -->
         </li>
         <!-- inbox dropdown end -->
 
