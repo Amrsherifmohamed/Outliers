@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj": {}
+    "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj": {}
   },
   "projects": {
-    "e:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj": {
+    "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
+        "projectUniqueName": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
         "projectName": "OutliersAPP.API",
-        "projectPath": "e:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
+        "projectPath": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
         "packagesPath": "C:\\Users\\youssef ghonem\\.nuget\\packages\\",
-        "outputPath": "e:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\obj\\",
+        "outputPath": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

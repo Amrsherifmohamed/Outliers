@@ -16,7 +16,10 @@ export class MemberCardComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  follow:boolean=false;
+  onfollow(){
+    this.follow=!this.follow;
+  }
   sendLike(id:number){
     this.userService.sendLike(this.authService.decodedToken.nameid,id).subscribe(
       ()=>{this.alertify.success('لقد قمت بالإعجاب بـ'+this.user.knownAs);},

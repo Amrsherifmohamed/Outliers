@@ -499,7 +499,7 @@ Website: http://Alvarez.is/
 */
 
 /* Import fonts */
-@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+/* @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900); */
 
 /* BASIC THEME CONFIGURATION */
 body {
@@ -1665,7 +1665,7 @@ PANELS CONFIGURATIONS
 }
 
 .content-panel-img {
-  background-image: url('assets/img/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg');
+  /* background-image: url('assets/img/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg'); */
 	box-shadow: 0px 3px 2px #aab2bd;
 	padding-top: 15px;
   padding-bottom: 5px;

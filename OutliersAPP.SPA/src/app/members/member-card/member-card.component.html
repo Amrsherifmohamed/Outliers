@@ -8,7 +8,8 @@
         <p style="font-size: 20px;" class="mb-4"> <i class="fa fa-user"></i> {{user.roleName}}</p>
 
         <a style="padding: 2%;size: 100px;" (click)="sendLike(user.id)">
-        <h2 style="cursor: pointer;">  <i class="fa fa-thumbs-up fa-10x"></i> </h2>
+        <h2 style="cursor: pointer;">  <span class="glyphicon" [class.glyphicon-thumbs-up]="follow" [class.glyphicon-thumbs-down]="!follow"
+          (click)="onfollow()"></span> </h2>
         </a>
       </div>
 
