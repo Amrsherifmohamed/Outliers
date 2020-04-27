@@ -1,3 +1,56 @@
+$('.toggle').on('click', function() {
+	$('.menu').toggleClass('expanded');  
+	$('span').toggleClass('hidden');  
+	$('.container , .toggle').toggleClass('close');  
+  });
+
+$(document).ready(function() {
+    var active1 = false;
+    var active2 = false;
+    var active3 = false;
+    var active4 = false;
+  
+      $('.parent2').on('mousedown touchstart', function() {
+      
+      if (!active1) $(this).find('.test1').css({'background-color': 'gray', 'transform': 'translate(0px,125px)'});
+      else $(this).find('.test1').css({'background-color': 'dimGray', 'transform': 'none'}); 
+       if (!active2) $(this).find('.test2').css({'background-color': 'gray', 'transform': 'translate(60px,105px)'});
+      else $(this).find('.test2').css({'background-color': 'darkGray', 'transform': 'none'});
+        if (!active3) $(this).find('.test3').css({'background-color': 'gray', 'transform': 'translate(105px,60px)'});
+      else $(this).find('.test3').css({'background-color': 'silver', 'transform': 'none'});
+        if (!active4) $(this).find('.test4').css({'background-color': 'gray', 'transform': 'translate(125px,0px)'});
+      else $(this).find('.test4').css({'background-color': 'silver', 'transform': 'none'});
+      active1 = !active1;
+      active2 = !active2;
+      active3 = !active3;
+      active4 = !active4;
+        
+      });
+  });
+
+  const indicator = document.querySelector('.nav-indicator');
+  const items = document.querySelectorAll('.nav-item');
+  
+  function handleIndicator(el) {
+    items.forEach(item => {
+      item.classList.remove('is-active');
+      item.removeAttribute('style');
+    });
+    
+    indicator.style.width = `${el.offsetWidth}px`;
+    indicator.style.left = `${el.offsetLeft}px`;
+    indicator.style.backgroundColor = el.getAttribute('active-color');
+  
+    el.classList.add('is-active');
+    el.style.color = el.getAttribute('active-color');
+  }
+  
+  
+  items.forEach((item, index) => {
+    item.addEventListener('click', (e) => { handleIndicator(e.target)});
+    item.classList.contains('is-active') && handleIndicator(item);
+  });
+
 
 
 function reloadPage(){
