@@ -39,12 +39,13 @@ import { CompanyAppliersComponent } from './jobs/company-appliers/company-applie
 import { CompanyDashboardComponent } from './jobs/company-dashboard/company-dashboard.component';
 import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolver';
 import { MemberChatdetailComponent } from './members/member-chatdetail/member-chatdetail.component';
+import { RegisterComponent } from './register/register.component';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: '',
-    runGuardsAndResolvers: 'always'
-    , canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+    // , canActivate: [AuthGuard],
     children: [
       {
         path: 'members', component: MemberListComponent, resolve: {
@@ -126,7 +127,8 @@ export const appRoutes: Routes = [
 
       { path: 'messages', component: MessagesComponent, resolve: { messages: MessageResolver } },
       { path: 'charge', component: PaymentComponent },
-      { path: 'admin', component: AdminPanelComponent, data: { roles: ['Admin', 'Moderator'] } }
+      { path: 'register', component: RegisterComponent },
+      { path: 'admin', component: AdminPanelComponent, data: { roles: ['Admin'] } }
     ]
   },
 

@@ -1,6 +1,8 @@
 body{
   background-color: #f1f1f1;
 }
+.content-panel-img {
+  background-image: url("/assets/img/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg");}
 .border{
   border-bottom:1px solid #F1F1F1;
   margin-left:800px;

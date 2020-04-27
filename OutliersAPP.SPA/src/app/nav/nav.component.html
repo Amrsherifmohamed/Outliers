@@ -1,6 +1,6 @@
 <div id="login-page" *ngIf="!loggedIn()">
   <div class="container">
-    <form (ngSubmit)="login()" #loginForm="ngForm" class="form-login" action="index.html">
+    <!-- <form (ngSubmit)="login()" #loginForm="ngForm" class="form-login" action="index.html">
       <h2 class="form-login-heading">sign in now</h2>
       <div class="login-wrap">
         <input name="username" [(ngModel)]="model.username" type="text" class="form-control" placeholder="User Name"
@@ -24,7 +24,7 @@
           </a>
         </div>
       </div>
-      <!-- Modal -->
+
       <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
         class="modal fade">
         <div class="modal-dialog">
@@ -45,7 +45,37 @@
           </div>
         </div>
       </div>
-    </form>
+    </form> -->
+    <div class="login-form">
+      <form #form="ngForm" (ngSubmit)="login()" #loginForm="ngForm">
+        <h1>Login</h1>
+        <div class="form-group">
+          <input name="username" [(ngModel)]="model.username" class="form-control" placeholder="username" required>
+
+        </div>
+
+        <div class="form-group">
+          <input name="password" [(ngModel)]="model.password" type="password" class="form-control"
+            placeholder="Password">
+          <span class="input-icon"><i class="fa fa-lock"></i></span>
+        </div>
+        <button style="outline: none;" type="submit" [disabled]="form.invalid " (click)="login(form)"
+          class="login-btn">Login</button>
+
+
+        <div class="seperator"><b>or</b></div>
+        <a class="reset-psw" style="cursor: pointer;" [routerLink]="['/register']">Create Nwe Account</a>
+        <!-- Social login buttons -->
+        <!-- <div class="social-icon">
+              <button style="outline: none;" type="button"><i class="fa fa-twitter"></i></button>
+              <button style="outline: none;" (click)="loginfacebook()" type="button"><i class="fa fa-facebook"></i></button>
+              <button style="outline: none;" (click)="login()" type="button"><i class="fa fa-google-plus"></i></button>
+  
+          </div> -->
+
+      </form>
+    </div>
+
   </div>
 </div>
 
@@ -115,9 +145,6 @@
                 <span class="small italic">4 mins.</span>
               </a>
             </li>
-
-
-
             <li>
               <a href="index.html#">See all notifications</a>
             </li>
@@ -128,31 +155,23 @@
     <div class="top-menu">
       <ul class="nav pull-right top-menu">
         <li><a style="cursor:  pointer;" class="logout" [routerLink]="['/members/home']">Home</a></li>
-        <li style=" margin-top: 4%; cursor: pointer; outline: none;" [routerLink]="['/members/profile']" >
-          <img height="40px" 
-              src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar">Welcome 
-            {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }} <b
-             ></b>
-          <!-- <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></li>
-            <li><a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></li>
-            <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></li>
-            <li class="divider dropdown-divider"></li>
-            <li><a style="cursor:  pointer;" class="logout" (click)="loggedOut();">Logout</a></li>
-          </ul> -->
+        <li  style="border-radius: 50%; margin-top: 4%; cursor: pointer; outline: none" [routerLink]="['/members/profile']">
+          <img class="w3-hover-grayscale"style="border-radius: 50%; width:50px;border: 5px solid #f1f2f7; height:50px;"  src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar"> 
+          {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }} <b></b>
         </li>
       </ul>
     </div>
   </header>
-
-
   <div class="parent2" style="margin-top: 4%;">
-    <div *hasRole="['Fresh Graduate'||'Professional']"  [routerLink]="['/members']"class="test1" style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
-    <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i class="fa fa-dashboard fa-2x"></i></div>
-    <div  [routerLink]="['/members/profile']" class="test2" style="cursor: pointer;"><i class="fa fa-desktop fa-2x"></i></div>
-
-    <div *hasRole="['Fresh Graduate'||'Professional']" [routerLink]="['/jobs']"style="cursor: pointer;" class="test3"><i class="fa fa-sitemap fa-2x"></i></div>
-    <div *hasRole="['Fresh Graduate'||'Professional']" class="test4"><i class="fa fa-envelope-o fa-2x"></i></div>
+    <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
+    <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
+        class="fa fa-dashboard fa-2x"></i></div>
+    <div *hasRole="['Fresh Graduate'||'Professional']" [routerLink]="['/members']" class="test2"
+      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
+    <div *hasRole="['Fresh Graduate'||'Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+      <i class="fa fa-sitemap fa-2x"></i></div>
+    <div *hasRole="['Fresh Graduate'||'Professional']" class="test4"><i class="fa fa-laptop fa-2x"
+        aria-hidden="true"></i></div>
     <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
   </div>
   <!-- <aside>

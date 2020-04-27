@@ -1,5 +1,5 @@
-<div class="container mt-5" style="margin-top: 2%;">
-  <div class="row">
+<div class="container mt-5">
+  <div class="row"  style="margin-top: 6%;">
     <div class="btn-group">
       <button  style=" background-color: #48cfad; /* Green */
       border: none;
@@ -8,7 +8,7 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Unread" (click)="loadMessages()" [ngStyle]="{'background':messageType =='Unread'?'#333' : '#E95420'}">
+      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Unread" (click)="loadMessages()" [ngStyle]="{'background':messageType =='Unread'?'#333' : '#4ECDC4'}">
         <i class="fa fa-envelope"></i> Messages Unread
       </button>
       <button  style=" background-color: #48cfad; /* Green */
@@ -18,7 +18,7 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Inbox" (click)="loadMessages()" [ngStyle]="{'background':messageType =='Inbox'?'#333' : '#E95420'}">
+      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Inbox" (click)="loadMessages()" [ngStyle]="{'background':messageType =='Inbox'?'#333' : '#4ECDC4'}">
         <i class="fa fa-envelope-open"></i>  Inbox
       </button>
       <button  style=" background-color: #48cfad; /* Green */
@@ -28,7 +28,7 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Outbox" (click)="loadMessages()" [ngStyle]="{'background':messageType =='Outbox'?'#333' : '#E95420'}">
+      font-size: 16px;border-radius: 9px;" [(ngModel)]="messageType" btnRadio="Outbox" (click)="loadMessages()" [ngStyle]="{ 'background':messageType =='Outbox'?'#333' : '#4ECDC4'}">
         <i class="fa fa-paper-plane"></i>  Sent messages
       </button>
     </div>
