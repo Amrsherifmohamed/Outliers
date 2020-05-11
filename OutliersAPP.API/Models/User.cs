@@ -23,6 +23,9 @@ namespace OutliersAPP.API.Models
         public string Experience { get; set; }
         public string Skills { get; set; }
         public ICollection<Photo> Photos { get; set; }
+        public ICollection<playlist> playlists { get; set; }
+        public ICollection<video> videos { get; set; }
+
         public ICollection<Like> Likers { get; set; }
         public ICollection<Like> Likees { get; set; }
         public ICollection<Message> MessagesSent { get; set; }

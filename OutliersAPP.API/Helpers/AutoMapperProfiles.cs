@@ -71,7 +71,45 @@ namespace OutliersAPP.API.Helpers
          
             
        
-       
+        //playlist
+            CreateMap<PlaylistForCreationDto, playlist>().ReverseMap();
+            CreateMap<playlist, PlaylistToReturnDto>();
+            CreateMap<playlist, PlaylistForDetailsDto>()
+                .ForMember(dest => dest.UserPhotoUrl, opt => { opt.MapFrom(src => src.User.Photos.FirstOrDefault(p => p.IsMain).Url); })
+                .ForMember(dest => dest.ProfName, opt => { opt.MapFrom(src => src.User.KnownAs); })
+                .ForMember(dest => dest.ProfInfo, opt => { opt.MapFrom(src => src.User.Introduction); })
+                .ForMember(dest => dest.ProfCity, opt => { opt.MapFrom(src => src.User.City); })
+                .ForMember(dest => dest.ProfCountry, opt => { opt.MapFrom(src => src.User.Country); })
+                .ForMember(dest => dest.ProfPhone, opt => { opt.MapFrom(src => src.User.PhoneNumber); });
+            CreateMap<playlist, PlaylistForListDto>()
+                .ForMember(dest => dest.UserPhotoUrl, opt => { opt.MapFrom(src => src.User.Photos.FirstOrDefault(p => p.IsMain).Url); })
+                .ForMember(dest => dest.ProfName, opt => { opt.MapFrom(src => src.User.KnownAs); })
+                .ForMember(dest => dest.ProfInfo, opt => { opt.MapFrom(src => src.User.Introduction); })
+                .ForMember(dest => dest.ProfCity, opt => { opt.MapFrom(src => src.User.City); })
+                .ForMember(dest => dest.ProfCountry, opt => { opt.MapFrom(src => src.User.Country); })
+                .ForMember(dest => dest.ProfPhone, opt => { opt.MapFrom(src => src.User.PhoneNumber); });
+            CreateMap<PlaylistForUpdateDto, playlist>();
+
+             //video
+            CreateMap<VideoForCreationDto, video>().ReverseMap();
+            CreateMap<video, VideoForReturnDto>();
+
+            CreateMap<video, VideoForDetailsDto>()
+                .ForMember(dest => dest.UserPhotoUrl, opt => { opt.MapFrom(src => src.User.Photos.FirstOrDefault(p => p.IsMain).Url); })
+                .ForMember(dest => dest.ProfName, opt => { opt.MapFrom(src => src.User.KnownAs); })
+                .ForMember(dest => dest.ProfInfo, opt => { opt.MapFrom(src => src.User.Introduction); })
+                .ForMember(dest => dest.ProfCity, opt => { opt.MapFrom(src => src.User.City); })
+                .ForMember(dest => dest.ProfCountry, opt => { opt.MapFrom(src => src.User.Country); })
+                .ForMember(dest => dest.ProfPhone, opt => { opt.MapFrom(src => src.User.PhoneNumber); });
+            CreateMap<video, VideoForListDto>()
+                .ForMember(dest => dest.UserPhotoUrl, opt => { opt.MapFrom(src => src.User.Photos.FirstOrDefault(p => p.IsMain).Url); })
+                .ForMember(dest => dest.ProfName, opt => { opt.MapFrom(src => src.User.KnownAs); })
+                .ForMember(dest => dest.ProfInfo, opt => { opt.MapFrom(src => src.User.Introduction); })
+                .ForMember(dest => dest.ProfCity, opt => { opt.MapFrom(src => src.User.City); })
+                .ForMember(dest => dest.ProfCountry, opt => { opt.MapFrom(src => src.User.Country); })
+                .ForMember(dest => dest.ProfPhone, opt => { opt.MapFrom(src => src.User.PhoneNumber); });
+            CreateMap<VideoForUpdateDto, video>();
+
        
        }
         

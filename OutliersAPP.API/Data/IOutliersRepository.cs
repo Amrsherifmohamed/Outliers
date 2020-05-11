@@ -13,10 +13,11 @@ namespace OutliersAPP.API.Data
         Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id,bool isCurrentUser);
         Task<Photo> GetPhoto(int id);
+         Task<video> GetVideo(int id);
         Task<Photo> GetMainPhotoForUser(int userId);
         Task<Like> GetLike(int userId, int recipientId);
         Task<Message> GetMessage(int id);
-        
+        Task<playlist> GetPlaylist(int id);
         Task<IEnumerable<Job>> GetJobs();
         Task<Job> GetJob(int id);
         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams );

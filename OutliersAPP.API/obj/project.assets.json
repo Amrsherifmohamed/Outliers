@@ -12136,11 +12136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
+      "projectUniqueName": "E:\\fcih\\ProjectGraduation\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
       "projectName": "OutliersAPP.API",
-      "projectPath": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
+      "projectPath": "E:\\fcih\\ProjectGraduation\\Outliers\\OutliersAPP.API\\OutliersAPP.API.csproj",
       "packagesPath": "C:\\Users\\ymg12\\.nuget\\packages\\",
-      "outputPath": "E:\\fcih\\GP\\GP\\Outliers\\OutliersAPP.API\\obj\\",
+      "outputPath": "E:\\fcih\\ProjectGraduation\\Outliers\\OutliersAPP.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
