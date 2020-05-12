@@ -19,6 +19,8 @@ namespace OutliersAPP.API.Data
         Task<Message> GetMessage(int id);
         Task<playlist> GetPlaylist(int id);
         Task<IEnumerable<Job>> GetJobs();
+        Task<IEnumerable<playlist>> GetPlaylists();
+
         Task<Job> GetJob(int id);
         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams );
         Task<IEnumerable<Message>> GetConversation(int userId, int recipientId);

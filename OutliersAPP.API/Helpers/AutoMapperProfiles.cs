@@ -108,7 +108,7 @@ namespace OutliersAPP.API.Helpers
                 .ForMember(dest => dest.ProfCity, opt => { opt.MapFrom(src => src.User.City); })
                 .ForMember(dest => dest.ProfCountry, opt => { opt.MapFrom(src => src.User.Country); })
                 .ForMember(dest => dest.ProfPhone, opt => { opt.MapFrom(src => src.User.PhoneNumber); });
-            CreateMap<VideoForUpdateDto, video>();
+            // CreateMap<VideoForUpdateDto, video>();
 
        
        }

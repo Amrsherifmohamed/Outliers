@@ -42,15 +42,12 @@ namespace OutliersAPP.API.Controllers
             return Ok(Video);
         }
 
-        [HttpPost("addvideo/{userId}/{id}")]
-        public async Task<IActionResult> Addvideo(int userId,int id ,[FromForm]VideoForCreationDto videoForCreationDto)
+        [HttpPost("addvideo/{userId}")]
+        public async Task<IActionResult> Addvideo(int userId,[FromForm]VideoForCreationDto videoForCreationDto)
         {
 
             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
-
-            
-            
              videoForCreationDto.UserId = userId;
             // var userFromRepo = await _repository.GetUser(userId, true);
             var file = videoForCreationDto.File;
@@ -72,7 +69,7 @@ namespace OutliersAPP.API.Controllers
             videoForCreationDto.Url = uploadResult.Uri.ToString();
 
             videoForCreationDto.publicId = uploadResult.PublicId;
-            videoForCreationDto.PlaylistId = id;
+            videoForCreationDto.PlaylistId = 1;
 
             var Video = _mapper.Map<video>(videoForCreationDto);
              _repository.Add(Video);

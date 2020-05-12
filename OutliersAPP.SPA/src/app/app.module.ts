@@ -72,6 +72,17 @@ import { JobAppliersResolver } from './_resolvers/job-appliers.resolver';
 import { MemberChatroomComponent } from './members/member-chatroom/member-chatroom.component';
 import { MemberChatroomcardComponent } from './members/member-chatroomcard/member-chatroomcard.component';
 import { MemberChatdetailComponent } from './members/member-chatdetail/member-chatdetail.component';
+import { CoursesService } from './_services/courses.service';
+import { PlaylistDetailResolver } from './_resolvers/playlist-detail.resolver';
+import { PlaylistEditResolver } from './_resolvers/playlist-edit.resolver';
+import { AddPlaylistComponent } from './playlist/add-playlist/add-playlist.component';
+import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
+import { DetailsPlaylistComponent } from './playlist/details-playlist/details-playlist.component';
+import { ListPlaylistComponent } from './playlist/list-playlist/list-playlist.component';
+import { ProfDashboardComponent } from './playlist/prof-dashboard/prof-dashboard.component';
+import { ProfDashboardResolver } from './_resolvers/prof-dashboard.resolver';
+import { AddVideoComponent } from './video/add-video/add-video.component';
+import { DetailsVideComponent } from './video/details-vide/details-vide.component';
 
 
 export function tokenGetter() {
@@ -118,6 +129,13 @@ export function tokenGetter() {
       MemberChatroomComponent,
       MemberChatroomcardComponent,
       MemberChatdetailComponent,
+      AddPlaylistComponent,
+      UpdatePlaylistComponent,
+      DetailsPlaylistComponent,
+      ListPlaylistComponent,
+      ProfDashboardComponent,
+      AddVideoComponent,
+      DetailsVideComponent,
 
    ],
    imports: [
@@ -145,30 +163,39 @@ export function tokenGetter() {
 
    ],
    providers: [
+      // Services
       AuthService,
-      ErrorInterceptorProvidor,
       AlertifyService,
+      UserService,
+      AdminService,
+      JobService,
+      CoursesService,
+      // other
+      ErrorInterceptorProvidor,
+      // Guards
       AuthGuard,
       PreventUnsavedChangesGuard,
-      UserService,
+      // Resolvers
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
       ListResolver,
       MessageResolver,
-      AdminService,
       PostResolver,
       PostMemberResolver,
       PostFollwerResolver,
       CommentResolver,
       PostDetailResolver,
       MemberFollownigResolver,
-      JobService,
       JobDetailResolver,
       JobListResolver,
       CompanyDashboardResolver,
       JobAppliersResolver,
       JobEditResolver,
+      PlaylistDetailResolver,
+      PlaylistEditResolver,
+      ProfDashboardResolver,
+      
    ],
    entryComponents:[RolesModalComponent],
    bootstrap: [

@@ -10,6 +10,7 @@ import { ApplyForJob } from '../_models/applyForJob';
   providedIn: 'root'
 })
 export class JobService {
+  
   basUrl = environment.apiUrl + 'company/';
   constructor(private http: HttpClient) { }
 

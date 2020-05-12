@@ -20,7 +20,7 @@ export class JobDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe(
-      data => { this.job = data['job'] }
+      data => { this.job = data['job'] ;}
     );
     this.createApplyForm();
   }

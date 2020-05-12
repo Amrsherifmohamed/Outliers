@@ -18,6 +18,7 @@
           <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('city').touched && jobForm.get('city').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
           </div>
         </div>
+        
         <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
 					<span class="pull-left"><strong>country</strong> </span>
 					<input class="input100" type="text"  placeholder="Enter  country " formControlName="country"  [ngClass]="{'is-invalid' : jobForm.get('country').errors && jobForm.get('country').touched}">

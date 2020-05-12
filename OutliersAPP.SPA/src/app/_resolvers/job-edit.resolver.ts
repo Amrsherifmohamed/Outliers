@@ -20,6 +20,6 @@ export class JobEditResolver implements Resolve<Job>{
               this.router.navigate(['/jobs']);
               return of(null);
           })
-        )
+        );
     }
 }

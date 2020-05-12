@@ -43,19 +43,22 @@ namespace OutliersAPP.API.Controllers
         [HttpGet("{id}", Name = "GetPlaylist")]
         public async Task<IActionResult> GetPlaylist(int id)
         {
-            var Playlist = await _repo.GetJob(id);
+            var Playlist = await _repo.GetPlaylist(id);
             var PlaylistToReturn = _mapper.Map<PlaylistForDetailsDto>(Playlist);
             return Ok(PlaylistToReturn);
         }
 
 
-        [HttpGet("myplaylists/{userName}")]//user
-        public async Task<ActionResult> GetMyPlaylists(string userName)
+        [HttpGet("myplaylists")]//user
+       public async Task<IActionResult> Getmyplaylists()
         {
-            var user = await _userManager.FindByNameAsync(userName);
-            var playlists = _context.Playlists.Where(a => a.UserId == user.Id);
-            return Ok(playlists.ToList());
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var user = await _repo.GetUser(currentUserId,true);
+            var playlists = await _repo.GetPlaylists();
+            var playlistsToReturn = _mapper.Map<IEnumerable<PlaylistForDetailsDto>>(playlists);
+            return Ok(playlistsToReturn.Where(a => a.UserId == user.Id).ToList());
         }
+        
 
 
 
@@ -98,12 +101,8 @@ namespace OutliersAPP.API.Controllers
         [HttpPut("updateplaylist/{id}")]
         public async Task<IActionResult> UpdatePlaylist([FromRoute] int id, [FromBody] PlaylistForUpdateDto playlistForUpdateDto)
         {
-            // if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-
             var playlistFromRepo = await _repo.GetPlaylist(id);
             _mapper.Map(playlistForUpdateDto, playlistFromRepo);
-
             if (await _repo.SaveAll())
                 return NoContent();
             throw new Exception($"Error when updated {id}");

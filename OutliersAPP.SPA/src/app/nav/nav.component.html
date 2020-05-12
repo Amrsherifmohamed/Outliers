@@ -163,17 +163,29 @@
     </div>
   </header>
   <div class="parent2" style="margin-top: 4%;">
-    <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
+   
+   <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
     <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
         class="fa fa-dashboard fa-2x"></i></div>
-    <div *hasRole="['Fresh Graduate'||'Professional']" [routerLink]="['/members']" class="test2"
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2"
       style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
-    <div *hasRole="['Fresh Graduate'||'Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+
+      <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2"
+      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
+
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
       <i class="fa fa-sitemap fa-2x"></i></div>
-    <div *hasRole="['Fresh Graduate'||'Professional']" class="test4"><i class="fa fa-laptop fa-2x"
+      <div *hasRole="['Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+        <i class="fa fa-sitemap fa-2x"></i></div>
+
+    <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x"
         aria-hidden="true"></i></div>
+        
+    <div style="cursor: pointer;" [routerLink]="['/profdashboard']" *hasRole="['Professional']" class="test4"><i class="fa fa-laptop fa-2x"
+      aria-hidden="true"></i></div>
     <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
   </div>
+
   <!-- <aside>
     <div id="sidebar" class="nav-collapse ">
       <ul class="sidebar-menu" id="nav-accordion">

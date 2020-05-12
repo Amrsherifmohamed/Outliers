@@ -257,11 +257,17 @@ namespace OutliersAPP.API.Data
             return jobs;
 
         }
+           public async Task<IEnumerable<playlist>> GetPlaylists()
+        {
+            var playlists = await _context.Playlists.Include(u => u.User).ThenInclude(u => u.Photos).ToListAsync();
+            return playlists;
+
+        }
         public async Task<playlist> GetPlaylist(int id)
         {
-            var user = await _context.Playlists.Include(u => u.User).ThenInclude(u => u.Photos)
+            var Playlist = await _context.Playlists.Include(u => u.User).ThenInclude(u => u.Photos)
             .FirstOrDefaultAsync(u => u.Id == id);
-            return user;
+            return Playlist;
         }
 
         public async Task<video> GetVideo(int id)
@@ -269,5 +275,7 @@ namespace OutliersAPP.API.Data
             var Video = await _context.Videos.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);
             return Video;
         }
+
+    
     }
 }

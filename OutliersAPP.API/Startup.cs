@@ -130,6 +130,8 @@ namespace OutliersAPP.API
            
             trialData.TrialUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            // app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             app.UseSignalR(routes => {
                 routes.MapHub<ChatHub>("/chat");
             });

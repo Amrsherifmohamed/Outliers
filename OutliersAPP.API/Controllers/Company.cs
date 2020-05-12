@@ -78,9 +78,7 @@ namespace OutliersAPP.API.Controllers
         [HttpPut("updatejob/{id}")]
         public async Task<IActionResult> UpdateJob([FromRoute] int id, [FromBody] JobForUpdateDto jobForUpdateDto)
         {
-            // if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-            //     return Unauthorized();
-
+           
             var jobFromRepo = await _repo.GetJob(id);
             _mapper.Map(jobForUpdateDto, jobFromRepo);
 
@@ -143,6 +141,7 @@ namespace OutliersAPP.API.Controllers
             var jops = _context.ApplyForJob.Where(a => a.UserId == user.Id);
             return Ok(jops.ToList());
         }
+        
           [HttpGet("getmypostedjob")]
         public async Task<IActionResult> GetMyPostedJob()
         {

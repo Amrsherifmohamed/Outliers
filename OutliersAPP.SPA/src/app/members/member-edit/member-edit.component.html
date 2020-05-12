@@ -42,21 +42,16 @@
                 </li>
               </ul>
             </div>
-            <!-- /panel-heading -->
             <div class="panel-body">
               <div class="tab-content">
-                <!-- /tab-pane -->
                 <div id="photo" class="tab-pane">
                   <div class="row">
                     <div class="col-md-9">
                       <app-photo-editor (getMemberPhotoChange)="updateMainPhoto($event)" [photos]="user.photos">
                       </app-photo-editor>
                     </div>
-                    <!-- /col-md-6 -->
                   </div>
-                  <!-- /row -->
                 </div>
-                <!-- /tab-pane -->
                 <div id="edit" class="tab-pane active">
                   <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 detailed">
