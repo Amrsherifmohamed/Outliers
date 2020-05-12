@@ -40,6 +40,14 @@ import { CompanyDashboardComponent } from './jobs/company-dashboard/company-dash
 import { CompanyDashboardResolver } from './_resolvers/company-dashboard.resolver';
 import { MemberChatdetailComponent } from './members/member-chatdetail/member-chatdetail.component';
 import { RegisterComponent } from './register/register.component';
+import { AddPlaylistComponent } from './playlist/add-playlist/add-playlist.component';
+import { ProfDashboardComponent } from './playlist/prof-dashboard/prof-dashboard.component';
+import { ProfDashboardResolver } from './_resolvers/prof-dashboard.resolver';
+import { UpdatePlaylistComponent } from './playlist/update-playlist/update-playlist.component';
+import { PlaylistEditResolver } from './_resolvers/playlist-edit.resolver';
+import { DetailsPlaylistComponent } from './playlist/details-playlist/details-playlist.component';
+import { PlaylistDetailResolver } from './_resolvers/playlist-detail.resolver';
+import { AddVideoComponent } from './video/add-video/add-video.component';
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -101,6 +109,27 @@ export const appRoutes: Routes = [
       {
         path: 'job/edit/:id', component: JobEditComponent, resolve: {
           job: JobEditResolver
+        }
+      },
+      {
+        path: 'addplaylist', component: AddPlaylistComponent
+      },
+      {
+        path: 'addvideo', component: AddVideoComponent
+      },
+      {
+        path: 'playlist/:id', component: DetailsPlaylistComponent, resolve: {
+          playlists: PlaylistDetailResolver
+        }
+      },
+      {
+        path: 'playlist/edit/:id', component: UpdatePlaylistComponent, resolve: {
+          playlists: PlaylistEditResolver
+        }
+      },
+      {
+        path: 'profdashboard', component:ProfDashboardComponent, resolve: {
+          profdashboard: ProfDashboardResolver
         }
       },
       {
