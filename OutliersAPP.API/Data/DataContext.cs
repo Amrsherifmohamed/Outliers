@@ -21,15 +21,13 @@ namespace OutliersAPP.API.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<playlist> Playlists { get; set; }
         public DbSet<video> Videos { get; set; }
-<<<<<<< HEAD
         public DbSet<Careerpath> Careerpaths { get; set; }
         public DbSet <CareerDetails> CareerDetailss{ get; set; }
-=======
+
         public DbSet<ContactUs> Contacts { get; set; }
         public DbSet<AdminContact> AdminContacts { get; set; }
 
 
->>>>>>> 7c371386e877814b0c4a16115214a0ef675b4e18
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
