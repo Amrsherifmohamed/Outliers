@@ -7,11 +7,12 @@ import { Observable, of } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { JobService } from "../_services/job.service";
 import { ContactsService } from "../_services/contacts.service";
+import { AdminContact } from "../_models/admincontact";
 
 @Injectable()
-export class AdminContactsDetailResolver implements Resolve<User>{
+export class AdminContactsDetailResolver implements Resolve<AdminContact>{
   constructor(private contactsService: ContactsService, private router: Router, private alertify: AlertifyService) { }
-  resolve(route: ActivatedRouteSnapshot): Observable<User> {
+  resolve(route: ActivatedRouteSnapshot): Observable<AdminContact> {
     return this.contactsService.getAdminContact(route.params['id']).pipe(
       catchError(error => {
         this.alertify.error(' There is a problem displaying the data');

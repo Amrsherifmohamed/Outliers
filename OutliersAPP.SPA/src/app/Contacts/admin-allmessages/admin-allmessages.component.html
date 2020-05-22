@@ -1,3 +1,84 @@
-<p>
-  admin-allmessages works!
-</p>
+<section id="container">
+
+
+  <section id="main-content" class="text-left">
+    <section class="wrapper">
+      <!-- page start-->
+      <div class="row mt">
+        <div class="col-sm-3">
+          <section class="panel">
+            <div class="panel-body">
+              <a href="mail_compose.html" class="btn btn-compose">
+                <i class="fa fa-pencil"></i> Your Mangement Card
+              </a>
+              <ul class="nav nav-pills nav-stacked mail-nav" style="text-align: left;">
+                <li ><a [routerLink]="['/profdashboard']"> <i class="fa fa-address-card"></i>Your
+                    PlayList<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addplaylist']"> <i class="fa fa-inbox"></i> Add New PlayList <span
+                      class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addvideo']"> <i class="fa fa-align-center"></i>Add New Video/s</a></li>
+                <li><a [routerLink]="['/contactus']"> <i class="fa fa-envelope"></i> Contact With Admin <span
+                      class="label label-info pull-right inbox-notification">8</span></a></li>
+                <li class="active"><a [routerLink]="['/msgfromadmin']"> <i class="fa fa-exclamation-circle"></i> Important</a></li>
+
+              </ul>
+            </div>
+          </section>
+           </div>
+        <div class="col-sm-9">
+          <section class="panel">
+            <header class="panel-heading wht-bg">
+              <h4 class="gen-case">
+                  Inbox (All Messages)
+         
+                </h4>
+            </header>
+            <div class="panel-body minimal">
+            
+              <div class="table-inbox-wrap ">
+                <table class="table table-inbox table-hover">
+                  <tbody *ngFor="let contact of contacts">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Are You Sure Delete This message ?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button onclick="reloadPage();" (click)="deletecontact(contact.id)" type="button"
+                            class="btn btn-primary">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+             
+                    <tr  style="cursor: pointer;outline: none;">
+                      <td class="inbox-small-cells">
+                        <a><button data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-xs"><i
+                          class="fa fa-trash-o "></i></button></a>
+                      </td>
+                      <td [routerLink]="['/contacts/',contact.id]" style="cursor: pointer;outline: none;" class="inbox-small-cells"><i *ngIf="contact.isRead==false" class="fa fa-star inbox-started"></i><i *ngIf="contact.isRead==true" class="fa fa-star inbox-divider"></i></td>
+                      <td [routerLink]="['/contacts/',contact.id]" style="cursor: pointer;outline: none;" class="view-message dont-show"><a href="mail_view.html">{{contact.suject}} </a></td>
+                      <td class="view-message"><a> <span *ngIf="contact.isRead==false" class="label label-danger pull-right">Unread</span> <span *ngIf="contact.isRead==true" class="label label-default pull-right">readed</span></a></td>
+                      <td class="view-message inbox-small-cells"></td>
+                      <td class="view-message text-right">{{contact.dateAdded}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </section>
+
+</section>

@@ -1,3 +1,78 @@
-<p>
-  admin-message-detail works!
-</p>
+<section id="container">
+
+  <section id="main-content" class="text-left">
+    <section class="wrapper">
+      <!-- page start-->
+      <div class="row mt">
+        <div class="col-sm-3">
+          <section class="panel">
+            <div class="panel-body">
+              <a href="mail_compose.html" class="btn btn-compose">
+                <i class="fa fa-pencil"></i> Your Mangement Card
+              </a>
+              <ul class="nav nav-pills nav-stacked mail-nav" style="text-align: left;">
+                <li ><a [routerLink]="['/profdashboard']"> <i class="fa fa-address-card"></i>Your
+                    PlayList<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addplaylist']"> <i class="fa fa-inbox"></i> Add New PlayList <span
+                      class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addvideo']"> <i class="fa fa-align-center"></i>Add New Video/s</a></li>
+                <li><a [routerLink]="['/contactus']"> <i class="fa fa-envelope"></i> Contact With Admin <span
+                      class="label label-info pull-right inbox-notification">8</span></a></li>
+                <li class="active"><a [routerLink]="['/msgfromadmin']"> <i class="fa fa-exclamation-circle"></i> Important</a></li>
+
+              </ul>
+            </div>
+          </section>
+    
+        </div>
+        <div class="col-sm-9">
+          <section class="panel">
+            <header class="panel-heading wht-bg">
+              <h4 class="gen-case">
+                  View Message
+                  <form action="#" class="pull-right mail-src-position">
+                    <div class="input-append">
+                      <input type="text" class="form-control " placeholder="Search Mail">
+                    </div>
+                  </form>
+                </h4>
+            </header>
+            <div class="panel-body ">
+              <div class="mail-header row">
+                <div class="col-md-8">
+                  <h4 class="pull-left"> Subject : {{contacts.suject}} </h4>
+                </div>
+                <div class="col-md-4">
+                  <div class="compose-btn pull-right">
+                    <a [routerLink]="['/contactus']" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Reply</a>
+                    <button (click)="deletecontact(contacts.id)" class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="mail-sender">
+                <div class="row">
+                  <div class="col-md-8">
+                    
+                    <strong>From : </strong>
+                    <span>[Admin]</span> to
+                    <strong>me</strong>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="date"> {{contacts.dateAdded}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="view-mail">
+                <p>{{contacts.content}}.</p>
+              </div>
+       
+  
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- /wrapper -->
+  </section>
+
+</section>

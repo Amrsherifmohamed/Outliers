@@ -34,7 +34,7 @@ namespace OutliersAPP.API.Controllers
         {
             var Contact = await _repo.GetAdminContact(id);
 
-            var ContactToReturn = _mapper.Map<ContactForDetailsDto>(Contact);
+            var ContactToReturn = _mapper.Map<AdminContactForDetailsDto>(Contact);
             return Ok(ContactToReturn);
         }
 
@@ -44,7 +44,7 @@ namespace OutliersAPP.API.Controllers
         {
 
             var Contacts = await _repo.GetAdminContacts();
-            var ContactsToReturn = _mapper.Map<IEnumerable<ContactForListDto>>(Contacts);
+            var ContactsToReturn = _mapper.Map<IEnumerable<AdminContactForListDto>>(Contacts);
             return Ok(ContactsToReturn);
         }
 
@@ -53,7 +53,7 @@ namespace OutliersAPP.API.Controllers
         {
 
             var Contacts = await _repo.GetAdminContacts();
-            var ContactsToReturn = _mapper.Map<IEnumerable<ContactForListDto>>(Contacts);
+            var ContactsToReturn = _mapper.Map<IEnumerable<AdminContactForListDto>>(Contacts);
             return Ok(ContactsToReturn);
         }
 

@@ -56,13 +56,7 @@ export class ContactsService {
     return this.http.put(this.basUrlAdmin + 'read/' + id, userContact);
   }
   deleteAdminContact(id: number){
-    return this.http.delete(this.basUrlUserContact + 'deletecontact/' + id, {});
+    return this.http.delete(this.basUrlAdmin + 'deletecontact/' + id, {});
   }
 
-
-
-
-
-
-  
 }
