@@ -1,0 +1,38 @@
+<section id="container">
+  <section id="main-content">
+    <section class="wrapper">
+      <div class="row mt">
+        <div class="col-lg-9 col-md-9 col-sm-9">
+          <h4 class="title"> Contact Form</h4>
+          <div id="message"></div>
+          <form (ngSubmit)="addContact()" [formGroup]="contactForm" class="contact-form php-mail-form" >
+            <div class="form-group"> 
+              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" formControlName="suject" [ngClass]="{'is-invalid' : contactForm.get('suject').errors && contactForm.get('suject').touched}">
+              <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('suject').touched && contactForm.get('suject').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" formControlName="content" [ngClass]="{'is-invalid' : contactForm.get('content').errors && contactForm.get('content').touched}"></textarea>
+              <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('content').touched && contactForm.get('content').hasError('content')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+              </div>
+            </div>
+
+            <div class="loading"></div>
+            <div class="error-message"></div>
+            <div class="sent-message"> message has been sent. Thank you!</div>
+
+            <div class="form-send">
+              <button  class="btn btn-large btn-primary">Send Message</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+
+    </section>
+  </section>
+
+</section>

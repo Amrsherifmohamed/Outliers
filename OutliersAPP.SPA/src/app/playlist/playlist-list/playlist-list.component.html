@@ -1,0 +1,11 @@
+
+<br>
+
+<div class="container-fluid gedf-wrapper ">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div *ngFor="let x of playlists" class="col-lg-3 col-md-3 col-sm-6"
+style="  margin-bottom: 5%;">
+    <app-playlist-card [playlist]="x"></app-playlist-card>
+</div>

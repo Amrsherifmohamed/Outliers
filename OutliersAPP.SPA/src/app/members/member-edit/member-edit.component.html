@@ -1,0 +1,132 @@
+<section id="container">
+  <section id="main-content">
+    <section class="wrapper site-min-height">
+      <div class="row mt">
+        <div class="col-lg-12">
+          <div class="row content-panel-img">
+            <div class="col-md-4 profile-text mt mb centered">
+              <div class="right-divider hidden-sm hidden-xs">
+                <h4>{{countfollwers}}</h4>
+                <h6>FOLLOWERS</h6>
+                <h4><span>{{countfollwing}}</span></h4>
+                <h6>FOLLOWING</h6>
+              </div>
+            </div>
+            <div class="col-md-4 profile-text">
+              <h3>{{user.userName}}</h3>
+              <h4>{{user.gender}}</h4>
+              <p>{{user.skills}}</p>
+              <br>
+            </div>
+            <!-- /col-md-4 -->
+            <div class="col-md-4 centered">
+              <div class="profile-pic">
+                <p><img src="{{photoUrl || 'assets/User.png'}}" class="img-circle"></p>
+              </div>
+            </div>
+            <!-- /col-md-4 -->
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /col-lg-12 -->
+        <div class="col-lg-12 mt">
+          <div class="row content-panel">
+            <div class="panel-heading">
+              <ul class="nav nav-tabs nav-justified">
+
+                <li>
+                  <a data-toggle="tab" href="#photo" class="contact-map">Photos</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#edit">Edit Profile</a>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body">
+              <div class="tab-content">
+                <div id="photo" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <app-photo-editor (getMemberPhotoChange)="updateMainPhoto($event)" [photos]="user.photos">
+                      </app-photo-editor>
+                    </div>
+                  </div>
+                </div>
+                <div id="edit" class="tab-pane active">
+                  <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 detailed">
+                      <h4 class="mb">Personal Information</h4>
+                      <form  #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()" role="form" class="form-horizontal">
+                        <div *ngIf="editForm.dirty" class="form-group">
+                          <label class="col-lg-2 control-label"> Avatar</label>
+                          <div class="col-lg-6">
+
+                              <div *ngIf="editForm.dirty" class="alert alert-info">
+                                <strong>Alert ! </strong>
+                                Must Be To Save Changes
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">Information</label>
+                          <div class="col-lg-6">
+                            <textarea id="c-name" class="form-control" name="introduction"
+                              [(ngModel)]="user.introduction" class="form-control border-white"></textarea>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">looking For</label>
+                          <div class="col-lg-6">
+                            <textarea id="c-name" class="form-control" name="lookingFor" [(ngModel)]="user.lookingFor"
+                              class="form-control border-white"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">Intrested Job</label>
+                          <div class="col-lg-6">
+                            <textarea id="c-name" class="form-control" name="interests" [(ngModel)]="user.interests"
+                              class="form-control border-white"></textarea>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">My Skills</label>
+                          <div class="col-lg-6">
+                            <textarea id="c-name" class="form-control" name="skills" [(ngModel)]="user.skills"
+                              class="form-control border-white"></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">Lives In</label>
+                          <div class="col-lg-6">
+                            <div class="form-inline p-2">
+                              <label for="country">Country &nbsp;</label>
+                              <input type="text" name="country" [(ngModel)]="user.country" class="ml-2 form-control">
+                              <br><br><label class="ml-4 " for="city"> City &nbsp; </label>
+                              <input type="text" name="city" [(ngModel)]="user.city" class="form-control ml-2">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                            <button form="editForm" [disabled]="!editForm.dirty" class="btn btn-theme"
+                              type="submit">Save</button>
+                             <a [routerLink]="['/members/profile']"><button class="btn btn-theme04" type="button">Cancel</button></a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>

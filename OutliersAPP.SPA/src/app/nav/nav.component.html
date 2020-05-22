@@ -1,0 +1,293 @@
+<div id="login-page" *ngIf="!loggedIn()">
+  <div class="container">
+    <!-- <form (ngSubmit)="login()" #loginForm="ngForm" class="form-login" action="index.html">
+      <h2 class="form-login-heading">sign in now</h2>
+      <div class="login-wrap">
+        <input name="username" [(ngModel)]="model.username" type="text" class="form-control" placeholder="User Name"
+          autofocus>
+        <br>
+        <input name="password" [(ngModel)]="model.password" type="password" class="form-control" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+          <span class="pull-right">
+            <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+          </span>
+        </label>
+        <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN
+          IN</button>
+        <hr>
+
+        <div class="registration">
+          Don't have an account yet?<br />
+          <a class="" href="#">
+            Create an account
+          </a>
+        </div>
+      </div>
+
+      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
+        class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Forgot Password ?</h4>
+            </div>
+            <div class="modal-body">
+              <p>Enter your e-mail address below to reset your password.</p>
+              <input type="text" name="email" placeholder="Email" autocomplete="off"
+                class="form-control placeholder-no-fix">
+            </div>
+            <div class="modal-footer">
+              <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+              <button class="btn btn-theme" type="button">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form> -->
+    <div class="login-form">
+      <form #form="ngForm" (ngSubmit)="login()" #loginForm="ngForm">
+        <h1>Login</h1>
+        <div class="form-group">
+          <input name="username" [(ngModel)]="model.username" class="form-control" placeholder="username" required>
+
+        </div>
+
+        <div class="form-group">
+          <input name="password" [(ngModel)]="model.password" type="password" class="form-control"
+            placeholder="Password">
+          <span class="input-icon"><i class="fa fa-lock"></i></span>
+        </div>
+        <button style="outline: none;" type="submit" [disabled]="form.invalid " (click)="login(form)"
+          class="login-btn">Login</button>
+
+
+        <div class="seperator"><b>or</b></div>
+        <a class="reset-psw" style="cursor: pointer;" [routerLink]="['/register']">Create Nwe Account</a>
+        <!-- Social login buttons -->
+        <!-- <div class="social-icon">
+              <button style="outline: none;" type="button"><i class="fa fa-twitter"></i></button>
+              <button style="outline: none;" (click)="loginfacebook()" type="button"><i class="fa fa-facebook"></i></button>
+              <button style="outline: none;" (click)="login()" type="button"><i class="fa fa-google-plus"></i></button>
+  
+          </div> -->
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+<section id="container c2" *ngIf="loggedIn()">
+  <header class="header black-bg">
+
+    <a routerLink="/" class="logo"><b>OutLiers<span>Team</span></b></a>
+    <div class="nav notify-row" id="top_menu">
+      <ul class="nav top-menu">
+        <li class="dropdown">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+            <i class="fa fa-tasks"></i>
+            <span class="badge bg-theme">4</span>
+          </a>
+          <ul class="dropdown-menu extended tasks-bar">
+            <div class="notify-arrow notify-arrow-green"></div>
+            <li>
+              <p class="green">You have 4 pending tasks</p>
+            </li>
+            <li>
+
+            </li>
+
+            <li>
+              <a href="index.html#">
+                <div class="task-info">
+                  <div class="desc">Payments Sent</div>
+                  <div class="percent">70%</div>
+                </div>
+                <div class="progress progress-striped">
+                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                    aria-valuemax="100" style="width: 70%">
+                    <span class="sr-only">70% Complete (Important)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="external">
+              <a href="#">See All Tasks</a>
+            </li>
+          </ul>
+        </li>
+
+        <li id="header_inbox_bar" class="dropdown">
+          <a [routerLink]="['/messages']" routerLinkActive="active">
+            <i class="fa fa-envelope-o"></i>
+            <span *ngIf="count!=='0'" class="badge bg-theme">{{count}}</span>
+          </a>
+
+        </li>
+
+        <li id="header_notification_bar" class="dropdown">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <i class="fa fa-bell-o"></i>
+            <span class="badge bg-warning">7</span>
+          </a>
+          <ul class="dropdown-menu extended notification">
+            <div class="notify-arrow notify-arrow-yellow"></div>
+            <li>
+              <p class="yellow">You have 7 new notifications</p>
+            </li>
+            <li>
+              <a href="index.html#">
+                <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                Server Overloaded.
+                <span class="small italic">4 mins.</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html#">See all notifications</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li><a style="cursor:  pointer;" class="logout" [routerLink]="['/members/home']">Home</a></li>
+        <li  style="border-radius: 50%; margin-top: 4%; cursor: pointer; outline: none" [routerLink]="['/members/profile']">
+          <img class="w3-hover-grayscale"style="border-radius: 50%; width:50px;border: 5px solid #f1f2f7; height:50px;"  src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar"> 
+          {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}  <b></b>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="parent2" style="margin-top: 4%;">
+   
+   <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
+    <!-- freh graduate -->
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2"
+      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
+
+      <div *hasRole="['Fresh Graduate']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+        <i class="fa fa-sitemap fa-2x"></i></div>
+      
+   <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x"
+          aria-hidden="true"></i></div>
+
+        <!--Profeshinal-->
+      <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2"
+      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
+        
+      <div style="cursor: pointer;" [routerLink]="['/profdashboard']" *hasRole="['Professional']" class="test4"><i class="fa fa-laptop fa-2x"
+        aria-hidden="true"></i></div>
+
+      <div *hasRole="['Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+        <i class="fa fa-sitemap fa-2x"></i></div>
+
+<<<<<<< HEAD
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/Freshdashboard']" class="test4"><i class="fa fa-laptop fa-2x"
+=======
+        <!--Company-->
+        <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
+          class="fa fa-dashboard fa-2x"></i></div>
+        <!--Admin-->
+        <div  [routerLink]="['/admin']" *hasRole="['Admin']" style="cursor: pointer;" class="test3">
+          <i class="fa fa-sitemap fa-2x"></i></div>
+
+      <div style="cursor: pointer;" [routerLink]="['/allcontacts']" *hasRole="['Admin']" class="test4"><i class="fa fa-laptop fa-2x"
+>>>>>>> 7c371386e877814b0c4a16115214a0ef675b4e18
+        aria-hidden="true"></i></div>
+
+    <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
+  </div>
+
+  <!-- <aside>
+    <div id="sidebar" class="nav-collapse ">
+      <ul class="sidebar-menu" id="nav-accordion">
+        <p class="centered"><a href="#"><img src="{{photoUrl || 'assets/User.png'}}" class="img-circle" width="80"></a></p>
+        <h5 class="centered">{{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}</h5>
+
+        <li class="sub-menu">
+          <a [routerLink]="['/members/home']">
+            <i class="fa fa-home-alt"></i>
+            <span>Home</span>
+            </a>
+        </li>
+        <li *hasRole="['Company']"  class="sub-menu">
+          <a [routerLink]="['/dashboard']">
+            <i class="fa fa-dashboard"></i>
+            <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="sub-menu">
+          <a [routerLink]="['/members/profile']">
+            <i class="fa fa-desktop"></i>
+            <span>Profile</span>
+            </a>
+        </li>
+
+        <li class="sub-menu">
+          <a href="javascript:;">
+            <i class="fa fa-cogs"></i>
+            <span>Components</span>
+            </a>
+          <ul class="sub">
+            <li><a>Courses</a></li>
+            <li><a [routerLink]="['/jobs']">Jobs</a></li>
+            <li><a>Assesments</a></li>
+          </ul>
+        </li>
+
+        <li class="sub-menu">
+          <a  [routerLink]="['/members']">
+            <i class="fa fa-tasks"></i>
+            <span>Find Friends</span>
+            </a>
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:;">
+            <i class="fa fa-th"></i>
+            <span>Career Tracks</span>
+            </a>
+          <ul class="sub">
+            <li><a href="basic_table.html">Basic Table</a></li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span>Mail </span>
+            <span class="label label-theme pull-right mail-info">2</span>
+            </a>
+        </li>
+        <li *hasRole="['Admin']" class="sub-menu">
+          <a href="javascript:;">
+            <i class=" fa fa-bar-chart-o"></i>
+            <span>Managment</span>
+            </a>
+          <ul class="sub">
+            <li><a href="#">Morris</a></li>
+            <li><a href="#">Chartjs</a></li>
+            <li><a href="#">Flot Charts</a></li>
+            <li><a href="#">xChart</a></li>
+          </ul>
+        </li>
+        <li class="sub-menu">
+          <a [routerLink]="['/chatroom']" >
+            <i class="fa fa-comments-o"></i>
+            <span>Chat Room</span>
+            </a>
+          <ul class="sub">
+            <li><a href="#">Lobby</a></li>
+            <li><a  [routerLink]="['/chatroom']"> Chat Room</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </aside> -->
+
+</section>

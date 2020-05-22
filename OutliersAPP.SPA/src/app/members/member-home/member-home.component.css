@@ -1,0 +1,212 @@
+/* body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+} */
+/* .mtorgih{
+    margin-right: -100px;
+} */
+/* .mrtol{
+    margin-left: 31rem;
+}*/
+ /* .mrtoright{
+    margin-left: 11rem;
+} 
+
+.c2
+{
+display:block;
+width: 1500px;
+height: 0;
+
+}
+.bt{
+
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.border{margin-right: 0%;}
+.card {
+    /* border: none; */
+    /* width: 350px; */
+    /* height: 900px; */
+    /* margin-left: 10px; 
+  }
+  .card-body {
+    overflow-y: scroll;
+    height: 896px;
+    width: 350px;
+    }
+  .chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .rounded-circle {
+    height: 50px;
+    width: 50px;
+    
+  }
+  
+  
+    .content-outbox{
+        text-align: right;
+        padding-top: 12px;
+        text-indent: 11px;
+      
+     }
+     .content-inbox{
+        text-align: left !important;
+        padding-top: 12px;
+        text-indent: 11px;
+   }
+   .badge{
+    border-radius: 20px;
+    max-height: 58px;
+    padding-top: 4px;
+   }
+   
+  
+   .btn-primary:enabled:hover{
+    text-decoration: none;
+    color: black !important;
+    background:pink !important;
+    letter-spacing:0.5px;
+    
+  }
+  .btn-primary{
+    text-decoration: none;
+    letter-spacing:0.5px;
+    font-weight:bold;
+    font-family:'JF Flat';
+    font-size:1rem;
+    outline: none;
+    
+      }
+      input{
+        border-radius: 16px 16px 0 0/13px 17px 16px 16px !important; 
+        font-weight:bold;
+        font-family:'JF Flat';
+        font-size:1rem;
+      }
+    
+      button:focus,button {
+        border: none !important;
+        outline:0 !important;
+        outline:none !important;box-shadow:none; }
+    
+        header {
+          padding: 0px 0px;
+          background: #555;
+          color: #f1f1f1;
+        }
+        
+        /* Page content 
+        .content {
+          padding: 0px;
+        }
+        
+        /* The sticky class is added to the header with JS when it reaches its scroll position 
+        .sticky {
+          position: left;
+          top: 0;
+          width: 100%
+        }
+        
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) 
+        .sticky + .content {
+          padding-top: 0px;
+        } */
+        .app_page1 {
+          margin: 0;
+          overflow: hidden;
+          height:100%;
+        }
+        
+        @media (min-width: 768px){
+          #left {
+            position: fixed;
+            top: 0px;
+            bottom: 0;
+            left: 0;
+            width: 15%;
+            overflow-y: scroll; 
+          }
+        
+          #middle {
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            left: 15%;
+            width: 15%;
+            overflow-y: scroll; 
+          }
+          
+          #right {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            overflow-y: scroll;
+            width: 20%;
+          }
+        }
+        
+        #left {
+          background-color: #2f323a;
+          text-align: center;
+          height:100%;
+        }
+        
+        #middle{
+          background-color: #2f323a;
+          text-align: center;
+          height:100%;
+        }
+        
+        #right {
+          height:100%;
+          background-color: #d6d9dc;
+          text-align: center;
+        }
+        
+        /* h4{
+          padding: 0px 0; 
+        } */
+        
+        .tool-card{
+          border: 2px solid black;
+          padding: 10px 10px;
+          margin: 10px 0;
+        }
+        .mtop{
+          margin-top: 70px;
+        }
+  

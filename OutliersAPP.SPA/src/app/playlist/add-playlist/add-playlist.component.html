@@ -1,0 +1,49 @@
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form (ngSubmit)="addPlaylist()" [formGroup]="playlistForm" class="contact100-form">
+				<span class="contact100-form-title">
+					Add New PlayList
+				</span>
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="pull-left"> <strong>playlist Name</strong>  </span>
+					<input class="input100" type="text"    placeholder="Enter The job Title " formControlName="name" [ngClass]="{'is-invalid' : playlistForm.get('name').errors && playlistForm.get('name').touched}">
+           <div style="color: brown; font-weight: bold;" *ngIf="playlistForm.get('name').touched && playlistForm.get('name').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+            </div>
+        </div>
+
+          <div class="form cf">
+              <section class="payment-type cf">
+                  <h2>Category :</h2>
+                  <input type="radio" name="radio1" id="free" value="c#" formControlName="category"><label class="free-label four col" for="free">c#</label>
+                  <input type="radio" name="radio1" id="basic" value="PHP" formControlName="category"><label class="basic-label four col" for="basic"> PHP</label>
+                  <input type="radio" name="radio1" id="premium" value="DataBase" formControlName="category"><label class="premium-label four col" for="premium">DataBase</label>
+                  <div style="color: brown; font-weight: bold;" *ngIf="playlistForm.get('category').touched && playlistForm.get('category').hasError('required')"> <i class="fa fa-exclamation-triangle"></i>This Field Is Required
+                  </div>
+                </section>
+            </div>
+
+
+
+        <div  class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="pull-left"><h4>Playlist Description</h4> </span>
+					<textarea class="input100"    placeholder="Your Playlist Description  here..."  formControlName="description"  [ngClass]="{'is-invalid' : playlistForm.get('description').errors && playlistForm.get('description').touched}"></textarea>
+          <div style="color: brown; font-weight: bold;" *ngIf="playlistForm.get('description').touched && playlistForm.get('description').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+
+  
+
+
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>

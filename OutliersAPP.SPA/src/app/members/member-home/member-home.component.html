@@ -1,0 +1,38 @@
+<div class="detailed ">
+  <div class="container-fluid gedf-wrapper">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4 gedf-main mtop">
+        <!--- \\\\\\\Post-->
+
+        <form #PostForm="ngForm" (ngSubmit)="createpost();">
+          <textarea rows="5" name="description" [(ngModel)]="newpost.description" class="form-control"
+            placeholder="Whats on your mind?"></textarea>
+          <div class="grey-style">
+            <div class="pull-left">
+              <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
+              <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-sm btn-theme03" formaction="PostForm">POST</button>
+            </div>
+          </div>
+        </form>
+        <app-post-list></app-post-list>
+      </div>
+
+      <div class="app_page1 ds">
+        <div class="row">
+          <div class="col-sm-1" id="right">
+            <h4 class="centered mt">TEAM MEMBERS ONLINE</h4>
+            <app-member-followinglist></app-member-followinglist>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

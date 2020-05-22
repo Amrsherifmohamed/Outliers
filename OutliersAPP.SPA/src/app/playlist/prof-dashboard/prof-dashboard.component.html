@@ -1,0 +1,96 @@
+<section id="container">
+  <section id="main-content">
+    <section class="wrapper">
+      <!-- page start-->
+      <div class="row mt">
+        <div class="col-sm-3">
+          <section class="panel">
+            <div class="panel-body">
+              <a href="mail_compose.html" class="btn btn-compose">
+                <i class="fa fa-pencil"></i> Your Mangement Card
+              </a>
+              <ul class="nav nav-pills nav-stacked mail-nav" style="text-align: left;">
+                <li class="active"><a [routerLink]="['/profdashboard']"> <i class="fa fa-address-card"></i>Your
+                    PlayList<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addplaylist']"> <i class="fa fa-inbox"></i> Add New PlayList <span
+                      class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a [routerLink]="['/addvideo']"> <i class="fa fa-align-center"></i>Add New Video/s</a></li>
+                <li><a [routerLink]="['/contactus']"> <i class="fa fa-envelope"></i> Contact With Admin <span
+                      class="label label-info pull-right inbox-notification">8</span></a></li>
+                <li><a> <i class="fa fa-exclamation-circle"></i> Important</a></li>
+
+
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col-sm-9">
+          <h3><i class="fa fa-angle-right"></i> Your PlayList</h3>
+          <div class="row">
+            <div class="content-panel">
+              <table class="table table-striped table-advance table-hover">
+                <thead>
+                  <tr>
+                    <th><i class="fa fa-bullhorn"></i> PlayList Name</th>
+                    <th class="hidden-phone"><i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+                      Category</th>
+                    <th><i class="fa fa-money" aria-hidden="true"></i> Desc</th>
+                    <!-- <th><i class=" fa fa-edit"></i> Status</th> -->
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody *ngFor="let playlist of playlists " style="text-align: left;">
+                  <!-- start modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Are You Sure Delete This Job ?
+                        </div>
+                        <div class="modal-footer">
+                          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button onclick="reloadPage();" (click)="deleteplaylist(playlist.id)" type="button"
+                            class="btn btn-primary">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <tr>
+                    <td>
+                      <a [routerLink]="['/playlist/',playlist.id]">{{playlist.name}}</a>
+                    </td>
+                    <td class="hidden-phone">{{playlist.category}}</td>
+                    <td>{{playlist.description}} </td>
+                    <!-- <td><span class="label label-warning label-mini">Due</span></td> -->
+                    <td>
+                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                      <a [routerLink]="['/playlist/edit/',playlist.id]"><button class="btn btn-primary btn-xs"><i
+                            class="fa fa-pencil"></i></button></a>
+                      <a><button data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-xs"><i
+                            class="fa fa-trash-o "></i></button></a>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </section>
+  </section>
+
+</section>

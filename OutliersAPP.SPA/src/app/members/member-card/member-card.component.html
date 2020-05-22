@@ -1,0 +1,18 @@
+<div class="card mb-3" style="background: #eaeaea;">
+  <div class="card card-profile">
+    <div class="team-member" style="background: #eaeaea;">
+      <img  src="{{user.photoURL || 'assets/User.png'}}" alt="Image" class="img-fluid">
+      <div class="text">
+        <h2 class="mb-2 font-weight-light h4"></h2>
+        <span style="cursor: pointer;" [routerLink]="['/members/',user.id]" class="d-block mb-2 text-white-opacity-05"><h1>{{user.userName}} <i *ngIf=" user.roleName=='Professional' " class="fa fa-check-circle fa-11x"></i> </h1></span>
+        <p style="font-size: 20px;" class="mb-4"> <i class="fa fa-user"></i> {{user.roleName}}</p>
+
+        <a style="padding: 2%;size: 100px;" (click)="sendLike(user.id)">
+        <h2 style="cursor: pointer;">  <span class="glyphicon" [class.glyphicon-thumbs-up]="follow" [class.glyphicon-thumbs-down]="!follow"
+          (click)="onfollow()"></span> </h2>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  </div>

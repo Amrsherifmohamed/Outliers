@@ -1,0 +1,58 @@
+<section id="container">
+
+
+  <section id="main-content">
+    <section class="wrapper">
+      <h3><i class="fa fa-angle-right"></i> Contact Form</h3>
+      <!-- BASIC FORM ELELEMNTS -->
+      <div class="row mt">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <h4 class="title">Contact Form</h4>
+          <div id="message"></div>
+          <form (ngSubmit)="addContact()" [formGroup]="contactForm" class="contact-form php-mail-form" >
+
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" formControlName="email" [ngClass]="{'is-invalid' : contactForm.get('email').errors && contactForm.get('email').touched}">
+              <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('email').touched && contactForm.get('email').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+              </div>
+            </div>
+
+            <div class="form-group"> 
+              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" formControlName="suject" [ngClass]="{'is-invalid' : contactForm.get('suject').errors && contactForm.get('suject').touched}">
+              <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('suject').touched && contactForm.get('suject').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" formControlName="content" [ngClass]="{'is-invalid' : contactForm.get('content').errors && contactForm.get('content').touched}"></textarea>
+              <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('content').touched && contactForm.get('content').hasError('content')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+              </div>
+            </div>
+
+            <div class="loading"></div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+
+            <div class="form-send">
+              <button  class="btn btn-large btn-primary">Send Message</button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <h4 class="title">Contact Details</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <ul class="contact_details">
+            <li><i class="fa fa-envelope-o"></i> info@yoursite.com</li>
+            <li><i class="fa fa-phone-square"></i> +34 5565 6555</li>
+            <li><i class="fa fa-home"></i> Some Fine Address, 887, Madrid, Spain.</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </section>
+  </section>
+
+</section>

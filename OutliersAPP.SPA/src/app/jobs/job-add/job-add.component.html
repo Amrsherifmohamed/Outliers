@@ -1,0 +1,109 @@
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form (ngSubmit)="addJob()" [formGroup]="jobForm" class="contact100-form">
+				<span class="contact100-form-title">
+					Sponser Your Job
+				</span>
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="pull-left"> <strong>Job Title</strong>  </span>
+					<input class="input100" type="text"    placeholder="Enter The job Title " formControlName="jobTitle" [ngClass]="{'is-invalid' : jobForm.get('jobTitle').errors && jobForm.get('jobTitle').touched}">
+           <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('jobTitle').touched && jobForm.get('jobTitle').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
+            </div>
+        </div>
+
+				<div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="pull-left"><strong>city</strong></span>
+					<input class="input100" type="text"  placeholder="Enter city" formControlName="city"  [ngClass]="{'is-invalid' : jobForm.get('city').errors && jobForm.get('city').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('city').touched && jobForm.get('city').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+        
+        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="pull-left"><strong>country</strong> </span>
+					<input class="input100" type="text"  placeholder="Enter  country " formControlName="country"  [ngClass]="{'is-invalid' : jobForm.get('country').errors && jobForm.get('country').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('country').touched && jobForm.get('country').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+
+				<div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="pull-left"><strong>salary</strong></span>
+					<input class="input100" type="text"   placeholder="Enter salary" formControlName="salary"  [ngClass]="{'is-invalid' : jobForm.get('salary').errors && jobForm.get('salary').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('salary').touched && jobForm.get('salary').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+        <div class="wrap-input100 bg1 rs1-wrap-input100">
+					<span class="pull-left"><strong>Experience Needed</strong></span>
+					<input class="input100" type="text"   placeholder="Enter experienceNeeded" formControlName="experienceNeeded" [ngClass]="{'is-invalid' : jobForm.get('experienceNeeded').errors && jobForm.get('experienceNeeded').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('experienceNeeded').touched && jobForm.get('experienceNeeded').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+					<span class="pull-left"><strong>vacancies</strong> </span>
+					<input class="input100" type="text"  placeholder="Enter The days of vacancies " formControlName="vacancies"  [ngClass]="{'is-invalid' : jobForm.get('vacancies').errors && jobForm.get('vacancies').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('vacancies').touched && jobForm.get('vacancies').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+				<div class="wrap-input100 input100-select bg1">
+          <span class="pull-left"><strong></strong>Job Roles </span>
+          <input class="input100" type="text"  placeholder="Enter jobRole" formControlName="jobRole"  [ngClass]="{'is-invalid' : jobForm.get('jobRole').errors && jobForm.get('jobRole').touched}">
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('jobRole').touched && jobForm.get('jobRole').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+					<div>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+          <div class="form cf">
+              <section class="payment-type cf">
+                  <h2>Career Levels :</h2>
+                  <input type="radio" name="radio1" id="free" value="EntryLevel(freshGraduate)" formControlName="CareerLevel"><label class="free-label four col" for="free">Entry Level (fresh Graduate)</label>
+                  <input type="radio" name="radio1" id="basic" value="IntermediateorExperiencedLevel" formControlName="CareerLevel"><label class="basic-label four col" for="basic"> Intermediate or Experienced Level</label>
+                  <input type="radio" name="radio1" id="premium" value="SeniororTop-Level" formControlName="CareerLevel"><label class="premium-label four col" for="premium">Senior or Top-Level</label>
+                  <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('CareerLevel').touched && jobForm.get('CareerLevel').hasError('required')"> <i class="fa fa-exclamation-triangle"></i>This Field Is Required
+                  </div>
+                </section>
+
+              <section class="payment-type cf">
+                  <h2>JobType :</h2>
+                  <input type="radio" name="radio3"  id="credit" value="FullTime" formControlName="JobType"><label class="credit-label four col" for="credit"> Full Time</label>
+                  <input type="radio"  name="radio3" id="debit"  value="PartTime"  formControlName="JobType" ><label class="debit-label four col" for="debit">Part Time</label>
+                  <input type="radio"  name="radio3" id="paypal"  value="Remotly"  formControlName="JobType"><label class="paypal-label four col" for="paypal">Remotly</label>
+                  <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('JobType').touched && jobForm.get('JobType').hasError('required')"> <i class="fa fa-exclamation-triangle"></i>This Field Is Required
+                  </div>
+                </section>
+
+            </div>
+
+
+
+        <div  class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="pull-left"><h4>Job Description</h4> </span>
+					<textarea class="input100"    placeholder="Your Job Description  here..."  formControlName="JobDescription"  [ngClass]="{'is-invalid' : jobForm.get('JobDescription').errors && jobForm.get('JobDescription').touched}"></textarea>
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('JobDescription').touched && jobForm.get('JobDescription').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+
+        <div  class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="pull-left"><h4>Job Requirements</h4> </span>
+          <textarea class="input100"    placeholder="Please write your requirements in the form of points like :
+
+          1- ....
+
+          2- ...."  formControlName="jobRequirements"  [ngClass]="{'is-invalid' : jobForm.get('jobRequirements').errors && jobForm.get('jobRequirements').touched}"></textarea>
+          <div style="color: brown; font-weight: bold;" *ngIf="jobForm.get('jobRequirements').touched && jobForm.get('jobRequirements').hasError('required')"><i class="fa fa-exclamation-triangle"></i>This Field Is Required
+          </div>
+        </div>
+
+
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>

@@ -1,0 +1,47 @@
+             <div class="card gedf-card"> 
+                <div class="[ panel panel-default ] panel-google-plus">
+                  <div class="dropdown">
+                      <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                          <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                      </span>
+                      <ul class="dropdown-menu" role="menu">
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Update</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Report</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" (click)="deletepost(post.id)">Delete</a></li>
+                          <li role="presentation" class="divider"></li>
+                      </ul>
+                  </div>
+                  <div class="panel-google-plus-tags">
+                      <ul>
+                          <li>#Millennials</li>
+                          <li>#Generation</li>
+                      </ul>
+                  </div>
+                  <div class="panel-heading">
+                      <img class="img-circle mrphoto" width="65" src="{{post.userPhotoUrl}}" alt="Mouse0270" />
+                      <div class="mtpragr">
+                      <h3>{{post.userKnownAs}}</h3>
+                      <h5><span>Shared publicly</span> - <span>{{post.posttime}}</span> </h5>
+                    </div>
+                  </div>
+                  <div class="panel-body ">
+                      <p>Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what
+                        Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what
+                        Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what
+                        Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what generation you want to belong to?{{post.description}}</p>
+                  </div>
+                  <form #postForm="ngForm" (ngSubmit)="sendComment();">
+                  <div class="panel-footer">
+                    <input type="text" class="form-control" [(ngModel)]="newComment.description" id="exampleInputText" name="description"
+                    placeholder="Write Your Comment">
+                    <br>
+                      <button type="button" class="[ btn btn-default ]" [routerLink]="['/member/post/comment/',post.id]" >+1</button>
+                      <button    type="submit" class="[ btn btn-default ]">
+                          <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                      </button>
+                      <!-- <input class="input-placeholder">Add a comment...--> 
+                  </div>
+                </form >
+
+              </div>
+          </div>
