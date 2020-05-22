@@ -85,6 +85,10 @@ namespace OutliersAPP.API.Controllers
         return Ok();
         return BadRequest("Field to Delete Career Path");
         }
+        [httpput]
+        public async Task<IActionResult> kfjgka(int id){
+            
+        }
     }
 
 }
