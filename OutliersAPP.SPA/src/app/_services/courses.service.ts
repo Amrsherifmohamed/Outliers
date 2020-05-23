@@ -9,16 +9,13 @@ import { Video } from '../_models/video';
   providedIn: 'root'
 })
 export class CoursesService {
-<<<<<<< HEAD
   basUrl = environment.apiUrl + 'Playlist/';
   currentPlaylist:Playlist;
-=======
-  basUrl = environment.apiUrl + 'playlist/';
->>>>>>> 7c371386e877814b0c4a16115214a0ef675b4e18
-  constructor(private http: HttpClient) { }
+
+constructor(private http: HttpClient) { }
 
   getPlaylist(id): Observable<Playlist> {
-    return this.http.get<Playlist>(this.basUrl + "getplaylist/"+id);
+    return this.http.get<Playlist>(this.basUrl + "getplaylist/" + id);
   }
   getmyPlaylist(): Observable<Playlist> {
     return this.http.get<Playlist>(this.basUrl + 'myplaylists/' );

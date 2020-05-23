@@ -212,25 +212,23 @@ export const appRoutes: Routes = [
         }
       },
 
-           // Contact From Admin
-          //  {
-          //   path: 'adminsendmsg', component:AdminSendMsgComponent
-          // },
-          {
-            path: 'allcontact', component: AdminAllmessagesComponent, resolve: {
-              contactus: AdminContactsListResolver
-            }
-          },
-          {
-            path: 'contactunread', component: AdminMessagesUnreadComponent, resolve: {
-              contactus: AdminContactsListUnreadResolver
-            }
-          },
-          {
-            path: 'contacts/:id', component: AdminMessageDetailComponent, resolve: {
-              contactus: AdminContactsDetailResolver
-            }
-          },
+         // Contact From Admin
+      
+         {
+          path: 'msgfromadmin', component: AdminAllmessagesComponent, resolve: {
+            contact: AdminContactsListResolver
+          }
+        },
+        {
+          path: 'contactunread', component: AdminMessagesUnreadComponent, resolve: {
+            contactus: AdminContactsListUnreadResolver
+          }
+        },
+        {
+          path: 'contacts/:id', component: AdminMessageDetailComponent, resolve: {
+            contact: AdminContactsDetailResolver
+          }
+        },
 
 
       { path: 'messages', component: MessagesComponent, resolve: { messages: MessageResolver } },

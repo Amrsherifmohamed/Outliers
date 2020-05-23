@@ -23,6 +23,7 @@
     "@aspnet/signalr": "^1.1.0",
     "@auth0/angular-jwt": "^2.1.2",
     "alertifyjs": "^1.11.2",
+    "angular-read-more": "^1.0.7",
     "bootstrap-v4-rtl": "^4.1.1-0",
     "bootswatch": "^4.1.1",
     "core-js": "^2.5.4",
