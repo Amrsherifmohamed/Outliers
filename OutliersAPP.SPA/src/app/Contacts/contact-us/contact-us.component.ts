@@ -15,15 +15,16 @@ import { ContactsService } from 'src/app/_services/contacts.service';
 export class ContactUsComponent implements OnInit {
   model: UserContact;
   contactForm: FormGroup;
+
   constructor(private router: Router, private fp: FormBuilder, private contactsService: 
     ContactsService, private authService: AuthService, private route: ActivatedRoute,
      private alertify: AlertifyService) { }
 
 
   ngOnInit() {
-    this.createJobForm();
+    this.createUserContactForm();
   }
-  createJobForm() {
+  createUserContactForm() {
     this.contactForm = this.fp.group({
       suject: ['', Validators.required],
       email: ['', Validators.required],

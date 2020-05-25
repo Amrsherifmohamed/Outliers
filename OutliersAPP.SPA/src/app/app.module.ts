@@ -6,8 +6,10 @@ import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, But
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FileUploadModule } from 'ng2-file-upload';
-
+import {MatChipsModule} from '@angular/material/chips';
+import { MatAutocompleteModule, MatFormFieldModule  } from '@angular/material';
 import { AppComponent } from './app.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import { NavComponent } from './nav/nav.component';
@@ -96,7 +98,7 @@ import { PlaylistWithVideoViewComponent } from './playlist/playlist-with-video-v
 import { PlaylistvideosResolver } from './_resolvers/playlistvideos.resolver';
 import { VgCoreModule } from 'videogular2/compiled/core';
 import { VgControlsModule } from 'videogular2/compiled/controls';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ContactsService } from './_services/contacts.service';
 import { ContactsDetailResolver } from './_resolvers/Contacts-details.resolver';
 import { ContactsEditReadmsgResolver } from './_resolvers/Contacts-edit-readmsg.resolver';
@@ -114,13 +116,14 @@ import { AdminSendMsgComponent } from './Contacts/admin-send-msg/admin-send-msg.
 import { AdminAllmessagesComponent } from './Contacts/admin-allmessages/admin-allmessages.component';
 import { AdminMessagesUnreadComponent } from './Contacts/admin-messages-unread/admin-messages-unread.component';
 import { AdminMessageDetailComponent } from './Contacts/admin-message-detail/admin-message-detail.component';
-
+// import {MatChipsModule} from '@angular/material/chips';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
  }
 
 @NgModule({
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
    declarations: [
       AppComponent,
       NavComponent,
@@ -190,7 +193,11 @@ export function tokenGetter() {
    imports: [
       BrowserModule,
       HttpClientModule,
+      MatAutocompleteModule, 
+      MatFormFieldModule,
       FormsModule,
+      MatChipsModule,
+      MatDialogModule,
       ReactiveFormsModule,
       FileUploadModule,
       NgxGalleryModule,
@@ -224,6 +231,7 @@ export function tokenGetter() {
       ContactsService,
       // other
       ErrorInterceptorProvidor,
+     
       // Guards
       AuthGuard,
       PreventUnsavedChangesGuard,

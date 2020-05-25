@@ -9,8 +9,8 @@ using OutliersAPP.API.Data;
 namespace OutliersAPP.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200513002845_careerpath")]
-    partial class careerpath
+    [Migration("20200523214740_contactus")]
+    partial class contactus
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,6 +86,28 @@ namespace OutliersAPP.API.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("OutliersAPP.API.Models.AdminContact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<bool>("IsRead");
+
+                    b.Property<int>("RecipientId");
+
+                    b.Property<string>("Subject");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipientId");
+
+                    b.ToTable("AdminContacts");
+                });
+
             modelBuilder.Entity("OutliersAPP.API.Models.ApplyForJob", b =>
                 {
                     b.Property<int>("UserId");
@@ -159,6 +181,30 @@ namespace OutliersAPP.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.ContactUs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("Email");
+
+                    b.Property<bool>("IsRead");
+
+                    b.Property<int>("SenderId");
+
+                    b.Property<string>("Subject");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("OutliersAPP.API.Models.Job", b =>
@@ -518,6 +564,14 @@ namespace OutliersAPP.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("OutliersAPP.API.Models.AdminContact", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.User", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("OutliersAPP.API.Models.ApplyForJob", b =>
                 {
                     b.HasOne("OutliersAPP.API.Models.Job", "Job")
@@ -549,6 +603,14 @@ namespace OutliersAPP.API.Migrations
                     b.HasOne("OutliersAPP.API.Models.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.ContactUs", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.User", "Sender")
+                        .WithMany()
+                        .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

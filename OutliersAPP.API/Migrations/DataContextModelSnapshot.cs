@@ -97,7 +97,7 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<int>("RecipientId");
 
-                    b.Property<string>("Suject");
+                    b.Property<string>("Subject");
 
                     b.HasKey("Id");
 
@@ -196,7 +196,7 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<int>("SenderId");
 
-                    b.Property<string>("Suject");
+                    b.Property<string>("Subject");
 
                     b.HasKey("Id");
 

@@ -8,6 +8,8 @@ using System;
 using AutoMapper;
 using System.Collections.Generic;
 using OutliersAPP.API.Data;
+using System.Security.Claims;
+
 namespace OutliersAPP.API.Controllers
 {
     [AllowAnonymous]
@@ -39,20 +41,22 @@ namespace OutliersAPP.API.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> GetContactsUnRead()
-        {
+        // [HttpGet]
+        // public async Task<IActionResult> GetContactsUnRead()
+        // {
 
-            var Contacts = await _repo.GetAdminContacts();
-            var ContactsToReturn = _mapper.Map<IEnumerable<AdminContactForListDto>>(Contacts);
-            return Ok(ContactsToReturn);
-        }
+           
+        //     var Contacts = await _repo.GetAdminContacts();
+        //     var ContactsToReturn = _mapper.Map<IEnumerable<AdminContactForListDto>>(Contacts);
+        //     return Ok(ContactsToReturn);
+        // }
 
         [HttpGet("allcontacts")]
-        public async Task<IActionResult> GetAllContacts()
+        public async Task<IActionResult> GetAllContacts(int id)
         {
+             id = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
-            var Contacts = await _repo.GetAdminContacts();
+            var Contacts = await _repo.GetAdminContacts(id);
             var ContactsToReturn = _mapper.Map<IEnumerable<AdminContactForListDto>>(Contacts);
             return Ok(ContactsToReturn);
         }

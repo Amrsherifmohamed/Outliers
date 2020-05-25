@@ -11,7 +11,7 @@ export interface User {
     photoURL: string;
     city: string;
     skills?: string;
-    intrestedjobe?: string;
+    intrestedJobe?: string;
     phoneNumber?: string;
     experience?: string;
     country: string;
