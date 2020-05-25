@@ -280,9 +280,9 @@ namespace OutliersAPP.API.Data
             var Contact = await _context.AdminContacts.Include(u => u.Recipient).ThenInclude(u => u.Photos).FirstOrDefaultAsync(u => u.Id == id);
             return Contact;
         }
-        public async Task<IEnumerable<AdminContact>> GetAdminContacts()
+        public async Task<IEnumerable<AdminContact>> GetAdminContacts(int id )
         {
-            var Contacts = await _context.AdminContacts.Where(m=>m.IsRead==false).Include(u => u.Recipient).ThenInclude(u => u.Photos).ToListAsync();
+            var Contacts = await _context.AdminContacts.Where( m=>m.RecipientId==id).ToListAsync();
             return Contacts;
 
         }
