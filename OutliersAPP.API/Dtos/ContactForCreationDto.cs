@@ -11,7 +11,7 @@ namespace OutliersAPP.API.Dtos
         public User Sender { get; set; }
         public string Email { get; set; }
         public string Content { get; set; }
-        public string Suject { get; set; }
+        public string Subject { get; set; }
         public DateTime DateAdded { get; set; }
 
         public ContactForCreationDto()

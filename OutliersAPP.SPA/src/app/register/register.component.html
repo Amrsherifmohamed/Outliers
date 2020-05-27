@@ -61,12 +61,9 @@
       <div class="form-row-total" style="padding-bottom: 2%;">
         <div class="form-row">
           <input
-            [ngClass]="{'is-invalid': registerForm.get('IntrestedJobe').errors && registerForm.get('IntrestedJobe').touched}"
-            placeholder="Intrested Jobe - Not required" formControlName="IntrestedJobe">
-          <div class="invalid-feedback"
-            *ngIf="registerForm.get('IntrestedJobe').touched && registerForm.get('IntrestedJobe').hasError('required')">
-            Enter Your
-            Intrested Jobe</div>
+            [ngClass]="{'is-invalid': registerForm.get('intrestedJobe').errors && registerForm.get('intrestedJobe').touched}"
+            placeholder="Intrested Jobe - Not required" formControlName="intrestedJobe">
+
         </div>
         <div class="form-row">
           <input [ngClass]="{'is-invalid': registerForm.get('Skills').errors && registerForm.get('Skills').touched}"

@@ -24,7 +24,7 @@ namespace OutliersAPP.API.Data
          Task<IEnumerable<ContactUs>> GetAllContacts();
 
          Task<AdminContact> GetAdminContact(int id);
-         Task<IEnumerable<AdminContact>> GetAdminContacts();
+         Task<IEnumerable<AdminContact>> GetAdminContacts(int id);
          Task<IEnumerable<AdminContact>> GetAllAdminContacts();
         Task<IEnumerable<playlist>> GetPlaylists();
 

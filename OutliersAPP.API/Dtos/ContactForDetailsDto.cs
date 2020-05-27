@@ -8,7 +8,7 @@ namespace OutliersAPP.API.Dtos
         public int Id { get; set; }
         public int SenderId { get; set; }
         public string SenderKnownAs { get; set; }
-        public string Suject { get; set; }
+        public string Subject { get; set; }
          public string Email { get; set; }
         public string SenderPhotoUrl { get; set; }
         public string Content { get; set; }
