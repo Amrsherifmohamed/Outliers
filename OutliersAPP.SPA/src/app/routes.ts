@@ -73,6 +73,10 @@ import { AdminMessageDetailComponent } from './Contacts/admin-message-detail/adm
 import { AdminContactsListResolver } from './_resolvers/AdminContacts-list.resolver';
 import { AdminContactsListUnreadResolver } from './_resolvers/AdminContacts-list-unread.resolver';
 import { AdminContactsDetailResolver } from './_resolvers/AdminContacts-details.resolver';
+import { CareerpathManagmentComponent } from './admin/careerpath-managment/careerpath-managment.component';
+import { UpdateCareerpathComponent } from './admin/update-careerpath/update-careerpath.component';
+import { CareerpathupdateResolver } from './_resolvers/Careerpath_Update.resolver';
+import { CreateCareerpathComponent } from './admin/create-careerpath/create-careerpath.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -228,6 +232,14 @@ export const appRoutes: Routes = [
           path: 'contacts/:id', component: AdminMessageDetailComponent, resolve: {
             contact: AdminContactsDetailResolver
           }
+        },
+        {
+          path: 'careerpathupdate/:id', component: UpdateCareerpathComponent, resolve: {
+            careerpath: CareerpathupdateResolver
+          }
+        },
+        {
+          path: 'careerpathcreate', component: CreateCareerpathComponent
         },
 
 

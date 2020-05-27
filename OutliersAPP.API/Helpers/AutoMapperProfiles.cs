@@ -112,10 +112,14 @@ namespace OutliersAPP.API.Helpers
             CreateMap<CareerpathForCreationDto,Careerpath>();
             CreateMap<Careerpath,CareerpathForReturnDto>();
             CreateMap<Careerpath,CareerpathForDetailsDto>();
+            CreateMap<CareerpathForupdateDto,Careerpath>();
             CreateMap<CareerDetails,PathForDetailsDto>();
             CreateMap<PathForCreationDto,CareerDetails>();
             CreateMap<CareerDetails,PathForReturnDto>();
             CreateMap<CareerDetails,PathForDetailsDto>();
+            CreateMap<PathForupdateDto,CareerDetails>();
+
+            
 
              // ContactUs
             CreateMap<ContactForCreationDto,ContactUs>().ReverseMap();

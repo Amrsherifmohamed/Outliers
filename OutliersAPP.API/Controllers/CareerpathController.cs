@@ -7,6 +7,7 @@ using AutoMapper;
 using System.Collections.Generic;
 using OutliersAPP.API.Data;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace OutliersAPP.API.Controllers
 {
@@ -90,6 +91,31 @@ namespace OutliersAPP.API.Controllers
         // [httpput]
         // public async Task<IActionResult> kfjgka(int id){          
         // }
+      [HttpPut("{userid}/{careerid}")]
+        public async Task<IActionResult> updatecareerpath(int userid,int careerid, CareerpathForupdateDto careerpathForupdateDto)
+        {
+            if (userid != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            var careerforreturn = await _repo.GetCareerpath(careerid);
+            _mapper.Map(careerpathForupdateDto, careerforreturn);
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception("problem have a problem whrn updata this career");
+        }
+        [HttpPut("careerpathdetails/{userid}/{careerid}")]
+        public async Task<IActionResult> updatecareerpathdetails(int userid,int careerid, PathForupdateDto pathForupdateDto)
+        {
+            if (userid != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            var pathforreturn = await _repo.Getpath(careerid);
+            _mapper.Map(pathForupdateDto, pathforreturn);
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"problem have a problem whrn updata this career {careerid}");
+        }
+
     }
 
 }

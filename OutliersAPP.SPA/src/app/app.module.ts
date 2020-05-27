@@ -114,6 +114,10 @@ import { AdminSendMsgComponent } from './Contacts/admin-send-msg/admin-send-msg.
 import { AdminAllmessagesComponent } from './Contacts/admin-allmessages/admin-allmessages.component';
 import { AdminMessagesUnreadComponent } from './Contacts/admin-messages-unread/admin-messages-unread.component';
 import { AdminMessageDetailComponent } from './Contacts/admin-message-detail/admin-message-detail.component';
+import { CareerpathManagmentComponent } from './admin/careerpath-managment/careerpath-managment.component';
+import { UpdateCareerpathComponent } from './admin/update-careerpath/update-careerpath.component';
+import { CareerpathupdateResolver } from './_resolvers/Careerpath_Update.resolver';
+import { CreateCareerpathComponent } from './admin/create-careerpath/create-careerpath.component';
 
 
 export function tokenGetter() {
@@ -184,6 +188,10 @@ export function tokenGetter() {
       AdminAllmessagesComponent,
       AdminMessagesUnreadComponent,
       AdminMessageDetailComponent,
+      CareerpathManagmentComponent,
+      UpdateCareerpathComponent,
+      CreateCareerpathComponent,
+      
 
 
    ],
@@ -261,6 +269,7 @@ export function tokenGetter() {
       AdminContactsDetailResolver,
       AdminContactsListUnreadResolver,
       AdminContactsListResolver,
+      CareerpathupdateResolver
 
    ],
    entryComponents:[RolesModalComponent],

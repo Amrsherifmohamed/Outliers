@@ -2,16 +2,18 @@
   <div class="header-container">
       <h3 class="page-header">لوحة الإدارة</h3>
   </div>
-  
   <div class="tab-panel">
     <tabset class="member-tabset">
-      <tab heading="إدارة المستخدمين" *hasRole="['Admin']">
+      <tab heading="User Managment" *hasRole="['Admin']">
         <div class="container">
             <app-user-management></app-user-management>
         </div>
       </tab>
-      <tab heading="إدارة الصور" *hasRole="['Admin','Moderator']">
+      <tab heading="Photo managmant" *hasRole="['Admin','Moderator']">
         <app-photo-management></app-photo-management>
+      </tab>
+      <tab heading="Careerpath managmant" *hasRole="['Admin','Moderator']">
+        <app-careerpath-managment></app-careerpath-managment>
       </tab>
     </tabset>
   </div>

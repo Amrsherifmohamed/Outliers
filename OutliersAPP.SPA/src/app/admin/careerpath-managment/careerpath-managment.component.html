@@ -1,0 +1,20 @@
+<div class="mtrigt"><button [routerLink]="['/careerpathcreate']" class="btn btn-success">Create Career path</button></div>
+<div class="row">
+  <table class="table" >
+    <tr>
+      <th style="width: 10%">career name </th>
+      <th style="width: 30%">category</th>
+      <th style="width: 30%">Description</th>
+      <th style="width: 30%">paths</th>
+    </tr>
+    <tr *ngFor="let careerpath of careerpath">
+      <td  style="width: 10%">{{careerpath.pahtname}}</td>
+      <td   style="width: 30%">{{careerpath.category}}</td>
+      <td  style="width: 30%">{{careerpath.description}}</td>
+      <td style="width: 30%"><span class="role-badge" *ngFor="let paths of careerpath.paths">{{paths.name}}/</span></td>
+      <td> <button type="button" class="btn btn-primary" [routerLink]="['/careerpathupdate/',careerpath.id]" data-dismiss="modal">Update</button>
+        <button (click)="deletcareerpath(careerpath.id)" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+      </td>
+    </tr>
+  </table>
+  </div>

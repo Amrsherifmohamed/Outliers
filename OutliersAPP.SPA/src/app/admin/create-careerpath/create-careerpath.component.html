@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="edit" class="tab-pane active">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-2 detailed">
+<form #form="ngForm" (ngSubmit)="createcareerpath()" #loginForm="ngForm">
+
+  <div class="form-group col-lg-8" >
+    <input name="pahtname" [(ngModel)]="model.pahtname" class="form-control" placeholder="pahtname" required>
+
+  </div>
+  <div class="form-group col-lg-8">
+    <input name="category" [(ngModel)]="model.category"  class="form-control"
+      placeholder="category">
+   
+  </div>
+  <div class="form-group col-lg-8">
+    <input name="description" [(ngModel)]="model.description"  class="form-control"
+      placeholder="description">
+   
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+  <button style="outline: none;" type="submit" [disabled]="form.invalid " formaction="loginForm"
+    class="login-btn">Add Path  </button>
+    </div>
+  </div>
+
+
+</form>
+</div>
+</div>
+</div>
