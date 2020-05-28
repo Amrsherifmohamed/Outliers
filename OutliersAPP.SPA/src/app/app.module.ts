@@ -116,15 +116,13 @@ import { AdminSendMsgComponent } from './Contacts/admin-send-msg/admin-send-msg.
 import { AdminAllmessagesComponent } from './Contacts/admin-allmessages/admin-allmessages.component';
 import { AdminMessagesUnreadComponent } from './Contacts/admin-messages-unread/admin-messages-unread.component';
 import { AdminMessageDetailComponent } from './Contacts/admin-message-detail/admin-message-detail.component';
-<<<<<<< HEAD
+
 import { CareerpathManagmentComponent } from './admin/careerpath-managment/careerpath-managment.component';
 import { UpdateCareerpathComponent } from './admin/update-careerpath/update-careerpath.component';
 import { CareerpathupdateResolver } from './_resolvers/Careerpath_Update.resolver';
 import { CreateCareerpathComponent } from './admin/create-careerpath/create-careerpath.component';
 
-=======
-// import {MatChipsModule} from '@angular/material/chips';
->>>>>>> 9a853c718c80138ac720d3ea26750c6a0e780fae
+
 
 export function tokenGetter() {
    return localStorage.getItem('token');

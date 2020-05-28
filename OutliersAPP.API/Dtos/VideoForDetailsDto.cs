@@ -6,7 +6,7 @@ namespace OutliersAPP.API.Dtos
 {
     public class VideoForDetailsDto
     {
-     public int Id { get; set; }
+        public int Id { get; set; }
         public string name { get; set; }
         public string category { get; set; }
         public string Description { get; set; }
