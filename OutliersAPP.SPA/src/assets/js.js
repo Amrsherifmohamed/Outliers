@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 	var showChar = 100;
 	var ellipsestext = "...";

@@ -164,10 +164,11 @@
       </ul>
     </div>
   </header>
-  <div class="parent2" style="margin-top: 4%;">
+
+  <!-- <div class="parent2" style="margin-top: 4%;">
 
     <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
-    <!-- freh graduate -->
+
     <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
         class="fa fa-user fa-2x"></i></div>
 
@@ -176,7 +177,6 @@
 
     <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
 
-    <!--Profeshinal-->
     <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
         class="fa fa-user fa-2x"></i></div>
 
@@ -192,7 +192,6 @@
 
     <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
         class="fa fa-dashboard fa-2x"></i></div>
-    <!--Admin-->
     <div [routerLink]="['/admin']" *hasRole="['Admin']" style="cursor: pointer;" class="test2">
       <i class="fa fa-sitemap fa-2x"></i></div>
 
@@ -200,7 +199,124 @@
         class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
 
     <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
-  </div>
+  </div> -->
+  <nav class="navigation">
+
+    <ul class="menu">
+      <!-- Fresh Graguate -->
+      <li *hasRole="['Fresh Graduate']" >
+        <a style="cursor: pointer;" class="active" [routerLink]="['/Freshdashboard']"><svg class="home" width="30px" height="30px" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+            <path
+              d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
+              205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
+              48.023V88.472z" />
+            </svg><span title="Dashboard">Dashboard</span></a></li>
+
+      <li *hasRole="['Fresh Graduate']" ><a style="cursor: pointer;" [routerLink]="['/jobs']"><svg class="work" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+            enable-background="new 0 0 512 512" xml:space="preserve">
+            <path
+              d="M201.875,141.084h-30v-30.563c0-11.747,9.523-21.271,21.271-21.271h125.709 c11.747,0,21.271,9.523,21.271,21.271v30.563h-30v-17.063c0-3.739-3.031-6.771-6.771-6.771h-94.709 c-3.739,0-6.771,3.031-6.771,6.771V141.084z M462,161.084V422.75H50V161.084H462z M347.818,228.582l-4.721-10.858 c-44.045,27.402-67.739,48.047-103.599,88.742c-19.074-13.598-29.838-19.846-46.809-28.057l-14.509,13.412 c29.016,26.895,44.784,44.631,68.409,72.456C284.896,295.584,311.497,260.279,347.818,228.582z" />
+            </svg><span title="find suitable jobs">jobs</span></a></li>
+
+      <li *hasRole="['Fresh Graduate']" ><a style="cursor: pointer;"[routerLink]="['/members']">
+        <svg class="lab" viewBox="0 0 20 20">
+          <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+        </svg>        
+        <span title="Find Friends">Friends</span></a></li>
+      
+      <li *hasRole="['Fresh Graduate']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
+        <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
+          l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
+      </svg><span title="About Us">About Us</span></a></li>
+           
+            <!-- Professional -->
+
+            <li *hasRole="['Professional']">
+              <a style="cursor: pointer;" class="active" [routerLink]="['/profdashboard']"><svg class="home" width="30px" height="30px" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                  <path
+                    d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
+                    205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
+                    48.023V88.472z" />
+                  </svg><span title="Dashboard">Dashboard</span></a></li>
+      
+            <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/jobs']"><svg class="work" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                  enable-background="new 0 0 512 512" xml:space="preserve">
+                  <path
+                    d="M201.875,141.084h-30v-30.563c0-11.747,9.523-21.271,21.271-21.271h125.709 c11.747,0,21.271,9.523,21.271,21.271v30.563h-30v-17.063c0-3.739-3.031-6.771-6.771-6.771h-94.709 c-3.739,0-6.771,3.031-6.771,6.771V141.084z M462,161.084V422.75H50V161.084H462z M347.818,228.582l-4.721-10.858 c-44.045,27.402-67.739,48.047-103.599,88.742c-19.074-13.598-29.838-19.846-46.809-28.057l-14.509,13.412 c29.016,26.895,44.784,44.631,68.409,72.456C284.896,295.584,311.497,260.279,347.818,228.582z" />
+                  </svg><span title="find suitable jobs">jobs</span></a></li>
+      
+            <!-- <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/members']">
+              <svg class="lab" viewBox="0 0 20 20">
+                <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+              </svg>        
+              <span title="Find Friends">Friends</span></a></li> -->
+            
+            <li  *hasRole="['Professional']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
+              <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
+                l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
+            </svg><span title="About Us">About Us</span></a></li>     
+            <!-- Company -->                
+                  <li *hasRole="['Company']">
+                    <a style="cursor: pointer;"class="active" [routerLink]="['/dashboard']"><svg class="home" width="30px" height="30px" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                        <path
+                          d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
+                          205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
+                          48.023V88.472z" />
+                        </svg><span title="Dashboard">Dashboard</span></a></li>          
+            
+                  <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/members']">
+                    <svg class="lab" viewBox="0 0 20 20">
+                      <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+                    </svg>        
+                    <span title="Find Friends">Friends</span></a></li>
+                  
+                  <li *hasRole="['Company']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
+                    <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
+                      l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
+                  </svg><span title="About Us">About Us</span></a></li>
+              <!-- Admin -->
+              <li [routerLink]="['/admin']" style="cursor: pointer; outline: none;">
+                <a style="cursor: pointer;"class="active" *hasRole="['Admin']"><svg class="home" width="30px" height="30px" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                    <path
+                      d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
+                      205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
+                      48.023V88.472z" />
+                    </svg><span title="Dashboard">Dashboard</span></a></li>          
+                    
+
+                <li *hasRole="['Admin']" style="cursor: pointer; outline: none;"><a style="cursor: pointer;" [routerLink]="['/allcontacts']"><svg class="contact" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                  enable-background="new 0 0 512 512" xml:space="preserve">
+                  <path
+                    d="M170.544,239.052L50,146.454v213.142L170.544,239.052z M460.928,103.407H51.416l204.593,157.162L460.928,103.407z M313.355,260.696l-57.364,43.994l-57.454-44.135L50.5,408.593h410.751L313.355,260.696z M341.367,239.212L462,359.845V146.693L341.367,239.212z" />
+                  </svg><span title="contact">contacts</span></a></li>
+
+
+            <li style="cursor: pointer; outline: none;">
+              <a style="cursor: pointer;"(click)="loggedOut()" >
+                <svg class="LogOut" viewBox="0 0 20 20">
+                  <path  d="M15.608,6.262h-2.338v0.935h2.338c0.516,0,0.934,0.418,0.934,0.935v8.879c0,0.517-0.418,0.935-0.934,0.935H4.392c-0.516,0-0.935-0.418-0.935-0.935V8.131c0-0.516,0.419-0.935,0.935-0.935h2.336V6.262H4.392c-1.032,0-1.869,0.837-1.869,1.869v8.879c0,1.031,0.837,1.869,1.869,1.869h11.216c1.031,0,1.869-0.838,1.869-1.869V8.131C17.478,7.099,16.64,6.262,15.608,6.262z M9.513,11.973c0.017,0.082,0.047,0.162,0.109,0.226c0.104,0.106,0.243,0.143,0.378,0.126c0.135,0.017,0.274-0.02,0.377-0.126c0.064-0.065,0.097-0.147,0.115-0.231l1.708-1.751c0.178-0.183,0.178-0.479,0-0.662c-0.178-0.182-0.467-0.182-0.645,0l-1.101,1.129V1.588c0-0.258-0.204-0.467-0.456-0.467c-0.252,0-0.456,0.209-0.456,0.467v9.094L8.443,9.553c-0.178-0.182-0.467-0.182-0.645,0c-0.178,0.184-0.178,0.479,0,0.662L9.513,11.973z"></path>
+                </svg>
+                  
+                  <span title="LogOut">LogOut</span></a>
+                </li>
+    </ul>
+
+  </nav>
+
+
+
+
 
   <!-- <aside>
     <div id="sidebar" class="nav-collapse ">
