@@ -155,3 +155,17 @@ D:\new new last version 2222\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\Ou
 D:\new new last version 2222\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorTargetAssemblyInfo.cache
 D:\new new last version 2222\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.dll
 D:\new new last version 2222\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.pdb
+E:\fcih\last version\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.deps.json
+E:\fcih\last version\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.runtimeconfig.json
+E:\fcih\last version\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.runtimeconfig.dev.json
+E:\fcih\last version\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.dll
+E:\fcih\last version\Outliers\OutliersAPP.API\bin\Debug\netcoreapp2.1\OutliersAPP.API.pdb
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.csprojAssemblyReference.cache
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.csproj.CoreCompileInputs.cache
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorAssemblyInfo.cache
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorAssemblyInfo.cs
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.AssemblyInfoInputs.cache
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.AssemblyInfo.cs
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.RazorTargetAssemblyInfo.cache
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.dll
+E:\fcih\last version\Outliers\OutliersAPP.API\obj\Debug\netcoreapp2.1\OutliersAPP.API.pdb

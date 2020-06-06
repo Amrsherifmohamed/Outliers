@@ -155,49 +155,49 @@
     <div class="top-menu">
       <ul class="nav pull-right top-menu">
         <li><a style="cursor:  pointer;" class="logout" [routerLink]="['/members/home']">Home</a></li>
-        <li  style="border-radius: 50%; margin-top: 4%; cursor: pointer; outline: none" [routerLink]="['/members/profile']">
-          <img class="w3-hover-grayscale"style="border-radius: 50%; width:50px;border: 5px solid #f1f2f7; height:50px;"  src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar"> 
-          {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}  <b></b>
+        <li style="border-radius: 50%; margin-top: 4%; cursor: pointer; outline: none"
+          [routerLink]="['/members/profile']">
+          <img class="w3-hover-grayscale" style="border-radius: 50%; width:50px;border: 5px solid #f1f2f7; height:50px;"
+            src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar">
+          {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }} <b></b>
         </li>
       </ul>
     </div>
   </header>
   <div class="parent2" style="margin-top: 4%;">
-   
-   <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
+
+    <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
     <!-- freh graduate -->
-    <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2"
-      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
+        class="fa fa-user fa-2x"></i></div>
 
-      <div *hasRole="['Fresh Graduate']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
-        <i class="fa fa-sitemap fa-2x"></i></div>
-      
-   <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x"
-          aria-hidden="true"></i></div>
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+      <i class="fa fa-sitemap fa-2x"></i></div>
 
-        <!--Profeshinal-->
-      <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2"
-      style="cursor: pointer;"><i class="fa fa-user fa-2x"></i></div>
-        
-      <div style="cursor: pointer;" [routerLink]="['/profdashboard']" *hasRole="['Professional']" class="test4"><i class="fa fa-laptop fa-2x"
-        aria-hidden="true"></i></div>
+    <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
 
-      <div *hasRole="['Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
-        <i class="fa fa-sitemap fa-2x"></i></div>
+    <!--Profeshinal-->
+    <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
+        class="fa fa-user fa-2x"></i></div>
 
-    <div *hasRole="['Fresh Graduate']" [routerLink]="['/Freshdashboard']" class="test4"><i class="fa fa-laptop fa-2x"
-        ></i>
-      </div>
+    <div style="cursor: pointer;" [routerLink]="['/profdashboard']" *hasRole="['Professional']" class="test4"><i
+        class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
 
-        <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
-          class="fa fa-dashboard fa-2x"></i></div>
-        <!--Admin-->
-        <div  [routerLink]="['/admin']" *hasRole="['Admin']" style="cursor: pointer;" class="test3">
-          <i class="fa fa-sitemap fa-2x"></i></div>
+    <div *hasRole="['Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
+      <i class="fa fa-sitemap fa-2x"></i></div>
 
-      <div style="cursor: pointer;" [routerLink]="['/allcontacts']" *hasRole="['Admin']" class="test4"><i class="fa fa-laptop fa-2x"
+    <div *hasRole="['Fresh Graduate']" [routerLink]="['/Freshdashboard']" class="test4"><i
+        class="fa fa-laptop fa-2x"></i>
+    </div>
 
-aria-hidden="true"></i></div>
+    <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
+        class="fa fa-dashboard fa-2x"></i></div>
+    <!--Admin-->
+    <div [routerLink]="['/admin']" *hasRole="['Admin']" style="cursor: pointer;" class="test2">
+      <i class="fa fa-sitemap fa-2x"></i></div>
+
+    <div style="cursor: pointer;" [routerLink]="['/allcontacts']" *hasRole="['Admin']" class="test3"><i
+        class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
 
     <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
   </div>
@@ -289,4 +289,3 @@ aria-hidden="true"></i></div>
       </ul>
     </div>
   </aside> -->
-
