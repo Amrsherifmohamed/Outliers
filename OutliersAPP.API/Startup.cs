@@ -42,6 +42,7 @@ namespace OutliersAPP.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             IdentityBuilder builder = services.AddIdentityCore<User>(opt=>{
                 opt.Password.RequireDigit = false;
@@ -74,7 +75,7 @@ namespace OutliersAPP.API
                     options.AddPolicy("VipOnly",policy=>policy.RequireRole("VIP"));
                 }
             );
-
+            // services.AddControllers().AddNewtonsoftJson();
             services.AddMvc(options=>{
                 var policy = new AuthorizationPolicyBuilder()
                             .RequireAuthenticatedUser()

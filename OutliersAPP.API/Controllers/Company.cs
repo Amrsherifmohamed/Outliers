@@ -37,6 +37,8 @@ namespace OutliersAPP.API.Controllers
             _context = context;
         }
 
+
+
         [HttpGet("{id}", Name = "GetJob")]
         public async Task<IActionResult> GetJob(int id)
         {
@@ -44,6 +46,7 @@ namespace OutliersAPP.API.Controllers
             var JobToReturn = _mapper.Map<JobForDetailsDto>(job);
             return Ok(JobToReturn);
         }
+
 
 
         [HttpGet]
@@ -55,6 +58,19 @@ namespace OutliersAPP.API.Controllers
             var jobsToReturn = _mapper.Map<IEnumerable<JobForListDto>>(jobs);
             return Ok(jobsToReturn);
         }
+
+        [HttpGet("query")]
+        public async Task<IActionResult> search(String query)
+        {
+            
+          
+            var jobs = await _repo.GetJobs();
+            var jobsToReturn = _mapper.Map<IEnumerable<JobForListDto>>(jobs);
+            return Ok(jobsToReturn);
+        }
+    
+
+
         [HttpPost("addjob/{id}")]
         public async Task<IActionResult> AddJob(int id, [FromBody] JobForCreationDto jobForCreationDto)
         {
