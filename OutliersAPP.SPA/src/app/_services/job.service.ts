@@ -44,5 +44,8 @@ export class JobService {
   deleteJob(id: number) {
     return this.http.delete(this.basUrl + 'deletejob/' + id, {});
   }
+  joprecomndation(careerpath:string){
+    return this.http.get(this.basUrl+'qery/'+careerpath);
+  }
 
 }

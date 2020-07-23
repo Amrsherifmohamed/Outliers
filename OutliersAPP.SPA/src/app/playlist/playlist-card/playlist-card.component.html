@@ -8,13 +8,26 @@
     <div class="[ panel panel-default ] panel-google-plus">
     <img src="assets/download.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{playlist.name}}</h5>
+      <h5 class="card-title">{{playlist.Name}}</h5>
       <div class="panel-body ">
         <p>
           Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what generation you want to belong to?{{playlist.description}}</p>
     </div>
-      <h3 [routerLink]="['/list_playlist_video/',playlist.id]" class="btn btn-primary">View this playlist</h3>
+      <h3 [routerLink]="['/list_playlist_video/',playlist.Id]" class="btn btn-primary">View this playlist</h3>
     </div>
+    <!-- <form #PostForm="ngForm" (ngSubmit)="createrating();"> -->
+    <div class="row">
+      <div class="col-sm-12">
+          <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block" >
+            <li
+             (click)="createrating(star)"
+            [ngClass]="{'selected': (star <= selectedValue)}">
+                <i class="fa fa-star"></i>
+        </li>  
+          </ul>
+      </div>
+    </div>
+  <!-- </form> -->
   </div>
   </div>
   

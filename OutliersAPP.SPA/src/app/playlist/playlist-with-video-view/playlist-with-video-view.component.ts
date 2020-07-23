@@ -21,6 +21,8 @@ playlist:Playlist;
 videos:Array<Video>=[];  
 api:VgAPI;
 
+
+
 constructor(private router:ActivatedRoute,private couresservice:CoursesService) { }
 
   ngOnInit() {
@@ -28,7 +30,9 @@ constructor(private router:ActivatedRoute,private couresservice:CoursesService) 
       this.playlist=data["playlist"]
     });
     this.getvideos();
+    
   }
+  
   
   currentIndex = 0;
   currentItem: Video = this.videos[this.currentIndex];

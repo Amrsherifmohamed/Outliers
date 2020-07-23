@@ -121,6 +121,12 @@ import { CareerpathManagmentComponent } from './admin/careerpath-managment/caree
 import { UpdateCareerpathComponent } from './admin/update-careerpath/update-careerpath.component';
 import { CareerpathupdateResolver } from './_resolvers/Careerpath_Update.resolver';
 import { CreateCareerpathComponent } from './admin/create-careerpath/create-careerpath.component';
+import { JobRecomndationsListComponent } from './jobs/job-recomndations-list/job-recomndations-list.component';
+import { JobRecomndationsCardComponent } from './jobs/job-recomndations-card/job-recomndations-card.component';
+import { JopRecomendationResolver } from './_resolvers/jop_recomndation.resolver';
+import { PlaylistRecomndationsListComponent } from './playlist/playlist-recomndations-list/playlist-recomndations-list.component';
+import { PlaylistRecomndationsCardComponent } from './playlist/playlist-recomndations-card/playlist-recomndations-card.component';
+import { PlaylistRecomendationResolver } from './_resolvers/playlistRecomndations.resolver';
 
 
 
@@ -196,6 +202,10 @@ export function tokenGetter() {
       CareerpathManagmentComponent,
       UpdateCareerpathComponent,
       CreateCareerpathComponent,
+      JobRecomndationsListComponent,
+      JobRecomndationsCardComponent,
+      PlaylistRecomndationsListComponent,
+      PlaylistRecomndationsCardComponent,
       
 
 
@@ -279,7 +289,9 @@ export function tokenGetter() {
       AdminContactsDetailResolver,
       AdminContactsListUnreadResolver,
       AdminContactsListResolver,
-      CareerpathupdateResolver
+      CareerpathupdateResolver,
+      JopRecomendationResolver,
+      PlaylistRecomendationResolver
 
    ],
    entryComponents:[RolesModalComponent],

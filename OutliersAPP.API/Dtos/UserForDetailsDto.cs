@@ -22,6 +22,7 @@ namespace OutliersAPP.API.Dtos
         public string Country { get; set; }
         public string PhotoURL { get; set; }
         public string userType { get; set; }
+        public string careerpath {get;set;}
         public ICollection<PhotoForDetailsDto> Photos { get; set; }
     }
 }

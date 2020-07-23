@@ -22,6 +22,7 @@ namespace OutliersAPP.API.Models
         public string IntrestedJobe { get; set; }
         public string Experience { get; set; }
         public string Skills { get; set; }
+        public string careerpath {get;set;}
         public ICollection<Photo> Photos { get; set; }
         public ICollection<playlist> playlists { get; set; }
         public ICollection<video> videos { get; set; }
@@ -35,6 +36,7 @@ namespace OutliersAPP.API.Models
         public  ICollection <Job> Jobs { get; set; }
         public ICollection<Post> Posts { get; set; }
         public ICollection<Comment> Comments { get; set; }
+        public ICollection<Rate> Rates { get; set; }
 
     }
 }

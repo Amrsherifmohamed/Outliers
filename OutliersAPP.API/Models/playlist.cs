@@ -14,6 +14,7 @@ namespace OutliersAPP.API.Models
         public User User { get; set; }
         public int UserId { get; set; }
         public ICollection<video> Videos{ get; set; }
+        public ICollection<Rate> rates { get; set; }
         // public CareerDetails CareerDetails { get; set; }
         // public int CareerDetailsId { get; set; }
     }

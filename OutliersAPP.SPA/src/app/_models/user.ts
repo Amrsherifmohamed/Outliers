@@ -21,6 +21,7 @@ export interface User {
     photos?: Photo[];
     roleName: string;
     roles?: string[];
+    careerpath:string;
 
 
 }

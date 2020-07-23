@@ -26,6 +26,7 @@ namespace OutliersAPP.API.Data
 
         public DbSet<ContactUs> Contacts { get; set; }
         public DbSet<AdminContact> AdminContacts { get; set; }
+        public DbSet<Rate> Rates {get;set;}
 
 
         protected override void OnModelCreating(ModelBuilder builder)

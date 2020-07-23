@@ -378,6 +378,26 @@ namespace OutliersAPP.API.Migrations
                     b.ToTable("Posts");
                 });
 
+            modelBuilder.Entity("OutliersAPP.API.Models.Rate", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("UserId");
+
+                    b.Property<int>("playlistId");
+
+                    b.Property<float>("ratevalue");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("playlistId");
+
+                    b.ToTable("Rates");
+                });
+
             modelBuilder.Entity("OutliersAPP.API.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -466,6 +486,8 @@ namespace OutliersAPP.API.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
+
+                    b.Property<string>("careerpath");
 
                     b.HasKey("Id");
 
@@ -669,6 +691,19 @@ namespace OutliersAPP.API.Migrations
                     b.HasOne("OutliersAPP.API.Models.User", "User")
                         .WithMany("Posts")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OutliersAPP.API.Models.Rate", b =>
+                {
+                    b.HasOne("OutliersAPP.API.Models.User", "User")
+                        .WithMany("Rates")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OutliersAPP.API.Models.playlist", "playlist")
+                        .WithMany("rates")
+                        .HasForeignKey("playlistId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

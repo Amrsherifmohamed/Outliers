@@ -11,7 +11,22 @@
     box-sizing: border-box;
   }
   
- 
+  .rating-list li {
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+  
+  }
+  
+  .rating-list li:hover,
+  .rating-list li:hover ~ li {
+    color: #ffd700;
+  }
+  
+  .rating-list {
+    display: inline-block;
+    list-style: none;
+  }
   @-ms-viewport {
     width: device-width;
   }

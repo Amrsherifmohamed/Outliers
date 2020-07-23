@@ -14,6 +14,7 @@ import {Comment} from '../_models/Comment'
 })
 export class UserService {
   baseUrl = environment.apiUrl + 'users/';
+  baseurl2=environment.apiUrl +"PlayList/";
   constructor(private http: HttpClient) { }
 
   getUsers(page?, itemsPerPage?, userParams?, likeParam?): Observable<PaginationResult<User[]>> {
@@ -157,5 +158,8 @@ export class UserService {
   }
   getcareerpath(){
     return this.http.get(this.baseUrl+"Careerpath");
+  }
+  getplaylistrecomndation(userid:number){
+    return this.http.get(this.baseurl2+"Playlist/"+userid);
   }
 }

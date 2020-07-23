@@ -16,5 +16,6 @@ namespace OutliersAPP.API.Dtos
 
         public string userType { get; set; }
         public string PhotoURL { get; set; }
+        public string careerpath {get;set;}
     }
 }

@@ -42,6 +42,7 @@ unLoadNotification($event:any){
         res=>{this.authService.firstfollwering.next(res.toString());
         this.authService.latestfolloweringcount.subscribe(res=>{this.countfollwing=res;});}
       );
+      
   }
 
   

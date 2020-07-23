@@ -26,7 +26,7 @@ export class UpdatePlaylistComponent implements OnInit {
     });
   }
   updateplaylist() {
-    this.playlistService.updateplaylist(this.playlist.id, this.playlist).subscribe(() => {
+    this.playlistService.updateplaylist(this.playlist.Id, this.playlist).subscribe(() => {
       this.alertify.success('updated Is Done');
       this.editForm.reset(this.playlist);
     }, error => this.alertify.error(error));

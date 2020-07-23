@@ -47,6 +47,34 @@ namespace OutliersAPP.API.Controllers
             return Ok(JobToReturn);
         }
 
+        
+
+// get recomndation
+
+        [HttpGet("qery/{query}")]
+        public async Task<IActionResult> GetJobs(string query)
+        {
+            query = System.Text.RegularExpressions.Regex.Replace(query, "[\\[\\]\\(\\)&@#$%^&*';<>:/\\\"]+", "");
+            query = query.Trim();
+            //$"\"{query}\""
+            String scriptPath = "C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\PythonRec\\JopRecommendationSearch.py";
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = $"/C ipython \"{scriptPath}\" \"{query}\"";
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            //Dictionary<String,String> jobsDictionary = JsonConvert.DeserializeObject<Dictionary<String,String>>(output);
+            //var jobs = await _repo.GetJobs();
+            //var jobsToReturn = _mapper.Map<IEnumerable<JobForListDto>>(jobs);
+            return Ok(output);
+        }
+        
 
 
         [HttpGet]

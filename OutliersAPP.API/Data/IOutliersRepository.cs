@@ -51,6 +51,9 @@ namespace OutliersAPP.API.Data
         Task<IEnumerable<Careerpath>> GetCareerpaths();
         Task<IEnumerable<playlist>> Getplaylistsamecategory(string category);
         Task<playlist> getvideoforplaylist(int playlistid);
+        Task<IEnumerable<Rate>> GetRates(int playlistId);
+        Task<Rate> getRateuser(int userid,int playlistid);
+        Task<Rate> getoeneRate(int rateid);
 
     }
 }

@@ -77,6 +77,9 @@ import { CareerpathManagmentComponent } from './admin/careerpath-managment/caree
 import { UpdateCareerpathComponent } from './admin/update-careerpath/update-careerpath.component';
 import { CareerpathupdateResolver } from './_resolvers/Careerpath_Update.resolver';
 import { CreateCareerpathComponent } from './admin/create-careerpath/create-careerpath.component';
+// import { JopRecomendationResolver } from './_resolvers/jop_recomndation.resolver';
+import { PlaylistRecomendationResolver } from './_resolvers/playlistRecomndations.resolver';
+import { JopRecomendationResolver } from './_resolvers/jop_recomndation.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -110,7 +113,8 @@ export const appRoutes: Routes = [
       },
       {
         path: 'members/home', component: MemberHomeComponent,resolve:{
-          post:PostFollwerResolver,posts:PostResolver,following:MemberFollownigResolver
+          post:PostFollwerResolver,posts:PostResolver,following:MemberFollownigResolver,job:JopRecomendationResolver
+          ,playlists:PlaylistRecomendationResolver
         }
       },
       {

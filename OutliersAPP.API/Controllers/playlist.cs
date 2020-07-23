@@ -115,5 +115,29 @@ namespace OutliersAPP.API.Controllers
             var VideosToReturn = _mapper.Map<PlaylistForDetailsDto>(Videos);
             return Ok(VideosToReturn);
         }
+        /// get recomndaitons
+        [HttpGet("PlayList/{Id}")]
+        public async Task<IActionResult> GetPlayList(string Id)
+        {
+            Id = System.Text.RegularExpressions.Regex.Replace(Id, "[\\[\\]\\(\\)&@#$%^&*';<>:/\\\"]+", "");
+            Id = Id.Trim();
+            //$"\"{query}\""
+            String scriptPath = "C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\PythonRec\\PlayList.py";
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = $"/C ipython \"{scriptPath}\" \"{Id}\"";
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            //Dictionary<String,String> jobsDictionary = JsonConvert.DeserializeObject<Dictionary<String,String>>(output);
+            //var jobs = await _repo.GetJobs();
+            //var jobsToReturn = _mapper.Map<IEnumerable<JobForListDto>>(jobs);
+            return Ok(output);
+        }
     }
 }

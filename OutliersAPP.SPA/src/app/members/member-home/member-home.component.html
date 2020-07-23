@@ -1,9 +1,41 @@
-<div class="detailed ">
-  <div class="container-fluid gedf-wrapper">
-    <div class="row">
-      <div class="col-md-4">
+
+<div class="detailed " >
+  <div class="container-fluid gedf-wrapper">  
+    <div class="row" >
+      <div class="col-md-1">
 
       </div>
+      <div class="col-md-3 col-sm-4 mb " >
+        <div class="grey-panel pn setting"   >
+          <div class="grey-header" id="po">
+            <h5>SERVER LOAD</h5>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <app-playlist-recomndations-list></app-playlist-recomndations-list>
+          
+        </div>
+        <div class="grey-panel pn setting2"  >
+          <div class="grey-header" id="po"  >
+            <h5>SERVER LOAD</h5>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <app-job-recomndations-list></app-job-recomndations-list>
+        </div>
+        <!-- /grey-panel -->
+      </div>
+      <!-- <div class="col-md-4 mb">
+        <div class="weather pn">
+          <i class="fa fa-cloud fa-4x"></i>
+          <h2>11º C</h2>
+          <h4>BUDAPEST</h4>
+        </div>
+      </div> -->
       <div class="col-md-4 gedf-main mtop">
         <!--- \\\\\\\Post-->
 
@@ -20,15 +52,23 @@
             </div>
           </div>
         </form>
+        <!-- <div class="showback" [hidden]="countfollwing!='undefined'">
+          <h4><i class="fa fa-angle-right"></i> Modal Example</h4>
+        
+          <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch Modal
+            </button>
+        </div> -->
+        <div >
         <app-post-list></app-post-list>
       </div>
+      </div>
 
-      <div class="app_page1 ds">
+      <div class="app_page1 ds" >
         <div class="row">
           <div class="col-sm-1" id="right">
             <h4 class="centered mt">TEAM MEMBERS ONLINE</h4>
             <app-member-followinglist></app-member-followinglist>
-
           </div>
         </div>
       </div>

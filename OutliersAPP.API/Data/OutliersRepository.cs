@@ -342,6 +342,21 @@ namespace OutliersAPP.API.Data
         //     var user = await query.FirstOrDefaultAsync(u => u.Id == id);
         //     return user;
         // }
+        public async Task<IEnumerable<Rate>> GetRates(int playlistid){
+            var retaplaylist= await _context.Rates.Include(r=>r.User).Include(r=>r.playlist)
+            .Where(r => r.playlistId == playlistid).ToListAsync();
+            return retaplaylist;
+        }
+        public async Task<Rate> getRateuser(int userid,int playlistid){
+            var rateplaylist = await _context.Rates.Include(c => c.User).Include(p => p.playlist)
+            .FirstOrDefaultAsync(c => c.UserId == userid && c.playlistId == playlistid);
+            return rateplaylist;
+        }
+       public async Task<Rate> getoeneRate(int rateid){
+           var rateplaylist = await _context.Rates.Include(c => c.User).Include(p => p.playlist)
+            .FirstOrDefaultAsync(c => c.id == rateid);
+            return rateplaylist;
+       }
 
     
     }

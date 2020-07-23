@@ -1,0 +1,30 @@
+
+.notify-row .badge {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 100;
+}
+
+
+ .dropdown-menu.tasks-bar .task-info .desc {
+    font-size: 13px;
+    font-weight: normal;
+} 
+
+
+ .ds .thumb {
+	width: 30px;
+	margin: 0 10px 0 20px;
+	display: block;
+	float: left;
+} 
+
+ .ds .details {
+	width: 170px;
+	float: left;
+} 
+
+
+
+

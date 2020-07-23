@@ -136,6 +136,10 @@ namespace OutliersAPP.API.Helpers
             CreateMap<AdminContact,AdminContactToReturnDto>();
             CreateMap<AdminContact,AdminContactForDetailsDto>();
             CreateMap<AdminContact,AdminContactForListDto>();
+            CreateMap<RateForCreationsDto,Rate>();
+            CreateMap<Rate,RateForReturnDto>();
+            CreateMap<Rate,RateForDetailsDto>();
+            CreateMap<Rate,RateForlistDto>();
 
        
        }

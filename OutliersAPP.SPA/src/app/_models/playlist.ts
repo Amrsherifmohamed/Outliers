@@ -1,8 +1,8 @@
 import { Video } from "./video";
 
 export interface Playlist {
-  id:number;
-  name:string;
+  Id:number;
+  Name:string;
   dateAdded:Date;
   userPhotoUrl:string;
   videoUrl:string;
