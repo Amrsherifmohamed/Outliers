@@ -85,13 +85,13 @@ x=25
 # In[1465]:
 
 
-print(query)
+# print(query)
 
 
 # In[1466]:
 
 
-# inputMovie = inputMovie[inputMovie.id == '23']
+#inputMovie = inputMovie[inputMovie.id == '23']
 
 
 # In[1467]:
@@ -505,6 +505,9 @@ print(result.to_json(orient = "records"))
 
 
 # In[ ]:
+
+
+
 
 
 
