@@ -1,59 +1,12 @@
+
 <div id="login-page" *ngIf="!loggedIn()">
   <div class="container">
-    <!-- <form (ngSubmit)="login()" #loginForm="ngForm" class="form-login" action="index.html">
-      <h2 class="form-login-heading">sign in now</h2>
-      <div class="login-wrap">
-        <input name="username" [(ngModel)]="model.username" type="text" class="form-control" placeholder="User Name"
-          autofocus>
-        <br>
-        <input name="password" [(ngModel)]="model.password" type="password" class="form-control" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-          <span class="pull-right">
-            <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-          </span>
-        </label>
-        <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN
-          IN</button>
-        <hr>
-
-        <div class="registration">
-          Don't have an account yet?<br />
-          <a class="" href="#">
-            Create an account
-          </a>
-        </div>
-      </div>
-
-      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
-        class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Forgot Password ?</h4>
-            </div>
-            <div class="modal-body">
-              <p>Enter your e-mail address below to reset your password.</p>
-              <input type="text" name="email" placeholder="Email" autocomplete="off"
-                class="form-control placeholder-no-fix">
-            </div>
-            <div class="modal-footer">
-              <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-              <button class="btn btn-theme" type="button">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form> -->
     <div class="login-form">
       <form #form="ngForm" (ngSubmit)="login()" #loginForm="ngForm">
         <h1>Login</h1>
         <div class="form-group">
           <input name="username" [(ngModel)]="model.username" class="form-control" placeholder="username" required>
-
         </div>
-
         <div class="form-group">
           <input name="password" [(ngModel)]="model.password" type="password" class="form-control"
             placeholder="Password">
@@ -61,347 +14,160 @@
         </div>
         <button style="outline: none;" type="submit" [disabled]="form.invalid " (click)="login(form)"
           class="login-btn">Login</button>
-
-
         <div class="seperator"><b>or</b></div>
         <a class="reset-psw" style="cursor: pointer;" [routerLink]="['/register']">Create Nwe Account</a>
-        <!-- Social login buttons -->
-        <!-- <div class="social-icon">
-              <button style="outline: none;" type="button"><i class="fa fa-twitter"></i></button>
-              <button style="outline: none;" (click)="loginfacebook()" type="button"><i class="fa fa-facebook"></i></button>
-              <button style="outline: none;" (click)="login()" type="button"><i class="fa fa-google-plus"></i></button>
-  
-          </div> -->
-
       </form>
     </div>
-
   </div>
 </div>
 
+<nav *ngIf="loggedIn()" class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+      <!-- <a class="navbar-brand" href="javascript:void(0)">
+        <img src="{{photoUrl || 'assets/logo.PNG'}}" class="navbar-brand-img"  alt="...">
+      </a> -->
+    <div class="navbar-inner">
+      <span class="text">
+        <span>O</span>
+        <span>U</span>
+        <span>T</span>
+        <span>L</span>
+        <span>I</span>
+        <span>E</span>
+        <span>R</span>
+        <span>S</span>
+      </span>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
 
-<section id="container c2" *ngIf="loggedIn()">
-  <header class="header black-bg">
-
-    <a routerLink="/" class="logo"><b>OutLiers<span>Team</span></b></a>
-    <div class="nav notify-row" id="top_menu">
-      <ul class="nav top-menu">
-        <li class="dropdown">
-          <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-            <i class="fa fa-tasks"></i>
-            <span class="badge bg-theme">4</span>
-          </a>
-          <ul class="dropdown-menu extended tasks-bar">
-            <div class="notify-arrow notify-arrow-green"></div>
-            <li>
-              <p class="green">You have 4 pending tasks</p>
-            </li>
-            <li>
-
-            </li>
-
-            <li>
-              <a href="index.html#">
-                <div class="task-info">
-                  <div class="desc">Payments Sent</div>
-                  <div class="percent">70%</div>
-                </div>
-                <div class="progress progress-striped">
-                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                    aria-valuemax="100" style="width: 70%">
-                    <span class="sr-only">70% Complete (Important)</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="external">
-              <a href="#">See All Tasks</a>
-            </li>
-          </ul>
-        </li>
-
-        <li id="header_inbox_bar" class="dropdown">
-          <a [routerLink]="['/messages']" routerLinkActive="active">
-            <i class="fa fa-envelope-o"></i>
-            <span *ngIf="count!=='0'" class="badge bg-theme">{{count}}</span>
-          </a>
-
-        </li>
-
-        <li id="header_notification_bar" class="dropdown">
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <i class="fa fa-bell-o"></i>
-            <span class="badge bg-warning">7</span>
-          </a>
-          <ul class="dropdown-menu extended notification">
-            <div class="notify-arrow notify-arrow-yellow"></div>
-            <li>
-              <p class="yellow">You have 7 new notifications</p>
-            </li>
-            <li>
-              <a href="index.html#">
-                <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                Server Overloaded.
-                <span class="small italic">4 mins.</span>
-              </a>
-            </li>
-            <li>
-              <a href="index.html#">See all notifications</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="top-menu">
-      <ul class="nav pull-right top-menu">
-        <li><a style="cursor:  pointer;" class="logout" [routerLink]="['/members/home']">Home</a></li>
-        <li style="border-radius: 50%; margin-top: 4%; cursor: pointer; outline: none"
-          [routerLink]="['/members/profile']">
-          <img class="w3-hover-grayscale" style="border-radius: 50%; width:50px;border: 5px solid #f1f2f7; height:50px;"
-            src="{{photoUrl || 'assets/User.png'}}" class="avatar" alt="Avatar">
-          {{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }} <b></b>
-        </li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- <div class="parent2" style="margin-top: 4%;">
-
-    <div (click)="loggedOut()" class="test1" style="cursor: pointer;"><i class="fa fa-sign-out fa-2x"></i></div>
-
-    <div *hasRole="['Fresh Graduate']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
-        class="fa fa-user fa-2x"></i></div>
-
-    <div *hasRole="['Fresh Graduate']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
-      <i class="fa fa-sitemap fa-2x"></i></div>
-
-    <div *hasRole="['Fresh Graduate']" class="test4"><i class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
-
-    <div *hasRole="['Professional']" [routerLink]="['/members']" class="test2" style="cursor: pointer;"><i
-        class="fa fa-user fa-2x"></i></div>
-
-    <div style="cursor: pointer;" [routerLink]="['/profdashboard']" *hasRole="['Professional']" class="test4"><i
-        class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
-
-    <div *hasRole="['Professional']" [routerLink]="['/jobs']" style="cursor: pointer;" class="test3">
-      <i class="fa fa-sitemap fa-2x"></i></div>
-
-    <div *hasRole="['Fresh Graduate']" [routerLink]="['/Freshdashboard']" class="test4"><i
-        class="fa fa-laptop fa-2x"></i>
-    </div>
-
-    <div *hasRole="['Company']" [routerLink]="['/dashboard']" class="test2" style="cursor: pointer;"><i
-        class="fa fa-dashboard fa-2x"></i></div>
-    <div [routerLink]="['/admin']" *hasRole="['Admin']" style="cursor: pointer;" class="test2">
-      <i class="fa fa-sitemap fa-2x"></i></div>
-
-    <div style="cursor: pointer;" [routerLink]="['/allcontacts']" *hasRole="['Admin']" class="test3"><i
-        class="fa fa-laptop fa-2x" aria-hidden="true"></i></div>
-
-    <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
-  </div> -->
-  <nav class="navigation">
-
-    <ul class="menu">
+        <ul  class="sidebar-menu text-center" id="nav-accordion">
       <!-- Fresh Graguate -->
-      <li *hasRole="['Fresh Graduate']" >
-        <a style="cursor: pointer;" class="active" [routerLink]="['/Freshdashboard']"><svg class="home" width="30px" height="30px" version="1.1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-            <path
-              d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
-              205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
-              48.023V88.472z" />
-            </svg><span title="Dashboard">Dashboard</span></a></li>
 
-      <li *hasRole="['Fresh Graduate']" ><a style="cursor: pointer;" [routerLink]="['/jobs']"><svg class="work" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-            enable-background="new 0 0 512 512" xml:space="preserve">
-            <path
-              d="M201.875,141.084h-30v-30.563c0-11.747,9.523-21.271,21.271-21.271h125.709 c11.747,0,21.271,9.523,21.271,21.271v30.563h-30v-17.063c0-3.739-3.031-6.771-6.771-6.771h-94.709 c-3.739,0-6.771,3.031-6.771,6.771V141.084z M462,161.084V422.75H50V161.084H462z M347.818,228.582l-4.721-10.858 c-44.045,27.402-67.739,48.047-103.599,88.742c-19.074-13.598-29.838-19.846-46.809-28.057l-14.509,13.412 c29.016,26.895,44.784,44.631,68.409,72.456C284.896,295.584,311.497,260.279,347.818,228.582z" />
-            </svg><span title="find suitable jobs">jobs</span></a></li>
+          <li *hasRole="['Fresh Graduate']"   [routerLink]="['/Freshdashboard']">
+            <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+            font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+              <i class="fa fa-tachometer" aria-hidden="true"></i>
+              Dashboard
+              </a>
+          </li>
 
-      <li *hasRole="['Fresh Graduate']" ><a style="cursor: pointer;"[routerLink]="['/members']">
-        <svg class="lab" viewBox="0 0 20 20">
-          <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
-        </svg>        
-        <span title="Find Friends">Friends</span></a></li>
-      
-      <li *hasRole="['Fresh Graduate']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
-        <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
-          l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
-      </svg><span title="About Us">About Us</span></a></li>
-           
+          <li *hasRole="['Fresh Graduate']"   [routerLink]="['/jobs']">
+            <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+            font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+              <i class="fa fa-search-plus" aria-hidden="true"></i>
+
+              Find your job
+              </a>
+          </li>
+          <li *hasRole="['Fresh Graduate']"  [routerLink]="['/members']">
+            <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+            font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              Members
+              </a>
+          </li>
             <!-- Professional -->
+            <li *hasRole="['Professional']"   [routerLink]="['/profdashboard']">
+              <a    [routerLink]="['/profdashboard']" class="btn btn-compose" style="
+              font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                Dashboard
+                </a>
+            </li>
 
-            <li *hasRole="['Professional']">
-              <a style="cursor: pointer;" class="active" [routerLink]="['/profdashboard']"><svg class="home" width="30px" height="30px" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-                  <path
-                    d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
-                    205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
-                    48.023V88.472z" />
-                  </svg><span title="Dashboard">Dashboard</span></a></li>
-      
-            <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/jobs']"><svg class="work" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                  enable-background="new 0 0 512 512" xml:space="preserve">
-                  <path
-                    d="M201.875,141.084h-30v-30.563c0-11.747,9.523-21.271,21.271-21.271h125.709 c11.747,0,21.271,9.523,21.271,21.271v30.563h-30v-17.063c0-3.739-3.031-6.771-6.771-6.771h-94.709 c-3.739,0-6.771,3.031-6.771,6.771V141.084z M462,161.084V422.75H50V161.084H462z M347.818,228.582l-4.721-10.858 c-44.045,27.402-67.739,48.047-103.599,88.742c-19.074-13.598-29.838-19.846-46.809-28.057l-14.509,13.412 c29.016,26.895,44.784,44.631,68.409,72.456C284.896,295.584,311.497,260.279,347.818,228.582z" />
-                  </svg><span title="find suitable jobs">jobs</span></a></li>
-      
-            <!-- <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/members']">
-              <svg class="lab" viewBox="0 0 20 20">
-                <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
-              </svg>        
-              <span title="Find Friends">Friends</span></a></li> -->
-            
-            <li  *hasRole="['Professional']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
-              <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
-                l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
-            </svg><span title="About Us">About Us</span></a></li>     
-            <!-- Company -->                
-                  <li *hasRole="['Company']">
-                    <a style="cursor: pointer;"class="active" [routerLink]="['/dashboard']"><svg class="home" width="30px" height="30px" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-                        <path
-                          d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
-                          205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
-                          48.023V88.472z" />
-                        </svg><span title="Dashboard">Dashboard</span></a></li>          
-            
-                  <li *hasRole="['Professional']" ><a style="cursor: pointer;"[routerLink]="['/members']">
-                    <svg class="lab" viewBox="0 0 20 20">
-                      <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
-                    </svg>        
-                    <span title="Find Friends">Friends</span></a></li>
-                  
-                  <li *hasRole="['Company']"><a style="cursor: pointer;"href="#"> <svg class="contact" viewBox="0 0 20 20">
-                    <path  d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
-                      l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
-                  </svg><span title="About Us">About Us</span></a></li>
-              <!-- Admin -->
-              <li [routerLink]="['/admin']" style="cursor: pointer; outline: none;">
-                <a style="cursor: pointer;"class="active" *hasRole="['Admin']"><svg class="home" width="30px" height="30px" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-                    <path
-                      d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,
-                      205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,
-                      48.023V88.472z" />
-                    </svg><span title="Dashboard">Dashboard</span></a></li>          
-                    
+            <li *hasRole="['Professional']"   [routerLink]="['/jobs']">
+              <a   [routerLink]="['/jobs']" class="btn btn-compose" style="
+              font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                Find your job
+                </a>
 
-                <li *hasRole="['Admin']" style="cursor: pointer; outline: none;"><a style="cursor: pointer;" [routerLink]="['/allcontacts']"><svg class="contact" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                  enable-background="new 0 0 512 512" xml:space="preserve">
-                  <path
-                    d="M170.544,239.052L50,146.454v213.142L170.544,239.052z M460.928,103.407H51.416l204.593,157.162L460.928,103.407z M313.355,260.696l-57.364,43.994l-57.454-44.135L50.5,408.593h410.751L313.355,260.696z M341.367,239.212L462,359.845V146.693L341.367,239.212z" />
-                  </svg><span title="contact">contacts</span></a></li>
-
-
-            <li style="cursor: pointer; outline: none;">
-              <a style="cursor: pointer;"(click)="loggedOut()" >
-                <svg class="LogOut" viewBox="0 0 20 20">
-                  <path  d="M15.608,6.262h-2.338v0.935h2.338c0.516,0,0.934,0.418,0.934,0.935v8.879c0,0.517-0.418,0.935-0.934,0.935H4.392c-0.516,0-0.935-0.418-0.935-0.935V8.131c0-0.516,0.419-0.935,0.935-0.935h2.336V6.262H4.392c-1.032,0-1.869,0.837-1.869,1.869v8.879c0,1.031,0.837,1.869,1.869,1.869h11.216c1.031,0,1.869-0.838,1.869-1.869V8.131C17.478,7.099,16.64,6.262,15.608,6.262z M9.513,11.973c0.017,0.082,0.047,0.162,0.109,0.226c0.104,0.106,0.243,0.143,0.378,0.126c0.135,0.017,0.274-0.02,0.377-0.126c0.064-0.065,0.097-0.147,0.115-0.231l1.708-1.751c0.178-0.183,0.178-0.479,0-0.662c-0.178-0.182-0.467-0.182-0.645,0l-1.101,1.129V1.588c0-0.258-0.204-0.467-0.456-0.467c-0.252,0-0.456,0.209-0.456,0.467v9.094L8.443,9.553c-0.178-0.182-0.467-0.182-0.645,0c-0.178,0.184-0.178,0.479,0,0.662L9.513,11.973z"></path>
-                </svg>
-                  
-                  <span title="LogOut">LogOut</span></a>
+                <li  *hasRole="['Professional']" [routerLink]="['/members']">
+                  <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+                  font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    Members
+                    </a>
                 </li>
-    </ul>
 
-  </nav>
+             <!-- Company -->
+             <li *hasRole="['Company']"   [routerLink]="['/dashboard']">
+              <a    [routerLink]="['/profdashboard']" class="btn btn-compose" style="
+              font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                Dashboard
+                </a>
+            </li>
+            <!-- Admin -->
+            <li  *hasRole="['Admin']" [routerLink]="['/admin']">
+              <a  [routerLink]="['/admin']" class="btn btn-compose" style="
+              font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               Dashboard
+                </a>
+            </li>
+
+
+          <li *hasRole="['Admin']"  [routerLink]="['/allcontacts']">
+            <a  [routerLink]="['/allcontacts']" class="btn btn-compose" style="
+            font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+              <i class="fa fa-pencil"></i>  Contacts
+              </a>
+          </li>
+
+          <li>
+            <a (click)="loggedOut()" class="btn btn-compose" style="
+            font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>  Log-Out
+              </a>
+          </li>
 
 
 
-
-
-  <!-- <aside>
-    <div id="sidebar" class="nav-collapse ">
-      <ul class="sidebar-menu" id="nav-accordion">
-        <p class="centered"><a href="#"><img src="{{photoUrl || 'assets/User.png'}}" class="img-circle" width="80"></a></p>
-        <h5 class="centered">{{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}</h5>
-
-        <li class="sub-menu">
-          <a [routerLink]="['/members/home']">
-            <i class="fa fa-home-alt"></i>
-            <span>Home</span>
-            </a>
-        </li>
-        <li *hasRole="['Company']"  class="sub-menu">
-          <a [routerLink]="['/dashboard']">
-            <i class="fa fa-dashboard"></i>
-            <span>Dashboard</span>
-            </a>
-        </li>
-
-        <li class="sub-menu">
-          <a [routerLink]="['/members/profile']">
-            <i class="fa fa-desktop"></i>
-            <span>Profile</span>
-            </a>
-        </li>
-
-        <li class="sub-menu">
-          <a href="javascript:;">
-            <i class="fa fa-cogs"></i>
-            <span>Components</span>
-            </a>
-          <ul class="sub">
-            <li><a>Courses</a></li>
-            <li><a [routerLink]="['/jobs']">Jobs</a></li>
-            <li><a>Assesments</a></li>
-          </ul>
-        </li>
-
-        <li class="sub-menu">
-          <a  [routerLink]="['/members']">
-            <i class="fa fa-tasks"></i>
-            <span>Find Friends</span>
-            </a>
-        </li>
-        <li class="sub-menu">
-          <a href="javascript:;">
-            <i class="fa fa-th"></i>
-            <span>Career Tracks</span>
-            </a>
-          <ul class="sub">
-            <li><a href="basic_table.html">Basic Table</a></li>
-
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <span>Mail </span>
-            <span class="label label-theme pull-right mail-info">2</span>
-            </a>
-        </li>
-        <li *hasRole="['Admin']" class="sub-menu">
-          <a href="javascript:;">
-            <i class=" fa fa-bar-chart-o"></i>
-            <span>Managment</span>
-            </a>
-          <ul class="sub">
-            <li><a href="#">Morris</a></li>
-            <li><a href="#">Chartjs</a></li>
-            <li><a href="#">Flot Charts</a></li>
-            <li><a href="#">xChart</a></li>
-          </ul>
-        </li>
-        <li class="sub-menu">
-          <a [routerLink]="['/chatroom']" >
-            <i class="fa fa-comments-o"></i>
-            <span>Chat Room</span>
-            </a>
-          <ul class="sub">
-            <li><a href="#">Lobby</a></li>
-            <li><a  [routerLink]="['/chatroom']"> Chat Room</a></li>
-          </ul>
-        </li>
-
-      </ul>
+        </ul>
+        <hr class="my-3">
+      </div>
     </div>
-  </aside> -->
+  </div>
+</nav>
+
+<div *ngIf="loggedIn()" class=" main-content" id="panel">
+  <nav class="navbar navbar-top navbar-expand fixed-top navbar-dark bg-primary border-bottom" style=" margin-left: 16.5%;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Search form -->
+        <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+          <div class="form-group mb-0">
+            <div class="input-group input-group-alternative input-group-merge">
+
+              <a  [routerLink]="['/members/home']" class="button">Home</a>
+
+            </div>
+          </div>
+
+          <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </form>
+        <!-- Navbar links -->
+        <i style="cursor: pointer;outline: none;" [routerLink]="['/messages']" class="fa fa-bell" aria-hidden="true"></i><span *ngIf="count!=='0'" class="badge bg-theme">{{count}}</span>
+
+        <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+          <li  [routerLink]="['/members/profile']" class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <span class="avatar avatar-sm rounded-circle">
+                  <img  src="{{photoUrl || 'assets/User.png'}}">
+                </span>
+                <div class="media-body  ml-2  d-none d-lg-block">
+                  <span style=" font-size: inherit;" class="mb-0 text-sm  font-weight-bold">{{ authService.currentUser?.userName || authService.decodedToken?.unique_name | titlecase }}</span>
+                </div>
+              </div>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
