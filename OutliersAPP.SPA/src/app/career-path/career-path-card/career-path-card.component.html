@@ -5,17 +5,20 @@
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper
               . Praesent commodo cursus magna, vel scelerisque nisl consectetur
               . Fusce dapibus, tellus ac cursus commodo.{{careerpath.description}}</p>
-            <!-- <div *ngFor="let x of careerdetails">
-              
-
-            </div> -->
             <ul class="list-group">
   <li  *ngFor="let Flowwer of careerdetails" class="list-group-item" >
       {{ Flowwer.name }}
     </li>
   </ul>
   <button [routerLink]="['/list_playlist/',careerpath.category]" type="button" class="btn btn-info mle">Info career path</button>
-  <button [routerLink]="['/list_playlist/',careerpath.category]" type="button" class="btn btn-success mle2">Start career path</button>
+  <!-- <button  (click)="crearecareepath(careerpath.category)" type="button" class="btn btn-success mle2">Start career path</button> -->
+
+  <!-- <form #editForm="ngForm" id="editForm" (ngSubmit)="crearecareepath()" role="form" class="contact100-form">
+    <input class="input100" type="text" value="{{careerpath.category}}" [(ngModel)]="careerpath.category"   name="careerpath" > 
+  <button form="editForm"  [routerLink]="['/list_playlist/',careerpath.category]" type="button" class="btn btn-success mle2">Start career path</button>
+</form> -->
+
+
   <!-- <button type="button" class="btn btn-info">Info</button> -->
               <!-- <div *ngFor="let x of details">
                   <p>x</p>

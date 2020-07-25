@@ -54,6 +54,7 @@ namespace OutliersAPP.API.Data
         Task<IEnumerable<Rate>> GetRates(int playlistId);
         Task<Rate> getRateuser(int userid,int playlistid);
         Task<Rate> getoeneRate(int rateid);
+        Task<User> createCareer(int userid);
 
     }
 }

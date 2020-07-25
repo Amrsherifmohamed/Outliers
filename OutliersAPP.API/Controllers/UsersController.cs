@@ -209,5 +209,18 @@ namespace OutliersAPP.API.Controllers
             var usertoreturn=_mapper.Map<IEnumerable<UserForcaredDto>>(users);
             return Ok(usertoreturn);
         }
+        [HttpPut("{id}/createcareerpath")]
+        public async Task<IActionResult> UpdateUser(int id, CereerpathForcreatonuerDto cereerpathForcreatonuerDto)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            var userFromRepo = await _repo.GetUser(id, true);
+            _mapper.Map(cereerpathForcreatonuerDto, userFromRepo);
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"حدثت مشكلة في تعديل بيانات المشترك رقم {id}");
+
+        }
     }
 }

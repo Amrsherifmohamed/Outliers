@@ -54,6 +54,7 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
       confirmPassword: ['', Validators.required],
       roleName: ['', Validators.required],
+      careerpath:['',Validators.required],
     }, { validator: this.passwordMatchValidator });
   }
   passwordMatchValidator(form: FormGroup) {

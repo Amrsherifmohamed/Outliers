@@ -27,6 +27,7 @@ namespace OutliersAPP.API.Dtos
         public string IntrestedJobe { get; set; }
         public string Experience { get; set; }
         public string Skills { get; set; }
+        public string careerpath {get;set;}
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public UserForRegisterDto()

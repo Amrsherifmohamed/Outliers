@@ -33,3 +33,12 @@ li {
     display: inline-block;
     list-style: none;
   }
+  .marg_vg{
+    margin-top: 4%;
+    width: 85%;
+    height: 50%;
+    margin-left: 14%;
+  }
+  .marg_text{
+    margin-left: 14%;
+  }

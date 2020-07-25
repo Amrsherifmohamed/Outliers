@@ -357,6 +357,10 @@ namespace OutliersAPP.API.Data
             .FirstOrDefaultAsync(c => c.id == rateid);
             return rateplaylist;
        }
+         public async Task<User> createCareer(int userid){
+             var user = await _context.Users.FirstOrDefaultAsync(m => m.careerpath == "" && m.Id == userid);
+             return user;
+         }
 
     
     }

@@ -22,7 +22,7 @@ get_ipython().magic(u'matplotlib inline')
 import sqlite3
 
 import sys
-query = sys.argv[1] if len(sys.argv) > 1 else 25
+query = sys.argv[1] if len(sys.argv) > 1 else 22
 
 
 # Create a SQL connection to our SQLite database

@@ -140,6 +140,8 @@ namespace OutliersAPP.API.Helpers
             CreateMap<Rate,RateForReturnDto>();
             CreateMap<Rate,RateForDetailsDto>();
             CreateMap<Rate,RateForlistDto>();
+            CreateMap<CereerpathForcreatonuerDto,User>();
+            CreateMap<User,CereerpathForcreatonuerDto>();
 
        
        }

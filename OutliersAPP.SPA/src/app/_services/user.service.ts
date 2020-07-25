@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import { Message } from '../_models/message';
 import { Post } from '../_models/Post';
 import {Comment} from '../_models/Comment'
+import { Careerpath } from '../_models/Careerpath';
 
 @Injectable({
   providedIn: 'root'
@@ -161,5 +162,8 @@ export class UserService {
   }
   getplaylistrecomndation(userid:number){
     return this.http.get(this.baseurl2+"Playlist/"+userid);
+  }
+  createcareerpath(userid:number,careerpath:User){
+    return this.http.put(this.baseUrl+userid+"/"+"createcareerpath",careerpath);
   }
 }

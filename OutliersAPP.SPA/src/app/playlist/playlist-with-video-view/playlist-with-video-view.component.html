@@ -1,5 +1,6 @@
 
-      <vg-player (onPlayerReady)="onPlayerReady($event)">
+    <div class="marg_vg">
+    <vg-player (onPlayerReady)="onPlayerReady($event)">
         <video #media  width="2000" height="900" controls autoplay="false"
       [vgMedia]="media"
       [src]="this.videos[currentIndex].url"
@@ -8,14 +9,17 @@
       crossorigin>
          </video>
       </vg-player>
+    </div>
+    <div class="marg_text">
 <ul>
   <li  *ngFor="let item of videos; let $index = index"
       (click)="onClickPlaylistItem(item, $index)"
       [class.selected]="item === currentItem">
       {{ item.description}}
-    <div class="mrright"> <h3> newvideo</h3></div>
+    <div class="mrright"> <h3> video number</h3></div>
   </li>
 </ul>
+</div>
 
 
 

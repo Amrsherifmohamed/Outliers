@@ -14,7 +14,7 @@ export class JobListResolver implements Resolve<Job[]>{
   resolve(route: ActivatedRouteSnapshot): Observable<Job[]> {
     return this.jobService.getAllJobs().pipe(
       catchError(error => {
-        this.alertify.error(' There is a problem displaying the data');
+        this.alertify.error(' There is a problem displaying the data amr');
         this.router.navigate(['']);
         return of(null);
 

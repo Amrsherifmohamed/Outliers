@@ -9,7 +9,7 @@ import { Video } from '../_models/video';
   providedIn: 'root'
 })
 export class CoursesService {
-  basUrl = environment.apiUrl + 'Playlist/';
+  basUrl = environment.apiUrl + 'PlayList/';
   currentPlaylist:Playlist;
 
 constructor(private http: HttpClient) { }

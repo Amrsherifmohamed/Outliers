@@ -20,6 +20,7 @@ export class PlaylistCardComponent implements OnInit {
   constructor(private ratingservice:RatingService,private authservice:AuthService,private alertify:AlertifyService) { }
 
   ngOnInit() {
+    // console.log(this.playlist.Id);
   }
   // countStar(star) {
   //   this.selectedValue = star;
@@ -28,13 +29,13 @@ export class PlaylistCardComponent implements OnInit {
   // }
   createrating(star){
     this.selectedValue = star;
-    this.newrating.ratevalue=star;
-    this.ratingservice.createrating(this.authservice.currentUser.id,this.playlist.Id,this.newrating).
+    this.newrating=star;
+    this.ratingservice.createrating(this.authservice.currentUser.id,this.playlist.id,this.newrating).
     subscribe(
       ()=>{
         this.alertify.success("success to upload post");
           // this.newpost.description='';
-          console.log('Value of star', this.newrating.ratevalue);
+          console.log('Value of star', this.newrating);
       },
       error=>{
         // this.alertify.error("error to uplad post"),
