@@ -1,7 +1,7 @@
 <section id="container">
 
 
-  <section id="main-content">
+  <section id="main-content" style="margin-left: 20%;">
     <section class="wrapper">
       <h3><i class="fa fa-angle-right"></i> Contact Form</h3>
       <!-- BASIC FORM ELELEMNTS -->
@@ -9,7 +9,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <h4 class="title">Contact Form</h4>
           <div id="message"></div>
-          
+
           <form (ngSubmit)="addContact()" [formGroup]="contactForm" class="contact-form php-mail-form" >
 
             <div class="form-group">
@@ -18,7 +18,7 @@
               </div>
             </div>
 
-            <div class="form-group"> 
+            <div class="form-group">
               <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" formControlName="suject" [ngClass]="{'is-invalid' : contactForm.get('suject').errors && contactForm.get('suject').touched}">
               <div class="validate" style="color: brown; font-weight: bold;" *ngIf="contactForm.get('suject').touched && contactForm.get('suject').hasError('required')"> <i class="fa fa-exclamation-triangle"></i> This Field Is Required
               </div>

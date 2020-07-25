@@ -80,8 +80,14 @@ namespace OutliersAPP.API.Controllers
             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
             var like = await _repo.GetLike(id, recipientId);
-            if (like != null)
-                return BadRequest("لقد قمت بالإعجاب بهذا المشترك من قبل");
+            if (like != null){
+                // return BadRequest("لقد قمت بالإعجاب بهذا المشترك من قبل");
+                _repo.Delete(like);
+                await _repo.SaveAll();
+                 return BadRequest("success to unlike this user");}
+                // if()
+                //    return Ok();
+               
             if (await _repo.GetUser(recipientId, false) == null)
                 return NotFound();
             like = new Like

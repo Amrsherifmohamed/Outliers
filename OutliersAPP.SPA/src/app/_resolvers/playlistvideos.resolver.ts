@@ -12,7 +12,7 @@ export class PlaylistvideosResolver implements Resolve<Video>{
   resolve(route: ActivatedRouteSnapshot): Observable<Video> {
     return this.coursesService.getvideoplaylist(route.params['id']).pipe(
       catchError(() => {
-        this.alertify.error(' There is a problem displaying the data');
+        this.alertify.error(' There is a problem displaying the data amr');
         this.router.navigate(['']);
         return of(null);
       })

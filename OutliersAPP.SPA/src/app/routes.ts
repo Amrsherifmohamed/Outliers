@@ -188,7 +188,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'jobs', component: JobListComponent, resolve: {
-          jobs: JobListResolver
+          jobs: JobListResolver,job:JopRecomendationResolver,playlists:PlaylistRecomendationResolver
         }
       },
       {

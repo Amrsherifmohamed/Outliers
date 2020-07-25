@@ -1,6 +1,6 @@
-<div class="container mt-3">
+<div class="container mt-3" style="margin-left: 30%;">
   <div class="header-container">
-      <h3 class="page-header">لوحة الإدارة</h3>
+      <h3 style="margin-top: 10%;" class="page-header">Managment </h3>
   </div>
   <div class="tab-panel">
     <tabset class="member-tabset">
@@ -9,10 +9,10 @@
             <app-user-management></app-user-management>
         </div>
       </tab>
-      <tab heading="Photo managmant" *hasRole="['Admin','Moderator']">
+      <tab heading="Photo managmant" *hasRole="['Admin']">
         <app-photo-management></app-photo-management>
       </tab>
-      <tab heading="Careerpath managmant" *hasRole="['Admin','Moderator']">
+      <tab heading="Careerpath managmant" *hasRole="['Admin']">
         <app-careerpath-managment></app-careerpath-managment>
       </tab>
     </tabset>

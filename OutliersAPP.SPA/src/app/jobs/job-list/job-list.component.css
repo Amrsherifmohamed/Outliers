@@ -34,3 +34,24 @@ form.example::after {
   clear: both;
   display: table;
 }
+.margi{
+  margin-left: 70%;
+}
+.setting{
+  margin-top: 45px;
+  height: 300px;
+  width: 260px;
+  overflow-y: scroll ;
+  position: fixed;
+  margin-right: -300px;
+  border: #4ECDC4;
+}
+.setting2{
+  margin-top: 400px;
+  height: 300px;
+  width: 260px;
+  overflow-y: scroll ;
+  position: fixed;
+  margin-right: -300px;
+  border: #4ECDC4;
+}

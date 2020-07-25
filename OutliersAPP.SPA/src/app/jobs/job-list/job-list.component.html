@@ -1,10 +1,42 @@
+
+
 <section  style="margin-left: 20%;" id="main-content">
   <section  class="wrapper">
     <form class="example" action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+    
     <div  class="row">
+      <!-- <div class="col-md-8">
+
+      </div> -->
+    
+      
+  <div class="col-md-3 col-sm-4 mb margi" >
+    <div class="grey-panel pn setting"   >
+      <div class="grey-header" id="po">
+        <h5>Playlist recommendations</h5>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <app-playlist-recomndations-list></app-playlist-recomndations-list>
+      
+    </div>
+    <div class="grey-panel pn setting2"  >
+      <div class="grey-header" id="po"  >
+        <h5>Jobs recommendations</h5>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <app-job-recomndations-list></app-job-recomndations-list>
+    </div>
+    <!-- /grey-panel -->
+  </div>
       <div *ngFor="let job of jobs" class="col-lg-9 main-chart">
         <div class="row">
           <div class="col-md-10 mb">
@@ -39,6 +71,7 @@
           </div>
           </div>
         </div>
+        
       </div>
   </section>
 </section>
