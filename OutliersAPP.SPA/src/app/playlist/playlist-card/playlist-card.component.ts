@@ -29,13 +29,13 @@ export class PlaylistCardComponent implements OnInit {
   // }
   createrating(star){
     this.selectedValue = star;
-    this.newrating=star;
+    this.newrating.ratevalue=star;
     this.ratingservice.createrating(this.authservice.currentUser.id,this.playlist.id,this.newrating).
     subscribe(
       ()=>{
         this.alertify.success("success to upload post");
           // this.newpost.description='';
-          console.log('Value of star', this.newrating);
+          console.log('Value of star', this.newrating.ratevalue);
       },
       error=>{
         // this.alertify.error("error to uplad post"),
