@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -26,7 +25,7 @@ query = sys.argv[1] if len(sys.argv) > 1 else 22
 
 
 # Create a SQL connection to our SQLite database
-con = sqlite3.connect("C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\OutliersAPP.db")
+con = sqlite3.connect("D:\matrial 2d\GP\APP\Outliers\OutliersAPP.API\OutliersAPP.db")
 
 cur = con.cursor()
 
@@ -414,7 +413,7 @@ if inputMovie.size > 1:
     # In[1506]:
 
 
-    #ALTER table `books` ADD INDEX theindex (`date`, `time`);
+    #ALTER table books ADD INDEX theindex (date, time);
 
 
     # In[ ]:
@@ -508,15 +507,3 @@ else:
 
 
 # In[ ]:
-
-
-
-
-
-
-
-
-
-
-
-

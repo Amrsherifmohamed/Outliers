@@ -57,7 +57,7 @@ namespace OutliersAPP.API.Controllers
             query = System.Text.RegularExpressions.Regex.Replace(query, "[\\[\\]\\(\\)&@#$%^&*';<>:/\\\"]+", "");
             query = query.Trim();
             //$"\"{query}\""
-            String scriptPath = "C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\PythonRec\\JopRecommendationSearch.py";
+            String scriptPath ="D:\\matrial 2d\\GP\\APP\\Outliers\\OutliersAPP.API\\PythonRec\\JopRecommendationSearch.py";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

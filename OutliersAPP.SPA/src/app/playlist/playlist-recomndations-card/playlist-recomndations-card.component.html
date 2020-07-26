@@ -1,11 +1,24 @@
-<div class="desc">
+<!-- <div class="desc">
   <div class="thumb">
-  <a [routerLink]="['/list_playlist_video/',playlist.Id]">  <img   class="img-circle"  width="45px" height="45px" align=""></a>
+  <a [routerLink]="['/list_playlist_video/',playlist.Id]">  <img   class="img-circle"  width="45px" height="45px"></a>
   </div>
   <div class="details">
 
     <strong>  <h5 href="#">{{playlist.Id}} </h5><br/></strong>
     <h5 >{{playlist.Name}}</h5>
+
+  </div>
+</div> -->
+
+<div class="part3">
+  <div class="sign">
+  <div class="statistics">
+    <h4>{{playlist.Name}}</h4>
+    <div class="stat">
+      <i class="fas fa-pencil-alt"></i>
+      <span>{{playlist.Category}}</span>
+      <span>{{playlist.Id}}</span>
+    </div>
 
   </div>
 </div>

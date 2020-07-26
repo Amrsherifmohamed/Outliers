@@ -53,7 +53,7 @@
           </li>
 
           <li *hasRole="['Fresh Graduate']"   [routerLink]="['/jobs']">
-            <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+            <a    [routerLink]="['/jobs']" class="btn btn-compose" style="
             font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
               <i class="fa fa-search-plus" aria-hidden="true"></i>
 
@@ -61,7 +61,7 @@
               </a>
           </li>
           <li *hasRole="['Fresh Graduate']"  [routerLink]="['/members']">
-            <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+            <a   [routerLink]="['/members']" class="btn btn-compose" style="
             font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
               <i class="fa fa-search" aria-hidden="true"></i>
               Members
@@ -84,7 +84,7 @@
                 </a>
 
                 <li  *hasRole="['Professional']" [routerLink]="['/members']">
-                  <a   [routerLink]="['/Freshdashboard']" class="btn btn-compose" style="
+                  <a   [routerLink]="['/members']" class="btn btn-compose" style="
                   font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     Members
@@ -93,7 +93,7 @@
 
              <!-- Company -->
              <li *hasRole="['Company']"   [routerLink]="['/dashboard']">
-              <a    [routerLink]="['/profdashboard']" class="btn btn-compose" style="
+              <a  [routerLink]="['/dashboard']" class="btn btn-compose" style="
               font-family: 'Ruda', sans-serif; font-weight: 200;font-size: large;">
                 <i class="fa fa-tachometer" aria-hidden="true"></i>
                 Dashboard

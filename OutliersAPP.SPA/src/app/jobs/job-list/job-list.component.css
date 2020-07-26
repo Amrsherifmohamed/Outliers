@@ -39,19 +39,27 @@ form.example::after {
 }
 .setting{
   margin-top: 45px;
-  height: 300px;
-  width: 260px;
+  /* height: 300px;
+  width: 300px; */
   overflow-y: scroll ;
   position: fixed;
   margin-right: -300px;
   border: #4ECDC4;
 }
 .setting2{
-  margin-top: 400px;
-  height: 300px;
-  width: 260px;
+  margin-top: 350px;
+  width: 308px;
+   /* height: 300px;
+  width: 300px; */
   overflow-y: scroll ;
   position: fixed;
   margin-right: -300px;
   border: #4ECDC4;
+}
+.grey-panel .grey-header {
+  background: #f7fafc;
+  padding: 3px;
+  margin-bottom: 15px;
+  position: fixed;
+  width: 20%;
 }

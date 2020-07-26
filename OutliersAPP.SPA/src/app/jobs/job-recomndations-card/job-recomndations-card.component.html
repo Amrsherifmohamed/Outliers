@@ -9,7 +9,7 @@
 
   </div>
 </div> -->
-
+<!--
 <div class="desc">
   <div class="thumb">
     <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
@@ -20,5 +20,18 @@
       <br/>
       <a href="#">James Brown{{job.Id}} ,{{job.JobTitle}}</a> {{job.jobDescription}}<br/>
     </p>
+  </div>
+</div> -->
+
+<div class="part3">
+  <div class="sign">
+  <div class="statistics">
+    <h4>{{job.JobTitle}}</h4>
+    <div class="stat">
+      <i class="fas fa-pencil-alt"></i>
+      <span style="cursor: pointer; outline: none;" [routerLink]="['/jobs/',job.id]">{{job.JobType}}</span>
+      <span>{{job.Id}}</span>
+    </div>
+
   </div>
 </div>

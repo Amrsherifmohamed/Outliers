@@ -1,10 +1,13 @@
 
+
+
+
       .app_page1 {
           margin: 0;
           overflow: hidden;
           height:100%;
         }
-        
+
         @media (min-width: 768px){
           #left {
             position: fixed;
@@ -12,18 +15,18 @@
             bottom: 0;
             left: 0;
             width: 15%;
-            overflow-y: scroll; 
+            overflow-y: scroll;
           }
-        
+
           #middle {
             position: absolute;
             top: 0px;
             bottom: 0;
             left: 15%;
             width: 15%;
-            overflow-y: scroll; 
+            overflow-y: scroll;
           }
-          
+
           #right {
             position: fixed;
             top: 0;
@@ -41,19 +44,19 @@
             width: 20%;
           }
         }
-        
+
         #left {
           background-color: #2f323a;
           text-align: center;
           height:100%;
         }
-        
+
         #middle{
           background-color: #2f323a;
           text-align: center;
           height:100%;
         }
-        
+
         #right {
           height:100%;
           background-color: #d6d9dc;
@@ -64,8 +67,8 @@
           background-color: #d6d9dc;
           /* text-align: center; */
         }
-        
-        
+
+
         .tool-card{
           border: 2px solid black;
           padding: 10px 10px;
@@ -97,4 +100,3 @@
           margin-right: -300px;
           border: #4ECDC4;
         }
-  

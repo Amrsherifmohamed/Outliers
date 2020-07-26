@@ -121,8 +121,8 @@ namespace OutliersAPP.API.Controllers
         {
             Id = System.Text.RegularExpressions.Regex.Replace(Id, "[\\[\\]\\(\\)&@#$%^&*';<>:/\\\"]+", "");
             Id = Id.Trim();
-            //$"\"{query}\""
-            String scriptPath = "C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\PythonRec\\PlayList.py";
+            //$"\"{query}\"" D:\\matrial 2d\\GP\\final project\\Outliers\\OutliersAPP.API\\PythonRec\\PlayList.py
+            String scriptPath = "D:\\matrial 2d\\GP\\APP\\Outliers\\OutliersAPP.API\\PythonRec\\PlayList.py";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

@@ -33,8 +33,8 @@ query = sys.argv[1] if len(sys.argv) > 1 else 'php'
 
 #query=len(sys.argv)>1?sys.argv[1]:"php"
 
-# Create a SQL connection to our SQLite database
-con = sqlite3.connect("C:\\Users\\smart\\Desktop\\New folder (2)\\Outliers\\OutliersAPP.API\\OutliersAPP.db")
+# Create a SQL connection to our SQLite database D:\\matrial 2d\\GP\\final project\\Outliers\\OutliersAPP.API\\OutliersAPP.db
+con = sqlite3.connect("D:\matrial 2d\GP\APP\Outliers\OutliersAPP.API\OutliersAPP.db")
 
 cur = con.cursor()
 import pandas as pd
