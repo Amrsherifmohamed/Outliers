@@ -16,7 +16,7 @@
     <h4>{{playlist.Name}}</h4>
     <div class="stat">
       <i class="fas fa-pencil-alt"></i>
-      <span>{{playlist.Category}}</span>
+      <span style="cursor: pointer; outline: none;" [routerLink]="['/list_playlist_video/',playlist.Id]">{{playlist.Category}}</span>
       <span>{{playlist.Id}}</span>
     </div>
 
