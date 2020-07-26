@@ -85,7 +85,7 @@
         .setting{
           margin-top: 70px;
           height: 300px;
-          width: 260px;
+          /* width: 260px; */
           overflow-y: scroll ;
           position: fixed;
           margin-right: -300px;
@@ -93,8 +93,9 @@
         }
         .setting2{
           margin-top: 400px;
-          height: 300px;
-          width: 260px;
+          width: 316px;
+           /* height: 300px;
+          width: 300px; */
           overflow-y: scroll ;
           position: fixed;
           margin-right: -300px;

@@ -80,7 +80,7 @@ body {
     padding-bottom: 5px;
 }
 .panel-google-plus > .panel-heading > img {
-    margin-right: 15px;
+  margin-right: -50px;
 }
 .panel-google-plus > .panel-heading > h3 {
     margin: 0px;
