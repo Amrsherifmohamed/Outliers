@@ -103,7 +103,7 @@ x=25
 # In[1468]:
 
 
-inputMovie = pd.read_sql_query("SELECT * FROM Rates WHERE id IN(%s)"%query , con)
+inputMovie = pd.read_sql_query("SELECT * FROM Rates WHERE UserId IN(%s)"%query , con)
 
 
 # In[1469]:
@@ -308,166 +308,169 @@ genreTable.shape
 # In[1491]:
 
 
+# if 0>1:
+if inputMovie.size > 1:
+    recommendationTable_df = ((genreTable*userProfile).sum(axis=1))/(userProfile.sum())
+    recommendationTable_df.head()
 
-recommendationTable_df = ((genreTable*userProfile).sum(axis=1))/(userProfile.sum())
-recommendationTable_df.head()
+    #     recommendationTable_df = ((genreTable*userProfile).sum(axis=1))/(userProfile.sum())
+    # else:  userProfile.head()
 
 
-# In[1492]:
+    # In[1492]:
 
+    recommendationTable_df = recommendationTable_df.sort_values(ascending=False)
 
-recommendationTable_df = recommendationTable_df.sort_values(ascending=False)
+    recommendationTable_df.head()
 
-recommendationTable_df.head()
 
+    # In[1493]:
 
-# In[1493]:
 
+    from pandas import DataFrame
+    #df = DataFrame(recommendationTable_df['Id'].isin(movies_df.head(5).keys())], columns= ['Id'])
+    #df = DataFrame(movies_df.loc[movies_df['Id'].isin(recommendationTable_df.head(5).keys())], columns= ['Id'])
 
-from pandas import DataFrame
-#df = DataFrame(recommendationTable_df['Id'].isin(movies_df.head(5).keys())], columns= ['Id'])
-#df = DataFrame(movies_df.loc[movies_df['Id'].isin(recommendationTable_df.head(5).keys())], columns= ['Id'])
 
+    # In[1494]:
 
-# In[1494]:
 
+    movies_df.loc[movies_df['Id'].isin(recommendationTable_df.head(5).keys())]
 
-movies_df.loc[movies_df['Id'].isin(recommendationTable_df.head(5).keys())]
 
+    # In[1495]:
 
-# In[1495]:
 
+    r=recommendationTable_df.isin(movies_df['Id'].keys())
 
-r=recommendationTable_df.isin(movies_df['Id'].keys())
 
+    # In[1496]:
 
-# In[1496]:
 
+    recommendationTable_df.keys()
 
-recommendationTable_df.keys()
 
+    # In[1497]:
 
-# In[1497]:
 
+    rf=r.to_frame() 
 
-rf=r.to_frame() 
 
+    # In[1498]:
 
-# In[1498]:
 
+    #print rff=rf(index=False)
 
-#print rff=rf(index=False)
 
+    # In[1499]:
 
-# In[1499]:
 
+    # rff
 
-# rff
 
+    # In[1500]:
 
-# In[1500]:
 
+    md=movies_df.set_index('Id')
 
-md=movies_df.set_index('Id')
 
+    # In[1501]:
 
-# In[1501]:
 
+    md
 
-md
 
+    # In[ ]:
 
-# In[ ]:
 
 
 
 
+    # In[1502]:
 
-# In[1502]:
 
+    rf
 
-rf
 
+    # In[1503]:
 
-# In[1503]:
 
+    result = rf.join(md, on=['Id'])
 
-result = rf.join(md, on=['Id'])
 
+    # In[1504]:
 
-# In[1504]:
 
+    result
 
-result
 
+    # In[1505]:
 
-# In[1505]:
 
 
+    result=result.reset_index().set_index(0)
 
-result=result.reset_index().set_index(0)
 
+    # In[1506]:
 
-# In[1506]:
 
+    #ALTER table `books` ADD INDEX theindex (`date`, `time`);
 
-#ALTER table `books` ADD INDEX theindex (`date`, `time`);
 
+    # In[ ]:
 
-# In[ ]:
 
 
 
 
+    # In[1507]:
 
-# In[1507]:
 
+    #result = result.drop(0, 1)
 
-#result = result.drop(0, 1)
 
+    # In[1508]:
 
-# In[1508]:
 
+    #movies_df['Id'].isin(recommendationTable_df.head(5).keys())
 
-#movies_df['Id'].isin(recommendationTable_df.head(5).keys())
 
+    # In[ ]:
 
-# In[ ]:
 
 
 
 
+    # In[1509]:
 
-# In[1509]:
 
+    #movies_df['Id'].isin(recommendationTable_df.head(5).keys())
 
-#movies_df['Id'].isin(recommendationTable_df.head(5).keys())
 
+    # In[1510]:
 
-# In[1510]:
 
+    #movies_df.set_index('Id')
 
-#movies_df.set_index('Id')
 
+    # In[1511]:
 
-# In[1511]:
 
+    #df=movies_df.loc[rs]
 
-#df=movies_df.loc[rs]
 
+    # In[1512]:
 
-# In[1512]:
 
+    #df
 
-#df
 
+    # In[1513]:
 
-# In[1513]:
 
-
-print(result.to_json(orient = "records"))
-
-
+    print(result.to_json(orient = "records"))
+else:
+    print(movies_df.to_json(orient = "records"))
 # In[ ]:
 
 
